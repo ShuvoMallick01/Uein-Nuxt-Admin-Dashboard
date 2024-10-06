@@ -1,8 +1,14 @@
-<template>
-  <h1>Home</h1>
-  <Button>Click me</Button>
-</template>
-
 <script setup lang="ts">
-// const runtimeConfig = useRuntimeConfig();
+definePageMeta({
+  layout: "accountsetting",
+  // middleware: "auth",
+  middleware: (to, form, next) => {
+    console.log(to, form);
+  },
+});
 </script>
+
+<template>
+  <h4>Practice</h4>
+  <Practice />
+</template>

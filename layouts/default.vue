@@ -1,4 +1,6 @@
-<script setup></script>
+<script setup>
+import Header from "./header/Header.vue";
+</script>
 
 <template>
   <!-- SIDEBAR NAVIGATION SECTION FOR DESKTOP DEVICE -->
@@ -10,7 +12,7 @@
 
   <main class="h-full lg:ml-[260px] 2xl:ml-[280px]">
     <!-- HEADER SECTION -->
-    <!-- <Header></Header> -->
+    <Header></Header>
 
     <!-- NAVIGATION DRAWER FOR SMALL DEVICE -->
     <!-- <MobileSidebar /> -->
