@@ -31,9 +31,6 @@ import { navigation } from "~/data/navigation";
             :key="index"
             :item="menuItem"
           />
-          <i class="px-4 py-6 font-semibold not-italic">
-            <NuxtLink to="/products">Product</NuxtLink></i
-          >
         </ul>
       </div>
     </nav>

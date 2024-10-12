@@ -3,14 +3,23 @@ export const navigation = [
     name: "Overview",
     menu: [
       {
+        label: "Practice",
+        route: "/",
+        icon: "IconBlocks",
+      },
+      {
         label: "Learning Management",
         route: "/learning-management",
         icon: "IconBlocks",
       },
-      { label: "Job Management", route: "/job-management", icon: "IconTarget" },
-      { label: "Analytic", route: "/analytics", icon: "IconAreaChart" },
-      { label: "Sales", route: "/sales", icon: "IconDiamondPercent" },
-      { label: "SaaS", route: "/saas", icon: "IconBadgeDollarSign" },
+      {
+        label: "Account Setting",
+        route: "/account-setting",
+        icon: "IconTarget",
+      },
+      // { label: "Analytic", route: "/analytics", icon: "IconAreaChart" },
+      // { label: "Sales", route: "/sales", icon: "IconDiamondPercent" },
+      { label: "Posts", route: "/posts", icon: "IconBadgeDollarSign" },
     ],
   },
   // {

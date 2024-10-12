@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-
+  ssr: false,
   runtimeConfig: {
     // The private keys which are only available server-side
     apiSecret: "123",
@@ -15,8 +15,16 @@ export default defineNuxtConfig({
   app: {
     head: {
       title: "Uein - Admin Dashboard",
-      titleTemplate: "template",
+      // titleTemplate: "template",
     },
+    // pageTransition: {
+    //   name: "page",
+    //   mode: "in-out", // default
+    // },
+    // layoutTransition: {
+    //   name: "layout",
+    //   mode: "out-in", // default
+    // },
   },
   modules: [
     "@nuxtjs/tailwindcss",
@@ -47,8 +55,15 @@ export default defineNuxtConfig({
     },
     { path: "~/sections", pathPrefix: false },
   ],
-  experimental: {
-    componentIslands: true,
+
+  routeRules: {
+    // "/": { swr: true, cache: { maxAge: 10 } },
+    "/": { isr: true, cache: { maxAge: 20 } },
+    "/learning-management": { prerender: true },
   },
+
+  // experimental: {
+  //   componentIslands: true,
+  // },
   css: ["simplebar-vue/dist/simplebar.min.css"],
 });
