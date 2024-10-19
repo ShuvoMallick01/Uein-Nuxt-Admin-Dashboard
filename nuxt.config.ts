@@ -2,36 +2,45 @@
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
   devtools: { enabled: true },
-  ssr: false,
-  runtimeConfig: {
-    // The private keys which are only available server-side
-    apiSecret: "123",
-    // Keys within public are also exposed client-side
-    public: {
-      apiBase: "/api",
-    },
-  },
 
   app: {
     head: {
       title: "Uein - Admin Dashboard",
       // titleTemplate: "template",
     },
-    // pageTransition: {
-    //   name: "page",
-    //   mode: "in-out", // default
-    // },
-    // layoutTransition: {
-    //   name: "layout",
-    //   mode: "out-in", // default
-    // },
   },
+
   modules: [
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
     "nuxt-lucide-icons",
     "@vueuse/nuxt",
+    "@pinia/nuxt",
+    "@nuxtjs/google-fonts",
+    "@nuxt/image",
+    "nuxt-lodash",
   ],
+  css: [
+    "simplebar-vue/dist/simplebar.min.css",
+    "notivue/notification.css",
+    "notivue/animations.css",
+    // "nprogress/nprogress.css"
+  ],
+
+  tailwindcss: {
+    cssPath: ["~/assets/css/tailwind.css", { injectPosition: "last" }],
+  },
+
+  googleFonts: {
+    families: {
+      Inter: [400, 500, 600, 700],
+    },
+  },
+  image: {
+    format: ["webp"],
+    quality: 80,
+  },
+
   shadcn: {
     /**
      * Prefix for all the imported component
@@ -56,14 +65,21 @@ export default defineNuxtConfig({
     { path: "~/sections", pathPrefix: false },
   ],
 
+  // lodash: {
+  //   prefix: "_",
+  //   prefixSkip: ["string"],
+  //   upperAfterPrefix: false,
+  //   exclude: ["map"],
+  //   alias: [
+  //     ["camelCase", "stringToCamelCase"], // => stringToCamelCase
+  //     ["kebabCase", "stringToKebab"], // => stringToKebab
+  //     ["isDate", "isLodashDate"], // => _isLodashDate
+  //   ],
+  // },
+
   routeRules: {
     // "/": { swr: true, cache: { maxAge: 10 } },
-    "/": { isr: true, cache: { maxAge: 20 } },
-    "/learning-management": { prerender: true },
+    // "/": { isr: true, cache: { maxAge: 20 } },
+    // "/learning-management": { prerender: true },
   },
-
-  // experimental: {
-  //   componentIslands: true,
-  // },
-  css: ["simplebar-vue/dist/simplebar.min.css"],
 });
