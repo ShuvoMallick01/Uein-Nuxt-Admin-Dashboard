@@ -8,8 +8,8 @@
       >
         <p class="text-[13px] font-semibold text-nowrap">Hi. John Smith</p>
 
-        <Avatar class="border border-white">
-          <AvatarImage src="/assets/images/users/07.jpg" alt="User" />
+        <Avatar size="xs" class="border border-white">
+          <AvatarImage src="~/assets/images/users/07.jpg" alt="User" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </div>

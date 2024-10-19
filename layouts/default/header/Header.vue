@@ -33,9 +33,9 @@ const sidebarStore = useSidebarStore();
           <Icon :size="22" name="Moon" v-else class="text-muted" />
         </button>
 
-        <!-- <NotificationPopover />
+        <NotificationPopover />
 
-        <ProfilePopover /> -->
+        <ProfilePopover />
       </div>
     </div>
   </header>

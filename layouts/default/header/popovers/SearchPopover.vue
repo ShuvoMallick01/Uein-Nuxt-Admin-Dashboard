@@ -1,6 +1,4 @@
-<script setup lang="ts">
-// CUSTOM COMPONENTS
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Dialog>
