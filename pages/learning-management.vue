@@ -12,21 +12,21 @@
     <Result />
 
     <!-- Study Time Last Week Card -->
-    <!-- <StudyTimeLastWeek /> -->
+    <StudyTimeLastWeek />
 
     <!-- Upcoming Task -->
-    <!-- <UpcomingTask /> -->
+    <UpcomingTask />
 
     <!-- Different Course Status Cards -->
-    <!-- <StatusList /> -->
+    <StatusList />
 
     <!-- Course Status -->
-    <!-- <CourseStatus /> -->
+    <CourseStatus />
 
     <!-- Your Downloads -->
-    <!-- <Downloads /> -->
+    <Downloads />
 
     <!-- Footer -->
-    <!-- <Footer></Footer> -->
+    <Footer />
   </div>
 </template>

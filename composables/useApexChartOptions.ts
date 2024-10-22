@@ -1,4 +1,3 @@
-// import merge from "lodash/merge";
 import type { ApexOptions } from "apexcharts";
 
 // DEFAULT & COMMON APEX CHART OPTIONS

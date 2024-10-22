@@ -1,6 +1,4 @@
-<script setup>
-import Header from "./header/Header.vue";
-</script>
+<script setup></script>
 
 <template>
   <!-- SIDEBAR NAVIGATION SECTION FOR DESKTOP DEVICE -->

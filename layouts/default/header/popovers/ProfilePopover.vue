@@ -9,7 +9,7 @@
         <p class="text-[13px] font-semibold text-nowrap">Hi. John Smith</p>
 
         <Avatar size="xs" class="border border-white">
-          <AvatarImage src="~/assets/images/users/07.jpg" alt="User" />
+          <AvatarImage src="/images/users/05.jpg" alt="User" />
           <AvatarFallback>CN</AvatarFallback>
         </Avatar>
       </div>
