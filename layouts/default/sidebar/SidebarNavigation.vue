@@ -1,42 +1,36 @@
 <script setup>
 import Scrollbar from "simplebar-vue";
-// CUSTOM COMPONENT
-import NavItem from "./NavItem.vue";
 // MENU LIST
 import { navigation } from "~/data/navigation";
-
-let { logo } = useLogo();
+import NavAccordion from "./NavAccordion.vue";
 </script>
 
 <template>
-  <div class="px-4 py-5 mb-2">
-    <NuxtLink to="/">
+  <div class="h-20 px-5 py-6">
+    <NuxtLink to="/" class="inline-flex">
       <img
-        :src="logo"
-        class="w-20 cursor-pointer"
-        alt="Uein Admin & Client Dashboard"
+        src="/logos/uco.svg"
+        class="w-8"
+        alt="Uno Admin & Client Dashboard"
       />
     </NuxtLink>
   </div>
 
-  <Scrollbar class="h-[calc(100vh-75px)]">
-    <nav class="pb-4 space-y-6">
-      <div
-        class="space-y-3"
-        v-for="navGroup in navigation"
-        :key="navGroup.name"
-      >
-        <h4 class="px-5 text-[12px] font-semibold text-primary uppercase">
+  <Scrollbar class="h-[calc(100vh-80px)]">
+    <nav class="px-4 pb-4 space-y-4">
+      <div v-for="navGroup in navigation" :key="navGroup.id">
+        <h4
+          v-if="navGroup.name"
+          class="pb-4 text-xs font-medium uppercase text-muted ps-3"
+        >
           {{ navGroup.name }}
         </h4>
 
-        <ul>
-          <NavItem
-            v-for="(menuItem, index) in navGroup.menu"
-            :item="menuItem"
-            :key="index"
-          />
-        </ul>
+        <NavAccordion
+          v-for="(menuItem, index) in navGroup.menu"
+          :item="menuItem"
+          :key="index"
+        />
       </div>
     </nav>
   </Scrollbar>

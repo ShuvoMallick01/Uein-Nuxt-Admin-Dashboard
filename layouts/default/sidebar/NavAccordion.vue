@@ -1,6 +1,8 @@
 <script setup lang="ts">
+import { Icon } from "@iconify/vue";
 // TYPE
 import { type NavItem } from "./type";
+import { cn } from "@/lib/utils";
 
 const props = defineProps<{ item: NavItem }>();
 
@@ -30,38 +32,60 @@ watch(
   <Collapsible v-model:open="isOpen">
     <CollapsibleTrigger class="w-full">
       <div
-        class="transition-all duration-300 ease-in-out border-l-2 cursor-pointer text-muted border-l-transparent hover:font-medium hover:border-l-primary hover:text-primary hover:bg-hover"
-        :class="{ '!border-l-primary !text-primary bg-hover': isOpen }"
+        class="text-gray-600 transition-all duration-300 rounded-lg cursor-pointer hover:text-primary-500 hover:font-medium hover:bg-primary-25 dark:hover:bg-primary/5"
+        :class="{ 'text-primary-500 bg-primary-25 dark:bg-primary/5': isOpen }"
       >
-        <div class="flex items-center justify-between p-4">
-          <div class="flex text-[13px] font-medium truncate items-center gap-3">
-            <Icon :name="item.icon" :size="20" :strokeWidth="1.2" />
-            {{ item.label }}
+        <div class="flex items-center justify-between p-3 mb-1">
+          <div class="flex items-center gap-2">
+            <Icon :icon="item.icon" style="font-size: large" />
+            <span class="text-sm font-medium truncate">{{ item.label }}</span>
           </div>
 
           <Icon
-            :size="18"
-            name="ChevronDown"
-            class="transition-all duration-300 ease-in-out"
-            :class="{ 'rotate-180': isOpen }"
+            icon="material-symbols:keyboard-arrow-right"
+            class="transition-all duration-300 rtl:rotate-180"
+            :class="{
+              'rotate-90 rtl:rotate-90': isOpen,
+            }"
           />
         </div>
       </div>
     </CollapsibleTrigger>
 
-    <CollapsibleContent>
+    <CollapsibleContent class="mb-4 space-y-1">
       <RouterLink
+        v-for="child in item.children"
         :to="child.route"
         @click="handleCloseSidebar()"
-        v-for="child in item.children"
-        class="flex items-center gap-4 p-4 duration-300 ease-in-out group text-[13px] font-medium text-muted hover:font-medium hover:text-primary hover:bg-hover"
-        :class="{
-          'bg-hover text-primary !border-l-primary': route.path === child.route,
-        }"
+        :class="
+          cn(
+            'text-gray-600 flex items-center gap-2 p-3 text-sm truncate duration-300 ease-in-out rounded-lg group hover:bg-primary-25 hover:text-primary dark:hover:bg-primary/5',
+            {
+              'text-primary bg-primary-25 dark:bg-primary/5':
+                route.path === child.route,
+            }
+          )
+        "
       >
-        <Icon name="Dot" :size="20" />
-        {{ child.label }}
+        <span
+          :class="
+            cn('w-1 h-1 bg-gray-600 rounded-full ms-1 me-2', {
+              'bg-primary bubble-effect': route.path === child.route,
+            })
+          "
+        ></span>
+        <span>{{ child.label }}</span>
       </RouterLink>
     </CollapsibleContent>
   </Collapsible>
 </template>
+
+<style scoped>
+.bubble-effect {
+  box-shadow: rgb(228, 220, 253) 0px 0px 0px 2px;
+}
+
+.dark .bubble-effect {
+  box-shadow: rgb(41 64 211 / 0.23) 0px 0px 0px 2px;
+}
+</style>

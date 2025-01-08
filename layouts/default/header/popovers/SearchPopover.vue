@@ -1,11 +1,37 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { Icon } from "@iconify/vue";
+// SHADCN COMPONENTS
+import {
+  Command,
+  CommandItem,
+  CommandList,
+  CommandEmpty,
+  CommandGroup,
+  CommandInput,
+  CommandShortcut,
+  CommandSeparator,
+} from "@/components/ui/command";
+import { Input } from "@/components/ui/input";
+import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+</script>
 
 <template>
   <Dialog>
     <DialogTrigger as-child>
-      <button>
-        <Icon name="Search" class="stroke-muted" />
-      </button>
+      <div class="relative hidden md:flex">
+        <Input placeholder="Search here..." class="h-10 rounded-lg min-w-72" />
+
+        <span
+          class="absolute h-10 -translate-y-1/2 border-s top-1/2 end-10 border-border"
+        >
+        </span>
+
+        <Icon
+          height="20"
+          icon="eva:search-outline"
+          class="absolute text-gray-500 transform -translate-y-1/2 top-1/2 end-0 me-3"
+        />
+      </div>
     </DialogTrigger>
 
     <DialogContent class="p-0 border-0 shadow-none sm:max-w-screen-sm">
@@ -17,17 +43,17 @@
 
           <CommandGroup heading="Suggestions">
             <CommandItem value="Calendar">
-              <Icon name="Calendar" class="w-4 h-4 mr-2" />
+              <Icon icon="uil:calender" class="w-4 h-4 me-2" />
               <span>Calendar</span>
             </CommandItem>
 
             <CommandItem value="Search Emoji">
-              <Icon name="Smile" class="w-4 h-4 mr-2" />
+              <Icon icon="uil:smile" class="w-4 h-4 me-2" />
               <span>Search Emoji</span>
             </CommandItem>
 
             <CommandItem value="Calculator">
-              <Icon name="Calculator" class="w-4 h-4 mr-2" />
+              <Icon icon="proicons:calculator" class="w-4 h-4 me-2" />
               <span>Calculator</span>
             </CommandItem>
           </CommandGroup>
@@ -36,19 +62,19 @@
 
           <CommandGroup heading="Settings">
             <CommandItem value="Profile">
-              <Icon name="User" class="w-4 h-4 mr-2" />
+              <Icon icon="lucide:user-round" class="w-4 h-4 me-2" />
               <span>Profile</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
 
             <CommandItem value="Billing">
-              <Icon name="CreditCard" class="w-4 h-4 mr-2" />
+              <Icon icon="f7:creditcard" class="w-4 h-4 me-2" />
               <span>Billing</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
 
             <CommandItem value="Settings">
-              <Icon name="Settings" class="w-4 h-4 mr-2" />
+              <Icon icon="si:settings-duotone" class="w-4 h-4 me-2" />
               <span>Settings</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>

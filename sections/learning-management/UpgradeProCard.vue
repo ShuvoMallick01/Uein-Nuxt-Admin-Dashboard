@@ -21,7 +21,7 @@
     </div>
 
     <img
-      src="~/assets/images/illustration/Frame-1.png"
+      src="/images/illustration/Frame-1.png"
       class="absolute bottom-0 right-0"
       alt="Illustration"
     />

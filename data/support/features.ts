@@ -1,0 +1,18 @@
+export const features = [
+  "Requirements",
+  "Install",
+  "Start",
+  "Build",
+  "Folder Structure",
+  "Color",
+  "Components",
+  "Routing Implementation",
+  "Routing Files",
+  "Using Auth or Guest Guard?",
+  "Navigations",
+  "Environment Variables",
+  "Mock server Note",
+  "How to remove mock server",
+  "Fake API",
+  "Settings",
+];

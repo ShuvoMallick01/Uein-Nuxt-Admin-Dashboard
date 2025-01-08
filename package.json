@@ -19,7 +19,7 @@
     "@pinia/nuxt": "^0.5.5",
     "@vueuse/core": "^11.1.0",
     "@vueuse/nuxt": "^11.1.0",
-    "apexcharts": "^3.54.0",
+    "apexcharts": "^3.54.1",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "h3": "^1.13.0",
@@ -39,6 +39,7 @@
     "vue3-apexcharts": "^1.7.0"
   },
   "devDependencies": {
+    "@iconify/vue": "^4.3.0",
     "@nuxtjs/tailwindcss": "^6.12.1",
     "nuxt-lodash": "^2.5.3",
     "typescript": "^5.6.2"
