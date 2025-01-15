@@ -1,19 +1,20 @@
-<script setup>
+<script setup lang="ts">
 import Scrollbar from "simplebar-vue";
-// MENU LIST
-import { navigation } from "~/data/navigation";
+// CUSTOM COMPONENT
 import NavAccordion from "./NavAccordion.vue";
+// MENU LIST
+import { navigation } from "@/data/navigation";
 </script>
 
 <template>
   <div class="h-20 px-5 py-6">
-    <NuxtLink to="/" class="inline-flex">
+    <RouterLink to="/" class="inline-flex">
       <img
-        src="/logos/uco.svg"
+        src="/logos/uno.svg"
         class="w-8"
         alt="Uno Admin & Client Dashboard"
       />
-    </NuxtLink>
+    </RouterLink>
   </div>
 
   <Scrollbar class="h-[calc(100vh-80px)]">

@@ -1,14 +1,19 @@
 <script setup lang="ts">
-import type { HTMLAttributes } from 'vue'
-import { cn } from '@/lib/utils'
+import type { HTMLAttributes } from "vue";
+import { cn } from "@/lib/utils";
 
-const props = defineProps<{
-  class?: HTMLAttributes['class']
-}>()
+const props = defineProps<{ class?: HTMLAttributes["class"] }>();
 </script>
 
 <template>
-  <th :class="cn('h-12 px-4 text-left align-middle font-medium text-muted-foreground [&:has([role=checkbox])]:pr-0', props.class)">
+  <th
+    :class="
+      cn(
+        'py-6 px-4 text-sm font-medium xl:px-5 text-left align-middle ltr:[&:has([role=checkbox])]:pr-0 [&:last-child]:text-center rtl:text-right',
+        props.class
+      )
+    "
+  >
     <slot />
   </th>
 </template>

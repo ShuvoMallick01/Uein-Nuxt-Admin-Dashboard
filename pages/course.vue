@@ -1,4 +1,29 @@
-<setup setup lang="ts"></setup>
+<script setup lang="ts"></script>
+
 <template>
-  <h4>SaaS</h4>
+  <div class="grid grid-cols-12 mb-6 gap-7">
+    <!-- INTRO CARD -->
+    <Intro />
+
+    <!-- STATS CARDS -->
+    <Status />
+
+    <!-- FEATURED COURSES TABLE CARD -->
+    <FeaturedCourse />
+
+    <!-- TOP CATEGORIES CARD -->
+    <TopCategories />
+
+    <!-- TRAFFIC SOURCES CHART CARDS -->
+    <!-- <TrafficSources /> -->
+
+    <!-- CONTINUE COURSES CARD -->
+    <!-- <ContinueCourses /> -->
+
+    <!-- UPCOMING TASK LIST CARD -->
+    <!-- <UpcomingTask /> -->
+
+    <!-- FOOTER CARD -->
+    <Footer />
+  </div>
 </template>

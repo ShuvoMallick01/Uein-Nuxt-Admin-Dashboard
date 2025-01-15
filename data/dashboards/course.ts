@@ -47,7 +47,7 @@ export const upcomingTasks = [
   { id: 5, status: false, title: "Read a Book", time: "08:30 PM - 09:30 PM" },
 ];
 
-export const stats = [
+export const status = [
   {
     id: 1,
     value: 1450,

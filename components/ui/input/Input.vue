@@ -7,6 +7,7 @@ const props = defineProps<{
   defaultValue?: string | number;
   modelValue?: string | number;
   class?: HTMLAttributes["class"];
+  error?: boolean;
 }>();
 
 const emits = defineEmits<{
@@ -24,7 +25,11 @@ const modelValue = useVModel(props, "modelValue", emits, {
     v-model="modelValue"
     :class="
       cn(
-        'flex h-10 w-full rounded-md border border-border bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-0 disabled:cursor-not-allowed disabled:opacity-50 dark:border-border',
+        'flex w-full rounded-md border border-border bg-card p-3 text-sm ring-offset-background shadow-xs  file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted focus:ring-2 focus:ring-ring focus:ring-offset-0 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50',
+        {
+          'border-red-600 focus:ring-red-600 placeholder:text-red-600':
+            props.error,
+        },
         props.class
       )
     "

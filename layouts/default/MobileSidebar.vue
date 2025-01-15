@@ -2,7 +2,6 @@
 import { VisuallyHidden } from "radix-vue";
 // CUSTOM COMPONENTS
 import SidebarNavigation from "./sidebar/SidebarNavigation.vue";
-
 const sidebarStore = useSidebarStore();
 </script>
 

@@ -1,25 +1,22 @@
-import { cva, type VariantProps } from 'class-variance-authority'
-
-export { default as Badge } from './Badge.vue'
+import { type VariantProps, cva } from "class-variance-authority";
+export { default as Badge } from "./Badge.vue";
 
 export const badgeVariants = cva(
-  'inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2',
+  "inline-flex items-center rounded-full border px-2 py-0.5 text-xs font-medium transition-colors",
   {
     variants: {
       variant: {
-        default:
-          'border-transparent bg-primary text-primary-foreground hover:bg-primary/80',
-        secondary:
-          'border-transparent bg-secondary text-secondary-foreground hover:bg-secondary/80',
-        destructive:
-          'border-transparent bg-destructive text-destructive-foreground hover:bg-destructive/80',
-        outline: 'text-foreground',
+        default: "border-transparent bg-primary text-white",
+        secondary: "border-transparent bg-gray-600 text-white",
+        destructive: "border-transparent bg-error text-white",
+        success: "border-transparent bg-success text-white",
+        warning: "border-transparent bg-warning text-white",
+        info: "border-transparent bg-info text-white",
+        outline: "text-foreground border-border",
       },
     },
-    defaultVariants: {
-      variant: 'default',
-    },
-  },
-)
+    defaultVariants: { variant: "default" },
+  }
+);
 
-export type BadgeVariants = VariantProps<typeof badgeVariants>
+export type BadgeVariants = VariantProps<typeof badgeVariants>;

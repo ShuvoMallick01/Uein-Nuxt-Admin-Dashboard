@@ -5,7 +5,7 @@ import {
   type MenubarSubTriggerProps,
   useForwardProps,
 } from "radix-vue";
-import { ChevronRight } from "lucide-vue-next";
+import { Icon } from "@iconify/vue";
 import { cn } from "@/lib/utils";
 
 const props = defineProps<
@@ -14,7 +14,6 @@ const props = defineProps<
 
 const delegatedProps = computed(() => {
   const { class: _, ...delegated } = props;
-
   return delegated;
 });
 
@@ -33,6 +32,6 @@ const forwardedProps = useForwardProps(delegatedProps);
     "
   >
     <slot />
-    <ChevronRight class="ml-auto h-4 w-4" />
+    <Icon icon="lucide:chevron-right" class="w-4 h-4 ml-auto" />
   </MenubarSubTrigger>
 </template>

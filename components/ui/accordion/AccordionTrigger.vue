@@ -1,20 +1,21 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
-import { ChevronDown } from 'lucide-vue-next'
+import { type HTMLAttributes, computed } from "vue";
 import {
   AccordionHeader,
   AccordionTrigger,
   type AccordionTriggerProps,
-} from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+} from "radix-vue";
+import { Icon } from "@iconify/vue";
+import { cn } from "@/lib/utils";
 
-const props = defineProps<AccordionTriggerProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<
+  AccordionTriggerProps & { class?: HTMLAttributes["class"] }
+>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 </script>
 
 <template>
@@ -23,15 +24,16 @@ const delegatedProps = computed(() => {
       v-bind="delegatedProps"
       :class="
         cn(
-          'flex flex-1 items-center justify-between py-4 font-medium transition-all hover:underline [&[data-state=open]>svg]:rotate-180',
-          props.class,
+          'flex flex-1 items-center justify-between p-4 text-sm rounded-lg font-semibold truncate transition-all hover:bg-hover hover:text-primary focus-within:bg-hover focus-within:text-primary [&[data-state=open]>svg]:rotate-180 dark:hover:bg-primary/10 dark:focus-within:bg-primary/10'
         )
       "
     >
       <slot />
+
       <slot name="icon">
-        <ChevronDown
-          class="h-4 w-4 shrink-0 transition-transform duration-200"
+        <Icon
+          icon="lucide:chevron-down"
+          class="w-4 h-4 transition-transform duration-200 shrink-0 text-primary"
         />
       </slot>
     </AccordionTrigger>

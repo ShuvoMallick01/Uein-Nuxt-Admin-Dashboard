@@ -7,22 +7,20 @@ export const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default: "bg-primary text-white hover:bg-primary/90",
         outline: "border border-border bg-transparent",
         link: "text-primary underline-offset-4 hover:underline",
-        // destructive: "bg-destructive text-destructive-foreground hover:bg-destructive/90",
-        // secondary: "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        // ghost: "hover:bg-accent hover:text-accent-foreground",
+        default: "bg-primary text-white hover:bg-primary-600",
       },
       size: {
-        default: "h-10 px-5 rounded-md",
+        default: "h-10 px-6 rounded-lg",
         xs: "h-7 px-2 rounded",
-        sm: "h-9 px-3 rounded-md",
-        lg: "h-12 px-8 rounded-md",
+        sm: "h-9 px-4 rounded-md",
+        md: "h-12 px-5 text-base rounded-md",
+        lg: "h-14 px-8 text-lg rounded-md",
         icon: "h-10 w-10",
       },
       color: {
-        default: "bg-primary text-white hover:bg-primary/90",
+        default: "bg-primary text-white",
         error: "bg-error text-white hover:bg-error/90",
         success: "bg-success text-white hover:bg-success/90",
         warning: "bg-warning text-white hover:bg-warning/90",
@@ -36,7 +34,7 @@ export const buttonVariants = cva(
         variant: "outline",
         color: "default",
         class:
-          "text-primary bg-transparent border-primary outline-none hover:bg-primary/10",
+          "text-primary-500 bg-transparent border-primary-500 outline-none hover:bg-primary/10",
       },
       {
         variant: "outline",
@@ -67,7 +65,8 @@ export const buttonVariants = cva(
       {
         variant: "link",
         color: "default",
-        class: "text-primary bg-transparent h-auto px-0 hover:bg-transparent",
+        class:
+          "text-primary-500 bg-transparent h-auto px-0 hover:bg-transparent",
       },
       {
         variant: "link",

@@ -1,23 +1,24 @@
 <script setup lang="ts">
-import { cn } from '@/lib/utils'
-import { AccordionContent, type AccordionContentProps } from 'radix-vue'
-import { computed, type HTMLAttributes } from 'vue'
+import { type HTMLAttributes, computed } from "vue";
+import { AccordionContent, type AccordionContentProps } from "radix-vue";
+import { cn } from "@/lib/utils";
 
-const props = defineProps<AccordionContentProps & { class?: HTMLAttributes['class'] }>()
+const props = defineProps<
+  AccordionContentProps & { class?: HTMLAttributes["class"] }
+>();
 
 const delegatedProps = computed(() => {
-  const { class: _, ...delegated } = props
-
-  return delegated
-})
+  const { class: _, ...delegated } = props;
+  return delegated;
+});
 </script>
 
 <template>
   <AccordionContent
     v-bind="delegatedProps"
-    class="overflow-hidden text-sm transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    class="overflow-hidden text-muted font-normal text-[13px] transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down dark:text-gray-400"
   >
-    <div :class="cn('pb-4 pt-0', props.class)">
+    <div :class="cn('pb-[18px] px-4 pt-[14px]', props.class)">
       <slot />
     </div>
   </AccordionContent>

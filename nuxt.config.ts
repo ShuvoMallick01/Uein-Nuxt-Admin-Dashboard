@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Uein - Admin Dashboard",
+      title: "Uno - Admin Dashboard",
       // titleTemplate: "template",
     },
   },
@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-lodash",
   ],
+
   css: [
     "simplebar-vue/dist/simplebar.min.css",
     "notivue/notification.css",
@@ -36,6 +37,7 @@ export default defineNuxtConfig({
       Inter: [400, 500, 600, 700],
     },
   },
+
   image: {
     format: ["webp"],
     quality: 80,
@@ -52,6 +54,7 @@ export default defineNuxtConfig({
      */
     componentDir: "./components/ui",
   },
+
   lucide: {
     namePrefix: "Icon",
   },
@@ -60,7 +63,6 @@ export default defineNuxtConfig({
     {
       path: "~/components",
       pathPrefix: false,
-      // extensions: [".vue"],
     },
     { path: "~/sections", pathPrefix: false },
   ],
