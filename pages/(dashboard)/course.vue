@@ -6,7 +6,7 @@
     <Intro />
 
     <!-- STATS CARDS -->
-    <Status />
+    <CourseStatus />
 
     <!-- FEATURED COURSES TABLE CARD -->
     <FeaturedCourse />

@@ -1,7 +1,5 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-// SHADCN COMPONENTS
-import { Card } from "@/components/ui/card";
 // DATA
 import { status } from "@/data/dashboards/course";
 </script>
