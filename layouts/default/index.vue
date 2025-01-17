@@ -23,7 +23,7 @@ import SidebarNavigation from "./sidebar/SidebarNavigation.vue";
 
     <!-- PAGE / ROUTE VIEW -->
     <div class="px-4 mx-auto max-w-screen-2xl sm:px-7 2xl:px-20">
-      <RouterView />
+      <NuxtPage />
     </div>
   </main>
 </template>

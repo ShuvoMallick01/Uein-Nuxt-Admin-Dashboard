@@ -15,13 +15,13 @@
     <TopCategories />
 
     <!-- TRAFFIC SOURCES CHART CARDS -->
-    <!-- <TrafficSources /> -->
+    <TrafficSources />
 
     <!-- CONTINUE COURSES CARD -->
-    <!-- <ContinueCourses /> -->
+    <Courses />
 
     <!-- UPCOMING TASK LIST CARD -->
-    <!-- <UpcomingTask /> -->
+    <UpcomingTask />
 
     <!-- FOOTER CARD -->
     <Footer />
