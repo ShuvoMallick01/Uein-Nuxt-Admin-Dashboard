@@ -3,7 +3,7 @@
 <template>
   <div class="grid grid-cols-12 mt-2 mb-6 gap-7">
     <!-- DIFFERENT WIDGETS CARD -->
-    <Widgets />
+    <FinanceWidgets />
 
     <!-- REVENUE GRAPH CARD -->
     <Revenue />

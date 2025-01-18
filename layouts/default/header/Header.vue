@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { onMounted } from "vue";
 import {
   useWindowScroll,
   useDark,
@@ -23,6 +24,10 @@ const { handleSidebarToggle } = useSidebarStore();
 const changeDirection = () => {
   dir.value = dir.value === "rtl" ? "ltr" : "rtl";
 };
+
+onMounted(() => {
+  dir.value = "ltr";
+});
 </script>
 
 <template>

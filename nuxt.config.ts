@@ -8,12 +8,15 @@ export default defineNuxtConfig({
       title: "Uno - Admin Dashboard",
       // titleTemplate: "template",
     },
+    middleware: {
+      "manifest-route-rule": { override: true },
+    },
   },
 
   modules: [
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
-    "nuxt-lucide-icons",
+    // "nuxt-lucide-icons",
     "@vueuse/nuxt",
     "@pinia/nuxt",
     "@nuxtjs/google-fonts",
@@ -55,9 +58,9 @@ export default defineNuxtConfig({
     componentDir: "./components/ui",
   },
 
-  lucide: {
-    namePrefix: "Icon",
-  },
+  // lucide: {
+  //   namePrefix: "Icon",
+  // },
 
   components: [
     {

@@ -4,10 +4,10 @@ export const navigation = [
     menu: [
       {
         label: "Dashboard",
-        route: "/course",
+        route: "/",
         icon: "cuida:dashboard-outline",
         children: [
-          { label: "Course", route: "/course" },
+          { label: "Course", route: "/" },
           { label: "Analytics", route: "/analytics" },
           { label: "Finance", route: "/finance" },
           { label: "Career", route: "/career" },

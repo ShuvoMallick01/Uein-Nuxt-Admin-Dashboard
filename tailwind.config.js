@@ -167,5 +167,5 @@ module.exports = {
     },
   },
 
-  plugins: [animate],
+  plugins: ["animate", "tailwindcss-rtl"],
 };

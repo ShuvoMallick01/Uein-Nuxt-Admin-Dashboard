@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import VueApexCharts from "vue3-apexcharts";
 // CUSTOM COMPOSABLE
-import { useChartOptions } from "./useChartOptions";
+import { useChartOptions } from "./useVacancyChartOptions";
 
 const { chartOptions, series } = useChartOptions();
 </script>
