@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  alias: ["/"],
+});
+</script>
 
 <template>
   <div class="grid grid-cols-12 mb-6 gap-7">

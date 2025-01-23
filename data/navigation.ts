@@ -7,7 +7,7 @@ export const navigation = [
         route: "/",
         icon: "cuida:dashboard-outline",
         children: [
-          { label: "Course", route: "/" },
+          { label: "Course", route: "/course" },
           { label: "Analytics", route: "/analytics" },
           { label: "Finance", route: "/finance" },
           { label: "Career", route: "/career" },

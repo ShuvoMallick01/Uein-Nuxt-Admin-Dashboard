@@ -2,16 +2,6 @@
 import { computed } from "vue";
 import { Icon } from "@iconify/vue";
 import type { Table } from "@tanstack/vue-table";
-// SHADCN COMPONENTS
-import {
-  Select,
-  SelectItem,
-  SelectValue,
-  SelectTrigger,
-  SelectContent,
-} from "@/components/ui/select";
-import { Button } from "@/components/ui/button";
-
 const { table } = defineProps<{ table: Table<T> }>();
 
 const firstIndex = computed(() => {
