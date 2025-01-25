@@ -1,4 +1,4 @@
-export const statues = [
+export const statuses = [
   { id: 1, title: "Active", value: "Active" },
   { id: 2, title: "Banned", value: "Banned" },
   { id: 3, title: "Pending", value: "Pending" },
