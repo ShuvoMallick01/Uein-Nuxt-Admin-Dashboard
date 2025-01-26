@@ -23,9 +23,15 @@ import { columns } from "./usersColumns";
 // TYPES
 import type { User, UserStatus } from "@/types/User";
 
-const { data: roles } = useCustomFetch<string[]>("/api/users/roles");
-const { data: statuses } = useCustomFetch<UserStatus[]>("/api/users/status");
-const { isLoading, data: users } = useCustomFetch<User[]>("/api/users");
+const { data: roles } = useCustomFetch<string[]>("roles", "/api/users/roles");
+const { data: statuses } = useCustomFetch<UserStatus[]>(
+  "statuses",
+  "/api/users/status"
+);
+const { isLoading, data: users } = useCustomFetch<User[]>(
+  "users",
+  "/api/users"
+);
 
 // HANDLE DELETE USERS BY IDS
 const handleDeleteUsers = async (users: User[]) => {

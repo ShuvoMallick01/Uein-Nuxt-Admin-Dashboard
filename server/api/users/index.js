@@ -1,31 +1,41 @@
 import { users } from "../../data/users";
 
 export default defineEventHandler(async (event) => {
-  const method = getMethod(event);
+  const method = event.node.req.method;
+
+  async function getUsers() {
+    try {
+      return users;
+    } catch (error) {
+      console.error("Error creating user:", error);
+      return { error: "Failed to get users" };
+    }
+  }
+
+  async function createUser(event) {
+    try {
+      const body = await readBody(event);
+
+      const newUser = {
+        id: users.length + 1,
+        ...body,
+        createdAt: new Date().toDateString(),
+      };
+
+      users.push(newUser);
+      return users;
+    } catch (error) {
+      console.error("Error creating user:", error);
+      return { error: "Failed to create user" };
+    }
+  }
 
   if (method === "GET") {
-    const query = getQuery(event);
-
-    if (query && query.id) {
-      // Fetch User by ID
-      const user = users.find((user) => user.id === parseInt(query.id));
-      if (!user) return { error: "User not found" };
-      return user;
-    }
-
-    // Return all users
-    return users;
+    return await getUsers();
   }
 
   if (method === "POST") {
-    const body = await readBody(event);
-    const newUser = {
-      id: users.length + 1,
-      ...body,
-      createAt: new Data().toDateString(),
-    };
-    users.push(newUser);
-    return { user: newUser };
+    return await createUser(event);
   }
 
   return { error: "Invalid request method" };
