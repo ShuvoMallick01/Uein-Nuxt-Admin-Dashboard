@@ -10,9 +10,9 @@ import {
   CommandInput,
   CommandShortcut,
   CommandSeparator,
-} from "@/components/ui/command";
-import { Input } from "@/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+} from "~/components/ui/command";
+import { Input } from "~/components/ui/input";
+import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
 </script>
 
 <template>

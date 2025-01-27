@@ -3,7 +3,7 @@ import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENT
 import NavAccordion from "./NavAccordion.vue";
 // MENU LIST
-import { navigation } from "@/data/navigation";
+import { navigation } from "~/data/navigation";
 </script>
 
 <template>

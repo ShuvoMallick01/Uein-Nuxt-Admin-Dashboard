@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Scrollbar from "simplebar-vue";
 // CUSTOM UTILS METHOD
-import { currency } from "@/lib/currency";
+import { currency } from "~/lib/currency";
 // DATA LIST
-import { featureCourses } from "@/data/dashboards/course";
+import { featureCourses } from "~/data/dashboards/course";
 </script>
 
 <template>

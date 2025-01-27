@@ -2,11 +2,11 @@
 import { Icon } from "@iconify/vue";
 import VueApexCharts from "vue3-apexcharts";
 // SHADCN COMPONENT
-import { Card } from "@/components/ui/card";
+import { Card } from "~/components/ui/card";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 // CUSTOM DATA
-import { stats } from "@/data/dashboards/career";
+import { stats } from "~/data/dashboards/career";
 
 const chartOptions = useApexChartOptions({
   colors: ["#2940D3"],

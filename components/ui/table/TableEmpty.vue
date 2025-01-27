@@ -2,7 +2,7 @@
 import { type HTMLAttributes, computed } from "vue";
 import TableRow from "./TableRow.vue";
 import TableCell from "./TableCell.vue";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 const props = withDefaults(
   defineProps<{
@@ -10,7 +10,7 @@ const props = withDefaults(
     colspan?: number;
   }>(),
   {
-    colspan: 1
+    colspan: 1,
   }
 );
 
@@ -24,8 +24,14 @@ const delegatedProps = computed(() => {
 <template>
   <TableRow>
     <TableCell
-      :class="cn('p-4 whitespace-nowrap align-middle text-sm text-foreground', props.class)"
-      v-bind="delegatedProps">
+      :class="
+        cn(
+          'p-4 whitespace-nowrap align-middle text-sm text-foreground',
+          props.class
+        )
+      "
+      v-bind="delegatedProps"
+    >
       <div class="flex items-center justify-center py-10">
         <slot />
       </div>

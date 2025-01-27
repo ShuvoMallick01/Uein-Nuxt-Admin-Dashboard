@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 // TYPE
 import { type NavItem } from "./type";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 const props = defineProps<{ item: NavItem }>();
 

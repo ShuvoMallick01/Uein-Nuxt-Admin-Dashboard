@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // SHADCN COMPONENT
-import { Card } from "@/components/ui/card";
-import { Badge, BadgeVariants } from "@/components/ui/badge";
+import { Card } from "~/components/ui/card";
+import { Badge, BadgeVariants } from "~/components/ui/badge";
 // DATA LIST
-import { widgets } from "@/data/dashboards/finance";
+import { widgets } from "~/data/dashboards/finance";
 
 const getVariant = (color: string): BadgeVariants["variant"] => {
   if (color === "info") return "info";

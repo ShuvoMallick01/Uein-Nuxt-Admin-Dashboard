@@ -1,9 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-// CUSTOM COMPONENTS
-import AvatarGroup from "@/components/AvatarGroup.vue";
 // TYPES
-import type { Post } from "@/types/Post";
+import type { Post } from "~/types/Post";
 
 defineProps<{ post: Post }>();
 </script>

@@ -2,7 +2,7 @@
 // CUSTOM COMPONENT
 import CourseItem from "./CourseItem.vue";
 // LIST DATA
-import { runningCourses } from "@/data/dashboards/course";
+import { runningCourses } from "~/data/dashboards/course";
 </script>
 
 <template>

@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
-import { currency } from "@/lib/currency";
+import { currency } from "~/lib/currency";
 // CUSTOM DATA
-import { transactions } from "@/data/dashboards/analytics";
+import { transactions } from "~/data/dashboards/analytics";
 </script>
 
 <template>

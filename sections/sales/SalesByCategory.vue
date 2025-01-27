@@ -4,7 +4,7 @@ import VueApexCharts from "vue3-apexcharts";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 // CUSTOM UTILS METHOD
-import { formatK } from "@/lib/currency";
+import { formatK } from "~/lib/currency";
 
 const series = ref([25, 23, 52]);
 

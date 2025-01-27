@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import VueApexCharts from "vue3-apexcharts";
 // SHADCN COMPONENTS
-import { Card, CardTitle, CardContent } from "@/components/ui/card";
+import { Card, CardTitle, CardContent } from "~/components/ui/card";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 

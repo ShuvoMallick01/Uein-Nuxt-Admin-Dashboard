@@ -5,7 +5,7 @@ import * as yup from "yup";
 // CUSTOM COMPONENTS
 import UserImageUpload from "./UserImageUpload.vue";
 // TYPES
-import type { User, UserPayload } from "@/types/User";
+import type { User, UserPayload } from "~/types/User";
 
 const { user } = defineProps<{ user?: User }>();
 

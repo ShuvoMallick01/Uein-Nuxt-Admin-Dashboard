@@ -7,11 +7,11 @@ import {
   type DialogContentProps,
   DialogOverlay,
   DialogPortal,
-  useForwardPropsEmits
+  useForwardPropsEmits,
 } from "radix-vue";
 import { X } from "lucide-vue-next";
 import { type SheetVariants, sheetVariants } from ".";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 interface SheetContentProps extends DialogContentProps {
   class?: HTMLAttributes["class"];
@@ -36,14 +36,17 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
 <template>
   <DialogPortal>
     <DialogOverlay
-      class="fixed top-0 left-0 inset-0 z-50 bg-black/70 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0" />
+      class="fixed top-0 left-0 inset-0 z-50 bg-black/70 data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:fade-out-0 data-[state=open]:fade-in-0"
+    />
     <DialogContent
       :class="cn(sheetVariants({ side }), props.class)"
-      v-bind="{ ...forwarded, ...$attrs }">
+      v-bind="{ ...forwarded, ...$attrs }"
+    >
       <slot />
 
       <DialogClose
-        class="absolute right-4 top-4 rounded-sm opacity-60 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary">
+        class="absolute right-4 top-4 rounded-sm opacity-60 ring-offset-background transition-opacity hover:opacity-100 focus:outline-none focus:ring-0 focus:ring-ring focus:ring-offset-2 disabled:pointer-events-none data-[state=open]:bg-secondary"
+      >
         <X class="w-5 h-5 text-muted-foreground" />
       </DialogClose>
     </DialogContent>

@@ -9,8 +9,8 @@ import {
   SelectValue,
   SelectContent,
   SelectTrigger,
-} from "@/components/ui/select";
-import { Card } from "@/components/ui/card";
+} from "~/components/ui/select";
+import { Card } from "~/components/ui/card";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 

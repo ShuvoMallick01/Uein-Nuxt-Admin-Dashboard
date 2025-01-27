@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 import { useField } from "vee-validate";
 import { type FileRejectReason, useDropzone } from "vue3-dropzone";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 const { value, errorMessage, setValue, setErrors } = useField<any>("image");
 

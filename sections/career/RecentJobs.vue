@@ -1,9 +1,9 @@
 <script setup lang="ts">
 import Scrollbar from "simplebar-vue";
 // CUSTOM UTILS METHOD
-import { dateFormat } from "@/lib/dateFormat";
+import { dateFormat } from "~/lib/dateFormat";
 // DATA LIST
-import { recentJobs } from "@/data/dashboards/career";
+import { recentJobs } from "~/data/dashboards/career";
 </script>
 
 <template>

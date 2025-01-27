@@ -1,10 +1,4 @@
-<script setup lang="ts">
-// import About from "@/sections/profile/About.vue";
-// import Groups from "@/sections/profile/Groups.vue";
-// import PostList from "@/sections/profile/PostList.vue";
-// import PostCompose from "@/sections/profile/PostCompose.vue";
-// import ProfileIntro from "@/sections/profile/ProfileIntro.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <!-- USER PROFILE OVERVIEW -->

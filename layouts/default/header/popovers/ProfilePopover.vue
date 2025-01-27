@@ -1,12 +1,12 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // SHADCDN COMPONENTS
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar, AvatarFallback, AvatarImage } from "~/components/ui/avatar";
 import {
   Popover,
   PopoverContent,
   PopoverTrigger,
-} from "@/components/ui/popover";
+} from "~/components/ui/popover";
 </script>
 
 <template>

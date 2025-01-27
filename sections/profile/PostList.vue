@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import PostItem from "./PostItem.vue";
 // DATA LIST
-import posts from "@/data/profile/posts";
+import posts from "~/data/profile/posts";
 </script>
 
 <template>

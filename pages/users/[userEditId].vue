@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 // TYPES
-import type { User } from "@/types/User";
+import type { User } from "~/types/User";
 
 const route = useRoute();
 

@@ -3,9 +3,9 @@ import Scrollbar from "simplebar-vue";
 // SHADCN COMPONENTS
 import { Badge, BadgeVariants } from "~/components/ui/badge";
 // CUSTOM UTILS METHOD
-import { currency } from "@/lib/currency";
+import { currency } from "~/lib/currency";
 // CUSTOM DATA
-import { popularProducts } from "@/data/dashboards/sales";
+import { popularProducts } from "~/data/dashboards/sales";
 
 const getVariant = (status: string): BadgeVariants["variant"] => {
   if (status === "Out of Stock") return "destructive";

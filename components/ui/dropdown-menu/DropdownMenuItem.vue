@@ -1,7 +1,11 @@
 <script setup lang="ts">
 import { type HTMLAttributes, computed } from "vue";
-import { DropdownMenuItem, type DropdownMenuItemProps, useForwardProps } from "radix-vue";
-import { cn } from "@/lib/utils";
+import {
+  DropdownMenuItem,
+  type DropdownMenuItemProps,
+  useForwardProps,
+} from "radix-vue";
+import { cn } from "~/lib/utils";
 import { type OptionVariants, optionVariants } from ".";
 
 interface Props extends DropdownMenuItemProps {
@@ -33,7 +37,8 @@ const forwardedProps = useForwardProps(delegatedProps);
         optionVariants({ variant, color }),
         props.class
       )
-    ">
+    "
+  >
     <slot />
   </DropdownMenuItem>
 </template>

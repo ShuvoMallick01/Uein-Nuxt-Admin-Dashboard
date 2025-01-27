@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 import Scrollbar from "simplebar-vue";
 // CUSTOM DATA
-import { recentActivity } from "@/data/dashboards/analytics";
+import { recentActivity } from "~/data/dashboards/analytics";
 </script>
 
 <template>

@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // DATA
-import { status } from "@/data/dashboards/course";
+import { status } from "~/data/dashboards/course";
 </script>
 
 <template>

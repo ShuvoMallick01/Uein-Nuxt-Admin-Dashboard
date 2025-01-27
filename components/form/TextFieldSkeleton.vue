@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { Label } from "@/components/ui/label";
+import { Label } from "~/components/ui/label";
 defineProps<{ label?: string }>();
 </script>
 

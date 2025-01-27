@@ -6,7 +6,7 @@ import {
   useForwardProps,
 } from "radix-vue";
 import { Icon } from "@iconify/vue";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 const props = defineProps<
   MenubarSubTriggerProps & { class?: HTMLAttributes["class"]; inset?: boolean }

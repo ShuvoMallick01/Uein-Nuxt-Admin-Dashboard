@@ -2,7 +2,7 @@
 // CUSTOM COMPONENTS
 import TaskItem from "./TaskItem.vue";
 // LIST DATA
-import { upcomingTasks } from "@/data/dashboards/course";
+import { upcomingTasks } from "~/data/dashboards/course";
 </script>
 
 <template>

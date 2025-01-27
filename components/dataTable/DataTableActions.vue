@@ -7,7 +7,7 @@ import {
   MenubarMenu,
   MenubarTrigger,
   MenubarContent,
-} from "@/components/ui/menubar";
+} from "~/components/ui/menubar";
 
 defineProps<{
   viewLink: string;

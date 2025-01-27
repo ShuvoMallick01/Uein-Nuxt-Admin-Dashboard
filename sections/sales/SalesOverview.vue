@@ -11,8 +11,8 @@ import {
   SelectValue,
   SelectContent,
   SelectTrigger,
-} from "@/components/ui/select";
-import { Card } from "@/components/ui/card";
+} from "~/components/ui/select";
+import { Card } from "~/components/ui/card";
 
 const selected = ref("0");
 const series = ref([

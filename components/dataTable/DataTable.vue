@@ -10,8 +10,8 @@ import {
   TableCell,
   TableHead,
   TableHeader,
-} from "@/components/ui/table";
-import { Button } from "@/components/ui/button";
+} from "~/components/ui/table";
+import { Button } from "~/components/ui/button";
 // CUSTOM COMPONENTS
 import DataTablePagination from "./DataTablePagination.vue";
 // CUSTOM COMPOSABLE

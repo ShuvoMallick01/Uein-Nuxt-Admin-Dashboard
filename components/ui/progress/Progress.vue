@@ -5,7 +5,7 @@ import {
   ProgressIndicator,
   type ProgressRootProps,
 } from "radix-vue";
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 const colors = {
   default: { bar: "bg-primary", track: "bg-gray-50" },

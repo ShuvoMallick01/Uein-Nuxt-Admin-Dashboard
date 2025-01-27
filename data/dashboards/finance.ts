@@ -1,4 +1,4 @@
-import { formatK } from "@/lib/currency";
+import { formatK } from "~/lib/currency";
 
 export const widgets = [
   {

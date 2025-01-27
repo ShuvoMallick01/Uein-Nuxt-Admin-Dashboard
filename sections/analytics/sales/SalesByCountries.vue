@@ -2,7 +2,7 @@
 // CUSTOM COMPONENT
 import SaleByCountry from "./SaleByCountry.vue";
 // LIST DATA
-import { salesByCountries } from "@/data/dashboards/analytics";
+import { salesByCountries } from "~/data/dashboards/analytics";
 </script>
 
 <template>
