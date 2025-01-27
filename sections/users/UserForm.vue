@@ -1,27 +1,26 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRouter, useRoute } from "vue-router";
 import { useForm } from "vee-validate";
 import * as yup from "yup";
-import axios from "axios";
-// SHADCN COMPONENTS
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { SelectItem } from "@/components/ui/select";
 // CUSTOM COMPONENTS
 import UserImageUpload from "./UserImageUpload.vue";
-import TextField from "@/components/form/TextField.vue";
-import SelectField from "@/components/form/SelectField.vue";
 // TYPES
 import type { User, UserPayload } from "@/types/User";
 
 const { user } = defineProps<{ user?: User }>();
 
 const router = useRouter();
+const route = useRoute();
 
 // CREATE NEW USER API REQUEST HANDLER
 const createNewUser = async (body: UserPayload) => {
   try {
-    await axios.post<{ user: User }>("/api/users", body);
+    const newUser = await $fetch<{ user: User }>("/api/users", {
+      method: "POST",
+      body: { body },
+    });
+    console.log(newUser);
+    await router.push("/users");
     // push.success("User created successfully");
   } catch (error) {
     console.log(error);
@@ -32,7 +31,11 @@ const createNewUser = async (body: UserPayload) => {
 // UPDATE USER API REQUEST HANDLER
 const updateUser = async (id: number, body: UserPayload) => {
   try {
-    await axios.put<{ user: User }>("/api/users", body, { params: { id } });
+    await $fetch<{ user: User }>(`/api/users/${route.params.userEditId}`, {
+      method: "PUT",
+      body: { id: id, updatedData: body },
+    });
+    await router.push("/users");
     // push.success("User updated successfully");
   } catch (error) {
     console.error(error);

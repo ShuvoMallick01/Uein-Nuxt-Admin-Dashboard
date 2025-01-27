@@ -177,7 +177,7 @@
 }
 
 .bg-skeleton {
-  @apply bg-gray-50;
+  @apply bg-gray-300;
 }
 
 /* ===== SIMPLEBAR SCROLL BAR ===== */

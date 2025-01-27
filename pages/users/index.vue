@@ -1,44 +1,33 @@
 <script setup lang="ts">
-import axios from "axios";
+import { watch, onMounted } from "vue";
 import { Icon } from "@iconify/vue";
-// SHADCN COMPONENTS
-import {
-  Select,
-  SelectItem,
-  SelectValue,
-  SelectTrigger,
-  SelectContent,
-} from "@/components/ui/select";
-import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-// CUSTOM COMPOSABLE
-import { useCustomFetch } from "@/composables/useCustomFetch";
-// CUSTOM COMPONENTS
-import DataTable from "@/components/dataTable/DataTable.vue";
-import SearchInput from "@/components/SearchInput.vue";
-import DataNotFound from "@/components/DataNotFound.vue";
-import CustomBreadcrumb from "@/components/CustomBreadcrumb.vue";
 // TABLE COLUMNS DEFINITION
 import { columns } from "./usersColumns";
 // TYPES
 import type { User, UserStatus } from "@/types/User";
 
-const { data: roles } = useCustomFetch<string[]>("roles", "/api/users/roles");
-const { data: statuses } = useCustomFetch<UserStatus[]>(
-  "statuses",
-  "/api/users/status"
+let isLoading = ref(true);
+
+const { data: roles } = useAsyncData("roles", () => $fetch("/api/users/roles"));
+const { data: statuses } = useAsyncData<UserStatus[]>("statuses", () =>
+  $fetch("/api/users/status")
 );
-const { isLoading, data: users } = useCustomFetch<User[]>(
-  "users",
-  "/api/users"
-);
+const {
+  status,
+  error,
+  data: users,
+} = useAsyncData<User[]>("users", () => $fetch("/api/users"));
 
 // HANDLE DELETE USERS BY IDS
 const handleDeleteUsers = async (users: User[]) => {
   try {
     isLoading.value = true;
     const ids = users.map((user) => user.id);
-    await axios.delete("/api/users", { data: { ids } });
+    // console.log(ids);
+    await $fetch("/api/users", {
+      method: "DELETE",
+      body: { ids },
+    });
     console.log("Users deleted successfully");
   } catch (error) {
     console.log(error);
@@ -46,6 +35,18 @@ const handleDeleteUsers = async (users: User[]) => {
     isLoading.value = false;
   }
 };
+
+if (error.value) {
+  console.log(error.value);
+}
+
+onMounted(() => {
+  isLoading.value = status.value === "pending";
+});
+
+watch(status, (newStatus) => {
+  isLoading.value = newStatus === "pending";
+});
 </script>
 
 <template>

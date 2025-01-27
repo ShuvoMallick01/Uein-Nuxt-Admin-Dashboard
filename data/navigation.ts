@@ -26,9 +26,9 @@ export const navigation = [
         icon: "cuida:users-outline",
         children: [
           { label: "List", route: "/users" },
-          { label: "Edit", route: "/users/3" },
+          { label: "Edit", route: "/users/2" },
           { label: "Create", route: "/users/create" },
-          { label: "Profile", route: "/users/profile" },
+          { label: "Profile", route: "/users/user-profile" },
         ],
       },
       {

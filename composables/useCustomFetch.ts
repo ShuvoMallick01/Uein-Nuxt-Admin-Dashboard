@@ -1,18 +1,16 @@
-import { ref, computed } from "vue";
+import { ref, computed, watch } from "vue";
 
 export function useCustomFetch<T>(key: string, url: string, config?: any) {
+  const isLoading = ref(true);
   const { data, status, error, refresh } = useAsyncData<T>(key, () =>
     $fetch(url)
   );
 
-  const isLoading = computed(() => status.value === "pending");
-  const errorMessage = computed(() =>
-    error.value ? "Something went wrong" : ""
-  );
+  isLoading.value = status.value === "success" ? false : true;
 
   return {
     data,
-    error: errorMessage,
+    error,
     isLoading,
     refresh,
   };

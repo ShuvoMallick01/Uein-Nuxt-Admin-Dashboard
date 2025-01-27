@@ -15,18 +15,30 @@ export default defineEventHandler(async (event) => {
   async function createUser(event) {
     try {
       const body = await readBody(event);
-
+      console.log("Test Create User");
       const newUser = {
         id: users.length + 1,
         ...body,
         createdAt: new Date().toDateString(),
       };
-
+      console.log(newUser);
       users.push(newUser);
-      return users;
+
+      return newUser;
     } catch (error) {
       console.error("Error creating user:", error);
       return { error: "Failed to create user" };
+    }
+  }
+
+  async function deleteUser(event) {
+    const body = await readBody(event);
+    const { ids } = body;
+    try {
+      const filteredUsers = users.filter((user) => !ids.includes(user.id));
+      return filteredUsers;
+    } catch (error) {
+      console.log(error);
     }
   }
 
@@ -36,6 +48,10 @@ export default defineEventHandler(async (event) => {
 
   if (method === "POST") {
     return await createUser(event);
+  }
+
+  if (method === "DELETE") {
+    return await deleteUser(event);
   }
 
   return { error: "Invalid request method" };
