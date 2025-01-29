@@ -9,13 +9,21 @@ const {
   data: user,
   status,
   error,
-} = await useAsyncData<User>("users", () =>
-  $fetch(`/api/users/${route.params.userEditId}`)
+} = await useAsyncData<User>(
+  "user",
+  () => $fetch(`/api/users/${route.params.userEditId}?foo=bar&baz=qux`),
+  {
+    lazy: false,
+    server: true,
+  }
 );
 
 console.log(user.value);
 
-if (error.value) console.log(error.value);
+// Handle errors
+if (error.value) {
+  console.error("Error fetching user:", error.value);
+}
 </script>
 
 <template>
