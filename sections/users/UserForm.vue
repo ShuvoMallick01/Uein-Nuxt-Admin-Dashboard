@@ -81,8 +81,7 @@ const onSubmit = handleSubmit((values, { resetForm }) => {
 
   if (user) {
     updateUser(user.id, payload);
-    router.push({ name: "Users" });
-    return;
+    return navigateTo("/users");
   }
 
   createNewUser(payload);

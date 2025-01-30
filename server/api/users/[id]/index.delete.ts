@@ -1,12 +1,21 @@
 import { users } from "../../../data/users";
 
 export default defineEventHandler(async (event) => {
-  const id = getRouterParam(event, "id");
-  if (!id) throw new Error("User ID is required");
+  try {
+    const id = getRouterParam(event, "id");
+    if (!id)
+      throw createError({
+        statusCode: 400,
+        statusMessage: "User ID is required!",
+      });
 
-  const userIndex = users.findIndex((user) => user.id === parseInt(id));
-  if (userIndex === -1) throw new Error("User not found");
+    const userIndex = users.findIndex((user) => user.id === Number(id));
+    if (userIndex === -1)
+      throw createError({ statusCode: 404, statusMessage: "User not found" });
 
-  const deleteUser = users.splice(userIndex, 1);
-  return deleteUser;
+    const deleteUser = users.splice(userIndex, 1);
+    return deleteUser;
+  } catch (error) {
+    return sendError(event, error as Error);
+  }
 });

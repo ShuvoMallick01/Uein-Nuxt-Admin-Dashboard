@@ -12,6 +12,7 @@ const { data: roles } = useAsyncData("roles", () => $fetch("/api/users/roles"));
 const { data: statuses } = useAsyncData<UserStatus[]>("statuses", () =>
   $fetch("/api/users/status")
 );
+
 const {
   status,
   error,

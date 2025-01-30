@@ -3,18 +3,18 @@ import { users } from "../../data/users";
 export default defineEventHandler(async (event) => {
   try {
     const body = await readBody(event);
-    console.log("Test Create User");
+
     const newUser = {
       id: users.length + 1,
       ...body,
       createdAt: new Date().toDateString(),
     };
-    console.log(newUser);
+    console.log("New User:", newUser);
     users.push(newUser);
 
-    return newUser;
+    return { success: true, data: newUser };
   } catch (error) {
     console.error("Error creating user:", error);
-    return { error: "Failed to create user" };
+    return sendError(event, error as Error);
   }
 });

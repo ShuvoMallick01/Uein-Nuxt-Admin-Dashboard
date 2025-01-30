@@ -1,7 +1,6 @@
 import { users } from "../../../data/users";
 
 export default defineEventHandler(async (event) => {
-  console.log("Testing....", parseCookies(event));
   try {
     const id = getRouterParam(event, "id");
     if (!id)
@@ -16,14 +15,6 @@ export default defineEventHandler(async (event) => {
 
     return user;
   } catch (error) {
-    return sendError(event, error);
+    return sendError(event, error as Error);
   }
-
-  //   const { id } = event.context.params as { id?: string };
-  //   if (!id) throw new Error("User ID is required");
-
-  //   const userIndex = users.findIndex((user) => user.id === parseInt(id));
-  //   if (userIndex === -1) throw new Error("User not found");
-
-  //   return users[userIndex];
 });

@@ -11,7 +11,7 @@ const {
   error,
 } = await useAsyncData<User>(
   "user",
-  () => $fetch(`/api/users/${route.params.userEditId}?foo=bar&baz=qux`),
+  () => $fetch(`/api/users/${route.params.userEditId}`),
   {
     lazy: false,
     server: true,

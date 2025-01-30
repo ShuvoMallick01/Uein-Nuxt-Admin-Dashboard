@@ -1,8 +1,6 @@
 import { users } from "../../data/users";
 
 export default defineEventHandler(async (event) => {
-  const method = event.node.req.method;
-
   try {
     return users;
   } catch (error) {
