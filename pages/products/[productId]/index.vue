@@ -1,29 +1,30 @@
 <script setup lang="ts">
-import { watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-// CUSTOM COMPONENT
-import ProductForm from "@/sections/products/product-form";
-import { ProductFormSkeleton } from "@/sections/products/skeletons";
-import CustomBreadcrumb from "@/components/CustomBreadcrumb.vue";
-// CUSTOM COMPOSABLE
-import { useFetch } from "@/hooks/useFetch";
+
 // TYPES
 import type { Product } from "@/types/Product";
 
 const route = useRoute();
-const router = useRouter();
 
 const {
-  error,
-  isLoading,
   data: product,
-} = useFetch<Product>("/api/products", {
-  params: { id: +route.params.id },
-});
+  status,
+  error,
+} = await useAsyncData<Product>(
+  "user",
+  () => $fetch(`/api/products/${route.params.productId}`),
+  {
+    lazy: false,
+    server: true,
+  }
+);
 
-watch(error, (hasError) => {
-  if (hasError) router.push("/products");
-});
+console.log(product.value);
+
+// Handle errors
+if (error.value) {
+  console.error("Error fetching user:", error.value);
+}
 </script>
 
 <template>
@@ -41,10 +42,10 @@ watch(error, (hasError) => {
       />
 
       <!-- SHOW LOADING SKELETON -->
-      <ProductFormSkeleton v-if="isLoading" />
+      <ProductFormSkeleton v-if="status === 'pending'" />
 
       <!-- PRODUCT FORM WITH DATA -->
-      <ProductForm v-if="!isLoading && product" :product="product" />
+      <ProductForm v-if="status !== 'pending' && product" :product="product" />
     </div>
   </div>
 </template>

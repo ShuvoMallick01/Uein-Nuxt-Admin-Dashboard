@@ -3,12 +3,6 @@ import { useRouter } from "vue-router";
 import { useFieldArray, useForm } from "vee-validate";
 import { Icon } from "@iconify/vue";
 import * as yup from "yup";
-import axios from "axios";
-// SHADCN COMPONENTS
-import { Card } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Button } from "@/components/ui/button";
-import { Switch } from "@/components/ui/switch";
 // CUSTOM COMPONENTS
 import Sizes from "./Sizes.vue";
 import Colors from "./Colors.vue";
@@ -23,6 +17,7 @@ const { product } = defineProps<{ product?: Product }>();
 
 // COMPOSABLES
 const router = useRouter();
+const route = useRoute();
 
 // CREATE NEW PRODUCT API REQUEST HANDLER
 const createNewProduct = async (body: ProductPayload) => {
@@ -41,7 +36,13 @@ const createNewProduct = async (body: ProductPayload) => {
       ],
     };
 
-    await axios.post<{ product: Product }>("/api/products", updateBody);
+    // await axios.post<{ product: Product }>("/api/products", updateBody);
+    const newProduct = await $fetch<{ product: Product }>("/api/products", {
+      method: "POST",
+      body: { updateBody },
+    });
+    console.log(newProduct);
+    await router.push("/products");
     // push.success("Product created successfully");
   } catch (error) {
     console.error(error);
@@ -52,9 +53,17 @@ const createNewProduct = async (body: ProductPayload) => {
 // UPDATE PRODUCT API REQUEST HANDLER
 const updateProduct = async (id: number, body: ProductPayload) => {
   try {
-    await axios.put<{ product: Product }>("/api/products", body, {
-      params: { id },
-    });
+    // await axios.put<{ product: Product }>("/api/products", body, {
+    //   params: { id },
+    // });
+    await $fetch<{ product: Product }>(
+      `/api/products/${route.params.productEditId}`,
+      {
+        method: "PUT",
+        body: { id: id, updatedData: body },
+      }
+    );
+    await router.push("/products");
     // push.success("Product updated successfully");
   } catch (error) {
     console.error(error);

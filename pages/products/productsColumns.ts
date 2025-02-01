@@ -4,10 +4,10 @@ import { Icon } from "@iconify/vue";
 // SHADCN COMPONENTS
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Badge, BadgeVariants } from "@/components/ui/badge";
+import { Badge, type BadgeVariants } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
-// CUSTOM COMPONENTS
-import { DataTableActions } from "@/components/table";
+import DataTableActions from "~/components/dataTable/DataTableActions.vue";
+
 // CUSTOM UTILS METHODS
 import { dateFormat } from "@/lib/dateFormat";
 

@@ -4,10 +4,16 @@ import { SelectItem } from "@/components/ui/select";
 // CUSTOM COMPONENT
 import SelectField from "@/components/form/SelectField.vue";
 // TYPES
-import type { ProductAttribute } from "@/types/Product";
+import type { ProductAttribute } from "~/types/Product";
 
-const { data: categories } = useFetch<ProductAttribute[]>(
-  "/api/products/categories"
+const {
+  data: categories,
+  error,
+  status,
+} = await useAsyncData<ProductAttribute[]>(
+  "colors",
+  () => $fetch("/api/products/categories"),
+  { lazy: false }
 );
 </script>
 

@@ -9,14 +9,20 @@ import { columns } from "./productsColumns";
 // TYPES
 import type { Product } from "@/types/Product";
 
-const { isLoading, data: products } = useFetch<Product[]>("/api/products");
+let isLoading = ref(true);
+
+const {
+  status,
+  error,
+  data: products,
+} = useAsyncData<Product[]>("products", () => $fetch("/api/products"));
 
 // HANDLE DELETE PRODUCT BY IDS
 const handleDeleteProducts = async (products: Product[]) => {
   try {
     isLoading.value = true;
     const ids = products.map(({ id }) => id);
-    await axios.delete("/api/products", { data: { ids } });
+    await $fetch("/api/products", { method: "DELETE", body: { ids } });
     toast.success("Products deleted successfully");
   } catch (error) {
     console.error(error);
@@ -25,6 +31,18 @@ const handleDeleteProducts = async (products: Product[]) => {
     isLoading.value = false;
   }
 };
+
+if (error.value) {
+  console.log(error.value);
+}
+
+onMounted(() => {
+  isLoading.value = status.value === "pending";
+});
+
+watch(status, (newStatus) => {
+  isLoading.value = newStatus === "pending";
+});
 </script>
 
 <template>

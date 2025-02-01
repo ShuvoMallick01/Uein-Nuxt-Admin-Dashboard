@@ -1,8 +1,4 @@
-<script setup lang="ts">
-// CUSTOM COMPONENTS
-import ProductForm from "@/sections/products/product-form";
-import CustomBreadcrumb from "@/components/CustomBreadcrumb.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="grid grid-cols-12 mb-8">

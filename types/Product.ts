@@ -25,7 +25,15 @@ export interface Review {
   review: string;
   createdAt: string;
   productId: number;
+  likes: number;
+  dislikes: number;
   user: { id: number; name: string; image: string };
+}
+
+export interface ProductAttribute {
+  id: number;
+  title: string;
+  value: string;
 }
 
 export interface ProductPayload {

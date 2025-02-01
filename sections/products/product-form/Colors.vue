@@ -1,13 +1,24 @@
 <script setup lang="ts">
+import { ref, onMounted } from "vue";
 import { useField } from "vee-validate";
 // TYPES
 import type { ProductAttribute } from "@/types/Product";
 
 const { value, errorMessage } = useField<string[]>("colors");
 
-const { isLoading, data: colors } = useFetch<ProductAttribute[]>(
-  "/api/products/colors"
-);
+const colors = ref<ProductAttribute[]>([]);
+const isLoading = ref(false);
+
+onMounted(async () => {
+  isLoading.value = true;
+
+  try {
+    colors.value = await $fetch("/api/products/colors");
+    isLoading.value = false;
+  } catch (error) {
+    console.log(error, "Failed to fetch colors");
+  }
+});
 </script>
 
 <template>

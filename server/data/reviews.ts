@@ -1,0 +1,43 @@
+export default [
+  {
+    id: 1,
+    productId: 1,
+    createdAt: "14 Jan, 2024",
+    rating: 4.5,
+    review:
+      "Amazing! Fast, to the point, professional and really amazing to work with them!!",
+    user: { id: 1, image: "/images/users/01.png", name: "Aubrey Beer" },
+    likes: 10,
+    dislikes: 2,
+  },
+  {
+    id: 2,
+    productId: 1,
+    createdAt: "15 Jan, 2024",
+    rating: 4,
+    review: "Great experience, very professional service.",
+    user: { id: 2, image: "/images/users/02.png", name: "John Doe" },
+    likes: 8,
+    dislikes: 1,
+  },
+  {
+    id: 3,
+    productId: 1,
+    createdAt: "16 Jan, 2024",
+    rating: 5,
+    review: "Outstanding service, highly recommend!",
+    user: { id: 3, image: "/images/users/03.png", name: "Jane Smith" },
+    likes: 15,
+    dislikes: 0,
+  },
+  {
+    id: 4,
+    productId: 1,
+    createdAt: "17 Jan, 2024",
+    rating: 3.5,
+    review: "Good service but could be improved in some areas.",
+    user: { id: 4, image: "/images/users/04.png", name: "Michael Johnson" },
+    likes: 5,
+    dislikes: 3,
+  },
+];

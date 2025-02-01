@@ -1,34 +1,24 @@
 <script setup lang="ts">
-import { watch } from "vue";
 import { useRoute, useRouter } from "vue-router";
-// SHADCN COMPONENTS
-import { Card } from "@/components/ui/card";
-// CUSTOM COMPOSABLE
-import { useFetch } from "@/hooks/useFetch";
-// CUSTOM COMPONENTS
-import Rating from "@/components/Rating.vue";
-import CustomBreadcrumb from "@/components/CustomBreadcrumb.vue";
-import ProductDetails from "@/sections/products/ProductDetails.vue";
-import ProductReviewList from "@/sections/products/ProductReviewList.vue";
-import ProductImageGallery from "@/sections/products/ProductImageGallery.vue";
-import { ProductSkeleton } from "@/sections/products/skeletons";
+
 // TYPES
 import type { Product } from "@/types/Product";
 
 const route = useRoute();
-const router = useRouter();
 
 const {
-  error,
-  isLoading,
   data: product,
-} = useFetch<Product>("/api/products", {
-  params: { id: +route.params.id },
-});
+  status,
+  error,
+} = await useAsyncData<Product>(
+  "products",
+  () => $fetch<Product>(`/api/products/${route.params.productId}`),
+  {
+    lazy: false,
+  }
+);
 
-watch(error, (hasError) => {
-  if (hasError) router.push("/products");
-});
+if (error) console.log(error.value);
 </script>
 
 <template>
@@ -42,10 +32,13 @@ watch(error, (hasError) => {
   />
 
   <!-- SHOW LOADING SKELETON -->
-  <ProductSkeleton v-if="isLoading" />
+  <ProductSkeleton v-if="status === 'pending'" />
 
   <!-- SHOW PRODUCT OVERVIEW -->
-  <div v-else-if="!isLoading && product" class="grid grid-cols-12 mb-6 gap-7">
+  <div
+    v-else-if="status !== 'pending' && product"
+    class="grid grid-cols-12 mb-6 gap-7"
+  >
     <div class="col-span-full 2xl:col-span-4 xl:col-span-5">
       <ProductImageGallery :images="product.images" />
     </div>

@@ -1,18 +1,27 @@
 <script setup lang="ts">
+import { onMounted, ref } from "vue";
 import { Icon } from "@iconify/vue";
-import { ProductReviewSkeleton } from "./skeletons";
+import ProductReviewSkeleton from "./skeletons/ProductReviewSkeleton.vue";
 // TYPES
 import type { Review } from "@/types/Product";
 
 // PROPS
 const { productId } = defineProps<{ productId: number }>();
 
-const {
-  // error,
-  isLoading,
-  data: reviews,
-} = useFetch<Review[]>("/api/reviews", {
-  params: { id: productId },
+const isLoading = ref(false);
+const reviews = ref<Review[] | null>(null);
+
+onMounted(async () => {
+  try {
+    isLoading.value = true;
+    reviews.value = await $fetch<Review[]>(
+      `/api/products/reviews/${productId}`
+    );
+  } catch (error) {
+    console.log(error, "Failed to get reviews");
+  } finally {
+    isLoading.value = false;
+  }
 });
 </script>
 
