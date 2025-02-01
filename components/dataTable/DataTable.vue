@@ -2,16 +2,6 @@
 import { FlexRender, type ColumnDef } from "@tanstack/vue-table";
 import { Icon } from "@iconify/vue";
 import Scrollbar from "simplebar-vue";
-// SHADCN COMPONENTS
-import {
-  Table,
-  TableRow,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-} from "~/components/ui/table";
-import { Button } from "~/components/ui/button";
 // CUSTOM COMPONENTS
 import DataTablePagination from "./DataTablePagination.vue";
 // CUSTOM COMPOSABLE

@@ -4,7 +4,11 @@ export default defineEventHandler(async (event) => {
   try {
     return users;
   } catch (error) {
-    console.error("Error creating user:", error);
-    return { error: "Failed to get users" };
+    console.error("Error fetching users:", error);
+    throw createError({
+      statusCode: 500,
+      statusMessage: "Failed to retrieve users",
+      data: { success: false, error: "Failed to retrieve users." },
+    });
   }
 });

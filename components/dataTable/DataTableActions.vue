@@ -1,13 +1,5 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-// SHADCN COMPONENTS
-import {
-  Menubar,
-  MenubarItem,
-  MenubarMenu,
-  MenubarTrigger,
-  MenubarContent,
-} from "~/components/ui/menubar";
 
 defineProps<{
   viewLink: string;
