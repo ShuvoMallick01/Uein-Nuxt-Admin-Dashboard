@@ -6,18 +6,16 @@ import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Badge, type BadgeVariants } from "@/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+// CUSTOM COMPONENTS
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
-
 // CUSTOM UTILS METHODS
 import { dateFormat } from "@/lib/dateFormat";
-
-// TYPE
-import type { Product } from "@/types/Product";
 import { currency } from "@/lib/currency";
-import { Progress } from "@/components/ui/progress";
+// TYPE
+import type { Order } from "@/types/Order";
 
 const sortingHeader = (name: string) => {
-  return ({ column }: HeaderContext<Product, unknown>) => {
+  return ({ column }: HeaderContext<Order, unknown>) => {
     return h(
       Button,
       {
@@ -39,11 +37,15 @@ const sortingHeader = (name: string) => {
 };
 
 const getBadgeVariant = (status: string): BadgeVariants["variant"] => {
-  if (status === "Published") return "success";
-  else return "warning";
+  if (status === "Delivered") return "default";
+  if (status === "Shipping") return "success";
+  if (status === "New") return "info";
+  if (status === "Pending") return "warning";
+  if (status === "Return") return "destructive";
+  else return "secondary";
 };
 
-export const columns: ColumnDef<Product>[] = [
+export const columns: ColumnDef<Order>[] = [
   {
     id: "select",
     enableHiding: false,
@@ -67,12 +69,15 @@ export const columns: ColumnDef<Product>[] = [
     },
   },
   {
-    accessorKey: "title",
-    header: sortingHeader("Product"),
+    accessorKey: "invoiceId",
+    header: sortingHeader("Invoice Id"),
+    cell: ({ row }) => row.getValue<string>("invoiceId"),
+  },
+  {
+    accessorKey: "customer",
+    header: sortingHeader("Customer"),
     cell: ({ row }) => {
-      const name = row.getValue<string>("title");
-      const image = row.original.featureImage;
-      const category = row.original.category;
+      const { email, image, name } = row.original.customer;
 
       return h("div", { class: "flex items-center gap-3" }, [
         h(Avatar, { shape: "square" }, () => [
@@ -85,43 +90,33 @@ export const columns: ColumnDef<Product>[] = [
             { class: "text-sm font-medium leading-relaxed hover:underline" },
             name
           ),
-          h("span", { class: "text-xs text-gray-400 mt-0.5" }, category),
+          h("span", { class: "text-xs text-gray-400 mt-0.5" }, email),
         ]),
       ]);
     },
   },
   {
-    accessorKey: "createdAt",
-    header: sortingHeader("Create At"),
-    cell: ({ row }) => dateFormat(row.getValue("createdAt")),
+    accessorKey: "createAt",
+    header: sortingHeader("Created At"),
+    cell: ({ row }) => dateFormat(row.getValue("createAt")),
   },
   {
-    accessorKey: "stock",
-    header: sortingHeader("Stock"),
+    accessorKey: "items",
+    header: sortingHeader("Items"),
     cell: ({ row }) => {
-      const stock = row.original.stock;
-
-      return h("div", null, [
-        h(Progress, {
-          class: "h-[5px] w-4/5",
-          modelValue: stock,
-          color: stock > 0 ? (stock > 10 ? "success" : "warning") : "error",
-        }),
-        h(
-          "p",
-          { class: "text-xs text-gray-400 mt-2" },
-          row.getValue<number>("stock") + " in stock"
-        ),
-      ]);
-    },
-    filterFn: (row, _, value) => {
-      return value === "1" ? row.original.stock > 0 : row.original.stock === 0;
+      const items = row.getValue<Order["items"]>("items");
+      return items.length;
     },
   },
   {
-    accessorKey: "price",
-    header: sortingHeader("Price"),
-    cell: ({ row }) => currency(row.getValue<number>("price")),
+    accessorKey: "paymentMethod",
+    header: sortingHeader("Payment Method"),
+    cell: ({ row }) => String(row.original.payment.paymentMethod),
+  },
+  {
+    accessorKey: "totalAmount",
+    header: sortingHeader("Amount"),
+    cell: ({ row }) => currency(row.getValue("totalAmount")),
   },
   {
     accessorKey: "status",
@@ -138,7 +133,7 @@ export const columns: ColumnDef<Product>[] = [
       const { id } = row.original;
 
       const handleDelete = () => {
-        if (confirm("Are you sure you want to delete this product?")) {
+        if (confirm("Are you sure you want to delete this Order?")) {
           console.log("Yes!");
         }
       };
@@ -148,8 +143,8 @@ export const columns: ColumnDef<Product>[] = [
           class: "justify-center",
           // THESE ARE CUSTOM PROPS
           handleDelete,
-          editLink: `/products/${id}`,
-          viewLink: `/products/${id}/overview`,
+          viewLink: `/orders/${id}`,
+          editLink: `/orders`,
         }),
       ]);
     },
