@@ -1,24 +1,20 @@
 <script setup lang="ts">
-import { ref, onMounted } from "vue";
 import { useField } from "vee-validate";
 // TYPES
 import type { ProductAttribute } from "@/types/Product";
 
 const { value, errorMessage, handleChange } = useField<string[]>("sizes");
 
-const sizes = ref<ProductAttribute[]>([]);
-const isLoading = ref(false);
+const {
+  data: sizes,
+  status,
+  error,
+} = useFetch<ProductAttribute[]>("/api/products/sizes");
 
-onMounted(async () => {
-  isLoading.value = true;
-
-  try {
-    sizes.value = await $fetch("/api/products/sizes");
-    isLoading.value = false;
-  } catch (error) {
-    console.log(error, "Failed to fetch colors");
-  }
-});
+// Error Handling
+if (error.value) {
+  console.error("Failed to fetch sizes:", error.value);
+}
 </script>
 
 <template>
@@ -30,14 +26,14 @@ onMounted(async () => {
     <div class="flex flex-wrap items-center gap-4">
       <!-- SHOW LOADING SPINNER -->
       <div
-        v-if="isLoading"
+        v-if="status === 'pending'"
         v-for="item in 5"
         :key="item"
         class="rounded-md animate-pulse size-8 bg-skeleton"
       ></div>
 
       <ToggleGroup
-        v-if="!isLoading && sizes"
+        v-if="status !== 'pending' && sizes"
         type="multiple"
         class="inline-flex gap-2"
         :model-value="value"

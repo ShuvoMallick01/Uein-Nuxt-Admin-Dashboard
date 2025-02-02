@@ -11,8 +11,8 @@ const {
   status,
   error,
 } = await useAsyncData<Product>(
-  "products",
-  () => $fetch<Product>(`/api/products/${route.params.productId}`),
+  "product",
+  () => $fetch(`/api/products/${route.params.productId}`),
   {
     lazy: false,
   }

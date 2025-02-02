@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { onMounted, ref } from "vue";
 import { Icon } from "@iconify/vue";
 import ProductReviewSkeleton from "./skeletons/ProductReviewSkeleton.vue";
 // TYPES
@@ -8,31 +7,26 @@ import type { Review } from "@/types/Product";
 // PROPS
 const { productId } = defineProps<{ productId: number }>();
 
-const isLoading = ref(false);
-const reviews = ref<Review[] | null>(null);
+const {
+  data: reviews,
+  status,
+  error,
+} = useFetch<Review[]>(`/api/products/reviews/${productId}`);
 
-onMounted(async () => {
-  try {
-    isLoading.value = true;
-    reviews.value = await $fetch<Review[]>(
-      `/api/products/reviews/${productId}`
-    );
-  } catch (error) {
-    console.log(error, "Failed to get reviews");
-  } finally {
-    isLoading.value = false;
-  }
-});
+// Error Handling
+if (error.value) {
+  console.error("Failed to fetch reviews:", error.value);
+}
 </script>
 
 <template>
   <!-- SHOW LOADING SKELETON -->
-  <template v-if="isLoading">
+  <template v-if="status === 'pending'">
     <ProductReviewSkeleton />
   </template>
 
   <!-- SHOW REVIEWS WHEN DATA IS AVAILABLE -->
-  <template v-else-if="!isLoading && reviews">
+  <template v-else-if="status !== 'pending' && reviews">
     <Card class="mb-5 space-y-2" v-for="review in reviews">
       <div class="flex items-center gap-3 mb-3">
         <Avatar shape="square" size="sm">

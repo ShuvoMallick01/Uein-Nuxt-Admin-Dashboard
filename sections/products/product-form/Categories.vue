@@ -15,6 +15,10 @@ const {
   () => $fetch("/api/products/categories"),
   { lazy: false }
 );
+
+if (error.value) {
+  console.error("Failed to fetch categories:", error.value);
+}
 </script>
 
 <template>
