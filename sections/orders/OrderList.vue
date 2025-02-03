@@ -1,34 +1,12 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
-// SHADCN COMPONENTS
-// import {
-//   Select,
-//   SelectItem,
-//   SelectValue,
-//   SelectTrigger,
-//   SelectContent,
-// } from "@/components/ui/select";
-// import { Card } from "@/components/ui/card";
-// import { Input } from "@/components/ui/input";
-// import { Button } from "@/components/ui/button";
-// CUSTOM COMPOSABLE
-// import { useFetch } from "@/hooks/useFetch";
-// CUSTOM COMPONENTS
-// import { DataTable } from "@/components/table";
-// import { OrderListSkeleton } from "./skeletons";
-// import DataNotFound from "@/components/DataNotFound.vue";
 // TABLE COLUMNS DEFINITION
 import { columns } from "./ordersColumns";
 // TYPES
-import type { Order, OrderStatus, PaymentMethod } from "@/types/Order";
+import type { Order, OrderStatus, PaymentMethods } from "@/types/Order";
 
 let isLoading = ref(true);
-// const { isLoading, data: orders } = useFetch<Order[]>("/api/orders");
-// const { data: statuses } = useFetch<OrderStatus[]>("/api/orders/statues");
-// const { data: paymentMethods } = useFetch<PaymentMethod[]>(
-//   "/api/orders/payment-methods"
-// );
 
 const {
   status,
@@ -40,15 +18,15 @@ const {
 
 const { data: statuses } = useAsyncData<OrderStatus[]>(
   "statues",
-  () => $fetch("/api/statues"),
+  () => $fetch("/api/orders/statuses"),
   {
     lazy: false,
   }
 );
 
-const { data: paymentMethods } = useAsyncData<PaymentMethod[]>(
+const { data: paymentMethods } = useAsyncData<PaymentMethods[]>(
   "statues",
-  () => $fetch("/api/payment-methods"),
+  () => $fetch("/api/orders/payment-methods"),
   {
     lazy: false,
   }
@@ -61,7 +39,12 @@ const handleDeleteOrders = async (orders: Order[]) => {
   try {
     isLoading.value = true;
     const ids = orders.map((order) => order.id);
-    await $fetch("/api/orders", { method: "DELETE", body: { ids } });
+    await $fetch("/api/orders", {
+      method: "DELETE",
+      body: {
+        ids,
+      },
+    });
     console.log("Orders deleted successfully");
   } catch (error) {
     console.log(error);

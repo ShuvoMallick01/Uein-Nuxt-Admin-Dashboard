@@ -1,34 +1,35 @@
 <script setup lang="ts">
 import axios from "axios";
 // SHADCN COMPONENTS
-import {
-  Select,
-  SelectItem,
-  SelectValue,
-  SelectContent,
-  SelectTrigger,
-} from "@/components/ui/select";
-import { Card, CardContent, CardTitle } from "@/components/ui/card";
+// import {
+//   Select,
+//   SelectItem,
+//   SelectValue,
+//   SelectContent,
+//   SelectTrigger,
+// } from "@/components/ui/select";
+// import { Card, CardContent, CardTitle } from "@/components/ui/card";
 // CUSTOM COMPONENT
 import TimelineItem from "./TimelineItem.vue";
-import { OrderStatusSkeleton } from "../skeletons";
+import OrderStatusSkeleton from "../skeletons/OrderStatusSkeleton.vue";
 // CUSTOM COMPOSABLE
-import { useFetch } from "@/hooks/useFetch";
+// import { useFetch } from "@/hooks/useFetch";
 // TYPES
 import type { Order } from "@/types/Order";
 import type { Status } from "@/types/Status";
 
 const props = defineProps<{ order: Order }>();
 
-const { isLoading, data: statuses } = useFetch<Status[]>("/api/orders/statues");
+const { status, data: statuses } = await useFetch<Status[]>(
+  "/api/orders/statuses"
+);
 
 const handleUpdateStatus = async (status: string) => {
   try {
-    await axios.patch(
-      "/api/orders",
-      { status },
-      { params: { id: props.order.id } }
-    );
+    await $fetch(`/api/orders/${props.order.id}`, {
+      method: "PATCH",
+      body: status,
+    });
     console.log("Status updated successfully");
   } catch (error) {
     console.error("Something went wrong");
@@ -37,9 +38,9 @@ const handleUpdateStatus = async (status: string) => {
 </script>
 
 <template>
-  <OrderStatusSkeleton v-if="isLoading" />
+  <OrderStatusSkeleton v-if="status === 'pending'" />
 
-  <Card class="px-5 pt-5 pb-2" v-else-if="!isLoading && statuses">
+  <Card class="px-5 pt-5 pb-2" v-else-if="status !== 'pending' && statuses">
     <div class="flex items-start justify-between mb-5">
       <CardTitle>Order Status</CardTitle>
 

@@ -33,7 +33,7 @@ export const orderHistories = [
     title: "Delivered Orders",
     totalOrder: 5446,
     icon: "fluent:box-checkmark-24-regular",
-    color: "text-purple-400",
+    color: "text-info-500",
   },
   {
     id: 4,

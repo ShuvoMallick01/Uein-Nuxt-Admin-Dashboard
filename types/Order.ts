@@ -39,7 +39,7 @@ export interface OrderStatus {
   value: string;
 }
 
-export interface paymentMethods {
+export interface PaymentMethods {
   id: number;
   value: string;
   title: string;
