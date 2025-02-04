@@ -1,19 +1,7 @@
 <script setup lang="ts">
-import axios from "axios";
-// SHADCN COMPONENTS
-// import {
-//   Select,
-//   SelectItem,
-//   SelectValue,
-//   SelectContent,
-//   SelectTrigger,
-// } from "@/components/ui/select";
-// import { Card, CardContent, CardTitle } from "@/components/ui/card";
 // CUSTOM COMPONENT
 import TimelineItem from "./TimelineItem.vue";
 import OrderStatusSkeleton from "../skeletons/OrderStatusSkeleton.vue";
-// CUSTOM COMPOSABLE
-// import { useFetch } from "@/hooks/useFetch";
 // TYPES
 import type { Order } from "@/types/Order";
 import type { Status } from "@/types/Status";

@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { toast } from "vue-sonner";
-import axios from "axios";
 // CUSTOM COMPONENTS
 import ProductListSkeleton from "~/sections/products/skeletons/ProductListSkeleton.vue";
 // TABLE COLUMNS DEFINITION
@@ -15,7 +14,7 @@ const {
   status,
   error,
   data: products,
-} = useAsyncData<Product[]>("products", () => $fetch("/api/products"));
+} = useAsyncData<Product>("products", () => $fetch("/api/products"));
 
 // HANDLE DELETE PRODUCT BY IDS
 const handleDeleteProducts = async (products: Product[]) => {

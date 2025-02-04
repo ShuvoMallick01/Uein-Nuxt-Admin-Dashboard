@@ -8,28 +8,12 @@ import type { Order, OrderStatus, PaymentMethods } from "@/types/Order";
 
 let isLoading = ref(true);
 
-const {
-  status,
-  error,
-  data: orders,
-} = useAsyncData<Order[]>("orders", () => $fetch("/api/orders"), {
-  lazy: false,
-});
+const { status, error, data: orders } = useFetch<Order[]>("/api/orders");
 
-const { data: statuses } = useAsyncData<OrderStatus[]>(
-  "statues",
-  () => $fetch("/api/orders/statuses"),
-  {
-    lazy: false,
-  }
-);
+const { data: statuses } = useFetch<OrderStatus[]>("/api/orders/statuses");
 
-const { data: paymentMethods } = useAsyncData<PaymentMethods[]>(
-  "statues",
-  () => $fetch("/api/orders/payment-methods"),
-  {
-    lazy: false,
-  }
+const { data: paymentMethods } = useFetch<PaymentMethods[]>(
+  "/api/orders/payment-methods"
 );
 
 if (error.value) console.log(error.value);

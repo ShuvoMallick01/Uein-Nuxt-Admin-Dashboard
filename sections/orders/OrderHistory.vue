@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// SHADCN COMPONENTS
-import { Card } from "@/components/ui/card";
 // CUSTOM COMPONENTS
 import { Icon } from "@iconify/vue";
 
@@ -18,11 +16,7 @@ const {
   status,
   error,
   data: orderHistories,
-} = useAsyncData<OrderHistory[]>(
-  "orderHistories",
-  () => $fetch("/api/orders/histories"),
-  { immediate: true }
-);
+} = useFetch<OrderHistory[]>("/api/orders/histories");
 
 if (error.value) console.log(error.value);
 </script>

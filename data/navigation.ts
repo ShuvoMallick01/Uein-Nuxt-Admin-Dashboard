@@ -57,7 +57,7 @@ export const navigation = [
         icon: "nimbus:invoice",
         children: [
           { label: "List", route: "/invoices" },
-          { label: "Edit", route: "/invoices/INV-0012" },
+          { label: "Edit", route: "/invoices/INV-002" },
           { label: "Create", route: "/invoices/create" },
           { label: "Details", route: "/invoices/INV-0012/details" },
         ],

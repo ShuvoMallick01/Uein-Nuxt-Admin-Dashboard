@@ -1,7 +1,4 @@
-<script setup lang="ts">
-import { Card, CardTitle } from "@/components/ui/card";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Card class="pt-5 px-0">

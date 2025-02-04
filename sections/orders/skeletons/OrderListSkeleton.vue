@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import Scrollbar from "simplebar-vue";
-import { Table, TableRow, TableCell, TableBody } from "@/components/ui/table";
 </script>
 
 <template>

@@ -1,52 +1,18 @@
 <script setup lang="ts">
-import { watch } from "vue";
-import { useRoute, useRouter } from "vue-router";
-// CUSTOM COMPONENTS
-// import OrderInfo from "@/sections/orders/order-info";
-// import OrderStatus from "@/sections/orders/order-status";
-// import OrderSummery from "@/sections/orders/order-summery";
-// import OrderWidgets from "@/sections/orders/order-widgets";
-// import {
-//   OrderInfoSkeleton,
-//   OrderStatusSkeleton,
-//   OrderWidgetSkeleton,
-//   OrderSummerySkeleton,
-// } from "@/sections/orders/skeletons";
-// CUSTOM COMPONENTS
-// import CustomBreadcrumb from "@/components/CustomBreadcrumb.vue";
-// CUSTOM COMPOSABLE
-// import { useFetch } from "@/hooks/useFetch";
+import { useRoute } from "vue-router";
+
 // TYPES
 import type { Order } from "@/types/Order";
 
 const route = useRoute();
-const router = useRouter();
 
-// const {
-//   error,
-//   isLoading,
-//   data: order,
-// } = useFetch<Order>("/api/orders", {
-//   params: { id: +route.params.id },
-// });
-console.log("Testing", route.params.orderId);
 const {
   status,
   error,
   data: order,
-} = useAsyncData<Order[]>(
-  "orders",
-  () => $fetch(`/api/orders/${route.params.orderId}`),
-  {
-    lazy: false,
-  }
-);
+} = useFetch<Order>(`/api/orders/${route.params.orderId}`);
 
 if (error.value) console.log(error.value);
-
-// watch(error, (hasError) => {
-//   if (hasError) router.push("/orders");
-// });
 </script>
 
 <template>

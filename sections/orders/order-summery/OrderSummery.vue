@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// SHADCN COMPONENTS
-import { Card, CardTitle } from "@/components/ui/card";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 // CUSTOM COMPONENT
 import TableRowItem from "./TableRowItem.vue";
 // CUSTOM UTILS METHOD

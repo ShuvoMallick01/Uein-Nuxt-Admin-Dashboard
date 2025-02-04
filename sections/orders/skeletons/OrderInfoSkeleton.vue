@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { Card } from "@/components/ui/card";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Card

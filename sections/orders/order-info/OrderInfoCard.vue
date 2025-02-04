@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // SHADCN COMPONENTS
-import { Badge, BadgeVariants } from "@/components/ui/badge";
-import { Card, CardHeader, CardTitle } from "@/components/ui/card";
+import type { BadgeVariants } from "@/components/ui/badge";
 
 // ==============================================================
 interface Props {

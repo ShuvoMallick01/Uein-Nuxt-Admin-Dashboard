@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { TableCell, TableRow } from "@/components/ui/table";
 // CUSTOM UTILS METHODS
 import { cn } from "@/lib/utils";
 import { currency } from "@/lib/currency";
