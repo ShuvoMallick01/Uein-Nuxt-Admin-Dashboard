@@ -9,16 +9,11 @@ const {
   data: invoice,
   status,
   error,
-} = await useAsyncData<Invoice>(
-  "Invoice",
-  () => $fetch(`/api/invoices/${route.params.invoiceId}`),
-  {
-    lazy: false,
-    server: true,
-  }
+} = await useAsyncData<Invoice>("Invoice", () =>
+  $fetch(`/api/invoices/${route.params.invoiceId}`)
 );
 
-console.log("CSR", invoice.value);
+if (error.value) console.log(error.value);
 </script>
 
 <template>
@@ -37,6 +32,8 @@ console.log("CSR", invoice.value);
     <InvoiceFormSkeleton v-if="status === 'pending'" />
 
     <!-- INVOICE FORM WITH DATA -->
-    <InvoiceForm v-if="status !== 'pending' && invoice" :invoice="invoice" />
+    <ClientOnly>
+      <InvoiceForm v-if="status !== 'pending' && invoice" :invoice="invoice" />
+    </ClientOnly>
   </Card>
 </template>

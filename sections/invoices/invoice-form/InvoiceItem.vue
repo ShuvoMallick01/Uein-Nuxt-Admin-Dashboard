@@ -8,7 +8,7 @@ import { TableCell, TableRow } from "@/components/ui/table";
 // CUSTOM COMPONENTS
 import TextField from "@/components/form/TextField.vue";
 // TYPES
-import { InvoiceItem } from "./types";
+import type { InvoiceItem } from "./types";
 
 const { fields, update, remove } = useFieldArray<InvoiceItem>("products");
 

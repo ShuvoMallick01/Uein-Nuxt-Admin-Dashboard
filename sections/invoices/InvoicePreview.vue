@@ -2,18 +2,6 @@
 import { computed } from "vue";
 import Scrollbar from "simplebar-vue";
 import { Icon } from "@iconify/vue";
-// SHADCN COMPONENTS
-import {
-  Table,
-  TableRow,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-} from "@/components/ui/table";
-import { Badge } from "@/components/ui/badge";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
 // CUSTOM UTILS METHODS
 import { currency } from "@/lib/currency";
 import { dateFormat } from "@/lib/dateFormat";

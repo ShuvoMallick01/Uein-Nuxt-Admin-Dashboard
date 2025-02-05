@@ -1,15 +1,5 @@
 <script setup lang="ts">
 import Scrollbar from "simplebar-vue";
-// SHADCN COMPONENTS
-import {
-  Table,
-  TableRow,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-} from "@/components/ui/table";
-import { Card, CardContent } from "@/components/ui/card";
 </script>
 
 <template>

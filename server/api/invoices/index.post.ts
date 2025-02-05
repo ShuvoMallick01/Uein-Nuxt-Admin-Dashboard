@@ -1,5 +1,5 @@
 import invoices from "../../data/invoices";
-import users from "~/pages/practice/users2.vue";
+import { users } from "../../data/users";
 
 export default defineEventHandler(async (event) => {
   try {

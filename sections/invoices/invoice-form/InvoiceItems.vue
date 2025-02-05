@@ -3,23 +3,12 @@ import { computed, ref } from "vue";
 import { useFieldArray, useField } from "vee-validate";
 import { Icon } from "@iconify/vue";
 import Scrollbar from "simplebar-vue";
-// SHADCN COMPONENTS
-import {
-  Table,
-  TableRow,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-} from "@/components/ui/table";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 // CUSTOM COMPONENTS
 import Item from "./InvoiceItem.vue";
 // CUSTOM UTILS METHOD
 import { currency } from "@/lib/currency";
 // TYPES
-import { InvoiceItem } from "./types";
+import type { InvoiceItem } from "./types";
 
 const initialItem = {
   title: "",

@@ -1,11 +1,8 @@
 import invoices from "../../../data/invoices";
 
 export default defineEventHandler(async (event) => {
-  console.log("testing...", event);
-  return event;
   try {
     const id = getRouterParam(event, "id");
-    console.log("Testing...", id);
     if (!id)
       throw createError({
         statusCode: 400,

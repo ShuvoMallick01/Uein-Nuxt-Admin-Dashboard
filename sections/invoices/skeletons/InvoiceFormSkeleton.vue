@@ -1,17 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
 import Scrollbar from "simplebar-vue";
-// SHADCN COMPONENTS
-import {
-  Table,
-  TableRow,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableHeader,
-} from "@/components/ui/table";
-// CUSTOM COMPONENTS
-import TextFieldSkeleton from "~/components/form/TextFieldSkeleton.vue";
 
 const tableHeads = ref([
   "Item Name",

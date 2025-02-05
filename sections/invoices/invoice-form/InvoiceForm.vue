@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
+import { useRoute } from "vue-router";
 import { useForm } from "vee-validate";
 import { Icon } from "@iconify/vue";
 import * as yup from "yup";
@@ -10,7 +10,7 @@ import type { Invoice, InvoicePayload } from "@/types/Invoice";
 // PROPS
 const { invoice } = defineProps<{ invoice?: Invoice }>();
 // COMPOSABLES
-const router = useRouter();
+const route = useRoute();
 
 // CREATE NEW INVOICE API REQUEST HANDLER
 const createNewInvoice = async (body: InvoicePayload) => {
@@ -25,10 +25,11 @@ const createNewInvoice = async (body: InvoicePayload) => {
       totalAmount: items + body.tax! + body.shippingCharge!,
     };
 
-    await useFetch<{ invoice: Invoice }>("/api/invoices", {
+    await $fetch<{ invoice: Invoice }>("/api/invoices", {
       method: "POST",
       body: { newInvoice },
     });
+    console.log("Invoice Create Successfully");
     // push.success("Invoice created successfully");
   } catch (error) {
     console.error(error);
@@ -39,10 +40,14 @@ const createNewInvoice = async (body: InvoicePayload) => {
 // UPDATE INVOICE API REQUEST HANDLER
 const updateInvoice = async (id: string, body: InvoicePayload) => {
   try {
-    await $fetch<{ invoice: Invoice }>("/api/invoices", {
-      method: "PUT",
-      body: { id, body },
-    });
+    await $fetch<{ invoice: Invoice }>(
+      `/api/invoices/${route.params.invoiceId}`,
+      {
+        method: "PUT",
+        body: { id, udpateData: body },
+      }
+    );
+    console.log("Invoice updated successfully");
     // push.success("Invoice updated successfully");
   } catch (error) {
     console.error(error);
@@ -130,13 +135,13 @@ const onSubmit = handleSubmit((values, { resetForm }) => {
 
   if (invoice) {
     updateInvoice(invoice.id, { ...invoice, ...payload });
-    // router.push({ name: "Invoices" });
     navigateTo("/invoices");
     return;
   }
 
   createNewInvoice(payload);
   resetForm();
+  navigateTo("/invoices");
 });
 </script>
 
