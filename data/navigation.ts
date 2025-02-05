@@ -100,7 +100,7 @@ export const navigation = [
           { label: "Register", route: "/register" },
           { label: "Forget Password", route: "/forget-password" },
           { label: "Verify Email", route: "/verification" },
-          { label: "Not Found", route: "/avscsf" },
+          { label: "Not Found", route: "/not-found" },
           { label: "Server Error", route: "/server-error" },
           { label: "Maintenance", route: "/maintenance" },
         ],
