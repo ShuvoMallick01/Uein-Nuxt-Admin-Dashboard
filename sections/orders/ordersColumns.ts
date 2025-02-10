@@ -2,17 +2,17 @@ import { h } from "vue";
 import type { ColumnDef, HeaderContext } from "@tanstack/vue-table";
 import { Icon } from "@iconify/vue";
 // SHADCN COMPONENTS
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Badge, type BadgeVariants } from "@/components/ui/badge";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "~/components/ui/button";
+import { Checkbox } from "~/components/ui/checkbox";
+import { Badge, type BadgeVariants } from "~/components/ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 // CUSTOM COMPONENTS
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
 // CUSTOM UTILS METHODS
-import { dateFormat } from "@/lib/dateFormat";
-import { currency } from "@/lib/currency";
+import { dateFormat } from "~/lib/dateFormat";
+import { currency } from "~/lib/currency";
 // TYPE
-import type { Order } from "@/types/Order";
+import type { Order } from "~/types/Order";
 
 const sortingHeader = (name: string) => {
   return ({ column }: HeaderContext<Order, unknown>) => {

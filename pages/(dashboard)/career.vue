@@ -1,12 +1,4 @@
-<script setup lang="ts">
-// import Footer from "~/components/Footer.vue";
-// import Stats from "~/sections/career/Stats.vue";
-// import Networks from "~/sections/career/networks";
-// import RecentJobs from "~/sections/career/RecentJobs.vue";
-// import VacancyStatus from "~/sections/career/vacancy-status";
-// import VisitorGraph from "~/sections/career/VisitorGraph.vue";
-// import ProfileStrength from "~/sections/career/ProfileStrength.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <div class="grid grid-cols-12 mb-6 gap-7">

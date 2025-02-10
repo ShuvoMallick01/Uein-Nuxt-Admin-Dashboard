@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 // TYPES
-import type { Invoice } from "@/types/Invoice";
+import type { Invoice } from "~/types/Invoice";
 
 const route = useRoute();
 

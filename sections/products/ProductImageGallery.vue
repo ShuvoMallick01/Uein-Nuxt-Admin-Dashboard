@@ -2,7 +2,7 @@
 import { ref } from "vue";
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
-import { cn } from "@/lib/utils";
+import { cn } from "~/lib/utils";
 
 const props = defineProps<{ images: string[] }>();
 

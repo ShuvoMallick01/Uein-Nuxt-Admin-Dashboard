@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useField } from "vee-validate";
 // TYPES
-import type { ProductAttribute } from "@/types/Product";
+import type { ProductAttribute } from "~/types/Product";
 
 const { value, errorMessage, handleChange } = useField<string[]>("sizes");
 

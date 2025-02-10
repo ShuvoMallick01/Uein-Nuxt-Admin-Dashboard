@@ -1,8 +1,4 @@
 <script setup lang="ts">
-// SHADCN COMPONENTS
-import { Button } from "@/components/ui/button";
-import { Card, CardTitle } from "@/components/ui/card";
-
 definePageMeta({
   layout: "support-layout",
 });

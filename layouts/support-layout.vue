@@ -1,8 +1,5 @@
 <script setup lang="ts">
-// SHADCN COMPONENTS
-import { Card, CardContent } from "@/components/ui/card";
 // CUSTOM COMPONENT
-import SearchInput from "@/components/SearchInput.vue";
 import DefaultLayout from "~/layouts/default/index.vue";
 </script>
 

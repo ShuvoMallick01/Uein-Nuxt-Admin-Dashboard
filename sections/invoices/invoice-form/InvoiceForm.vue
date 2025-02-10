@@ -6,7 +6,7 @@ import * as yup from "yup";
 // CUSTOM COMPONENTS
 import InvoiceItems from "./InvoiceItems.vue";
 // TYPE
-import type { Invoice, InvoicePayload } from "@/types/Invoice";
+import type { Invoice, InvoicePayload } from "~/types/Invoice";
 // PROPS
 const { invoice } = defineProps<{ invoice?: Invoice }>();
 // COMPOSABLES

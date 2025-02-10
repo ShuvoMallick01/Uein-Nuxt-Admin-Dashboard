@@ -4,7 +4,7 @@ export const navigation = [
     menu: [
       {
         label: "Dashboard",
-        route: "/",
+        route: "/dashboard",
         icon: "cuida:dashboard-outline",
         children: [
           { label: "Course", route: "/course" },

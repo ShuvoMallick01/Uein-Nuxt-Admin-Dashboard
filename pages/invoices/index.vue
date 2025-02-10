@@ -4,7 +4,7 @@ import { Icon } from "@iconify/vue";
 // TABLE COLUMNS DEFINITION
 import { columns } from "./invoicesColumn";
 // TYPES
-import type { Invoice } from "@/types/Invoice";
+import type { Invoice } from "~/types/Invoice";
 
 let isLoading = ref(true);
 

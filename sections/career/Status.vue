@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import VueApexCharts from "vue3-apexcharts";
-// SHADCN COMPONENT
-import { Card } from "~/components/ui/card";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 // CUSTOM DATA

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 definePageMeta({
-  alias: ["/"],
+  alias: ["/dashboard"],
 });
 </script>
 

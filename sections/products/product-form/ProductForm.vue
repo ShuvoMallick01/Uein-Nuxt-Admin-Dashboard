@@ -10,7 +10,7 @@ import Categories from "./Categories.vue";
 import ProductImages from "./ProductImages.vue";
 import ProductFeatureItem from "./ProductFeatureItem.vue";
 // TYPE
-import type { Product, ProductPayload } from "@/types/Product";
+import type { Product, ProductPayload } from "~/types/Product";
 
 // PROPS
 const { product } = defineProps<{ product?: Product }>();

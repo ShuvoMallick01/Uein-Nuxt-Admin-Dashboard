@@ -1,7 +1,7 @@
 <script setup lang="ts">
 // CUSTOM UTILS METHODS
-import { cn } from "@/lib/utils";
-import { currency } from "@/lib/currency";
+import { cn } from "~/lib/utils";
+import { currency } from "~/lib/currency";
 
 defineProps<{ name: string; value: number; isLast?: boolean }>();
 </script>

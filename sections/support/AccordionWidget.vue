@@ -1,12 +1,4 @@
 <script setup lang="ts">
-import {
-  Accordion,
-  AccordionItem,
-  AccordionTrigger,
-  AccordionContent,
-} from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-
 // ======================================
 interface Item {
   value: string;

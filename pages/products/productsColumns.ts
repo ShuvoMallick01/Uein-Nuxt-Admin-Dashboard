@@ -2,19 +2,19 @@ import { h } from "vue";
 import type { ColumnDef, HeaderContext } from "@tanstack/vue-table";
 import { Icon } from "@iconify/vue";
 // SHADCN COMPONENTS
-import { Button } from "@/components/ui/button";
-import { Checkbox } from "@/components/ui/checkbox";
-import { Badge, type BadgeVariants } from "@/components/ui/badge";
-import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar";
+import { Button } from "~/components/ui/button";
+import { Checkbox } from "~/components/ui/checkbox";
+import { Badge, type BadgeVariants } from "~/components/ui/badge";
+import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
 
 // CUSTOM UTILS METHODS
-import { dateFormat } from "@/lib/dateFormat";
+import { dateFormat } from "~/lib/dateFormat";
 
 // TYPE
-import type { Product } from "@/types/Product";
-import { currency } from "@/lib/currency";
-import { Progress } from "@/components/ui/progress";
+import type { Product } from "~/types/Product";
+import { currency } from "~/lib/currency";
+import { Progress } from "~/components/ui/progress";
 
 const sortingHeader = (name: string) => {
   return ({ column }: HeaderContext<Product, unknown>) => {

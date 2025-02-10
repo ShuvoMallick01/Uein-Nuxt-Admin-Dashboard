@@ -3,8 +3,8 @@
 import TimelineItem from "./TimelineItem.vue";
 import OrderStatusSkeleton from "../skeletons/OrderStatusSkeleton.vue";
 // TYPES
-import type { Order } from "@/types/Order";
-import type { Status } from "@/types/Status";
+import type { Order } from "~/types/Order";
+import type { Status } from "~/types/Status";
 
 const props = defineProps<{ order: Order }>();
 

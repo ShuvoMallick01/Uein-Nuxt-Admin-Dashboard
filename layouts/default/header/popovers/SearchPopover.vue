@@ -1,18 +1,5 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-// SHADCN COMPONENTS
-import {
-  Command,
-  CommandItem,
-  CommandList,
-  CommandEmpty,
-  CommandGroup,
-  CommandInput,
-  CommandShortcut,
-  CommandSeparator,
-} from "~/components/ui/command";
-import { Input } from "~/components/ui/input";
-import { Dialog, DialogContent, DialogTrigger } from "~/components/ui/dialog";
 </script>
 
 <template>

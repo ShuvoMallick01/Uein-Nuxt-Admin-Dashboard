@@ -1,11 +1,11 @@
 <script setup lang="ts">
+// DATA LIST
+import { faqs } from "~/data/support/faqs";
+import { tickets } from "~/data/support/tickets";
+
 definePageMeta({
   layout: "support-layout",
 });
-
-// DATA LIST
-import { faqs } from "@/data/support/faqs";
-import { tickets } from "@/data/support/tickets";
 
 // STATE
 const defaultValue = "item-1";

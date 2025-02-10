@@ -6,7 +6,7 @@ import ProductListSkeleton from "~/sections/products/skeletons/ProductListSkelet
 // TABLE COLUMNS DEFINITION
 import { columns } from "./productsColumns";
 // TYPES
-import type { Product } from "@/types/Product";
+import type { Product } from "~/types/Product";
 
 let isLoading = ref(true);
 

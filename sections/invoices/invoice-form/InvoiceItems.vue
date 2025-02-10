@@ -6,7 +6,7 @@ import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENTS
 import Item from "./InvoiceItem.vue";
 // CUSTOM UTILS METHOD
-import { currency } from "@/lib/currency";
+import { currency } from "~/lib/currency";
 // TYPES
 import type { InvoiceItem } from "./types";
 

@@ -2,9 +2,9 @@
 // CUSTOM COMPONENT
 import TableRowItem from "./TableRowItem.vue";
 // CUSTOM UTILS METHOD
-import { currency } from "@/lib/currency";
+import { currency } from "~/lib/currency";
 // TYPES
-import type { Order } from "@/types/Order";
+import type { Order } from "~/types/Order";
 
 defineProps<{ order: Order }>();
 </script>

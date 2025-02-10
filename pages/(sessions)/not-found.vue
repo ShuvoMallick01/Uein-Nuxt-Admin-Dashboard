@@ -7,7 +7,7 @@ definePageMeta({
 });
 
 // SHADCN COMPONENTS
-import { Button } from "@/components/ui/button";
+import { Button } from "~/components/ui/button";
 </script>
 
 <template>

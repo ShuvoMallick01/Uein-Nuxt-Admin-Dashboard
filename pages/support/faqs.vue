@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // DATA LIST
-import { faqs } from "@/data/support/faqs";
+import { faqs } from "~/data/support/faqs";
 
 definePageMeta({
   layout: "support-layout",

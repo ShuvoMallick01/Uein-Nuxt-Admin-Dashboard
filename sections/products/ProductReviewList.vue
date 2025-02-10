@@ -2,7 +2,7 @@
 import { Icon } from "@iconify/vue";
 import ProductReviewSkeleton from "./skeletons/ProductReviewSkeleton.vue";
 // TYPES
-import type { Review } from "@/types/Product";
+import type { Review } from "~/types/Product";
 
 // PROPS
 const { productId } = defineProps<{ productId: number }>();

@@ -1,8 +1,6 @@
 <script setup lang="ts">
 // SHADCN COMPONENT
-import { SelectItem } from "@/components/ui/select";
-// CUSTOM COMPONENT
-import SelectField from "@/components/form/SelectField.vue";
+import { SelectItem } from "~/components/ui/select";
 // TYPES
 import type { ProductAttribute } from "~/types/Product";
 

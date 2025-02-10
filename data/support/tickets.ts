@@ -32,7 +32,7 @@ export const tickets = [
     category: "Vue.js",
     title: "What is the Composition API?",
     content:
-      "The Composition API in Vue 3 offers a more flexible way to structure components by organizing logic into reusable functions instead of options-based properties.",
+      "The Composition API in  Nuxt 3 offers a more flexible way to structure components by organizing logic into reusable functions instead of options-based properties.",
   },
   {
     value: "item-6",

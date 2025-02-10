@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
-
 // TYPES
-import type { Order } from "@/types/Order";
+import type { Order } from "~/types/Order";
 
 const route = useRoute();
 

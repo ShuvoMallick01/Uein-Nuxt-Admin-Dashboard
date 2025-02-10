@@ -10,9 +10,6 @@
     </aside>
 
     <main class="h-full lg:ml-[260px] 2xl:ml-[280px]">
-      <!-- NAVIGATION DRAWER FOR SMALL DEVICE -->
-      <!-- <MobileSidebar /> -->
-
       <!-- PAGE / ROUTE VIEW -->
       <div class="px-4 mx-auto max-w-screen-2xl sm:px-7 2xl:px-20">
         <slot />

@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // DATA LIST
-import { tickets } from "@/data/support/tickets";
+import { tickets } from "~/data/support/tickets";
 
 definePageMeta({
   layout: "support-layout",

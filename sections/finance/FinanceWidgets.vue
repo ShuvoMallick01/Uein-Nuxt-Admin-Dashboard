@@ -1,8 +1,7 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // SHADCN COMPONENT
-import { Card } from "~/components/ui/card";
-import { Badge, BadgeVariants } from "~/components/ui/badge";
+import { Badge, type BadgeVariants } from "~/components/ui/badge";
 // DATA LIST
 import { widgets } from "~/data/dashboards/finance";
 

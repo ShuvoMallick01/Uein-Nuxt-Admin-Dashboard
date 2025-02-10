@@ -1,16 +1,6 @@
 <script setup lang="ts">
 import { ref, watch } from "vue";
 import VueApexCharts from "vue3-apexcharts";
-// SHADCN COMPONENTS
-import {
-  Select,
-  SelectItem,
-  SelectGroup,
-  SelectValue,
-  SelectContent,
-  SelectTrigger,
-} from "~/components/ui/select";
-import { Card } from "~/components/ui/card";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 

@@ -3,10 +3,10 @@ import { computed } from "vue";
 import Scrollbar from "simplebar-vue";
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
-import { currency } from "@/lib/currency";
-import { dateFormat } from "@/lib/dateFormat";
+import { currency } from "~/lib/currency";
+import { dateFormat } from "~/lib/dateFormat";
 // TYPES
-import type { Invoice } from "@/types/Invoice";
+import type { Invoice } from "~/types/Invoice";
 
 // PROPS
 const { invoice } = defineProps<{ invoice: Invoice }>();
@@ -84,7 +84,7 @@ const subtotal = computed(() => {
               <TableCell>
                 <p class="text-sm font-medium">{{ item.title }}</p>
                 <p class="pt-1 text-xs text-muted">
-                  Build with Bootstrap, React JS, Angular, Vue etc.
+                  Build with Bootstrap, React JS, Angular, Nuxt etc.
                 </p>
               </TableCell>
               <TableCell class="text-center">{{ item.quantity }}</TableCell>

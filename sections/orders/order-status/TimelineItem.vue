@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { dateFormat } from "@/lib/dateFormat";
+import { dateFormat } from "~/lib/dateFormat";
 
 defineProps<{
   name: string;
