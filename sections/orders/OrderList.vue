@@ -9,9 +9,7 @@ import type { Order, OrderStatus, PaymentMethods } from "~/types/Order";
 let isLoading = ref(true);
 
 const { status, error, data: orders } = useFetch<Order[]>("/api/orders");
-
 const { data: statuses } = useFetch<OrderStatus[]>("/api/orders/statuses");
-
 const { data: paymentMethods } = useFetch<PaymentMethods[]>(
   "/api/orders/payment-methods"
 );
@@ -77,21 +75,11 @@ watch(status, (newStatus) => {
             class="flex flex-col items-center gap-4 lg:flex-row lg:w-3/4 2xl:w-3/5"
           >
             <!-- GLOBAL SEARCH FILTER -->
-            <div class="relative w-full">
-              <Input
-                type="search"
-                placeholder="Find Order No"
-                class="rounded-lg ps-9"
-                :modelValue="globalFilter ?? ''"
-                @update:modelValue="(value) => setGlobalFilter(String(value))"
-              />
-
-              <Icon
-                height="18"
-                icon="eva:search-outline"
-                class="absolute inset-y-0 my-auto text-muted start-3"
-              />
-            </div>
+            <SearchInput
+              placeholder="Find Orders"
+              :modelValue="globalFilter"
+              :updateModelValue="(value) => setGlobalFilter(String(value))"
+            />
 
             <div class="flex items-center w-full gap-3">
               <!-- STATUS BASED FILTER -->
@@ -139,11 +127,11 @@ watch(status, (newStatus) => {
 
                 <SelectContent>
                   <SelectItem
-                    v-for="payment in paymentMethods"
-                    :key="payment.id"
-                    :value="payment.value"
+                    v-for="paymentMethod in paymentMethods"
+                    :key="paymentMethod.id"
+                    :value="paymentMethod.value"
                   >
-                    {{ payment.title }}
+                    {{ paymentMethod.title }}
                   </SelectItem>
                 </SelectContent>
               </Select>

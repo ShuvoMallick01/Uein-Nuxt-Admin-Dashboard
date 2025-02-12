@@ -9,14 +9,7 @@ const {
   data: product,
   status,
   error,
-} = await useAsyncData<Product>(
-  "user",
-  () => $fetch(`/api/products/${route.params.productId}`),
-  {
-    lazy: false,
-    server: true,
-  }
-);
+} = await useFetch<Product>(`/api/products/${route.params.productId}`);
 
 console.log(product.value);
 

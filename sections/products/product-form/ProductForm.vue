@@ -36,7 +36,6 @@ const createNewProduct = async (body: ProductPayload) => {
       ],
     };
 
-    // await axios.post<{ product: Product }>("/api/products", updateBody);
     const newProduct = await $fetch<{ product: Product }>("/api/products", {
       method: "POST",
       body: { updateBody },
@@ -53,11 +52,8 @@ const createNewProduct = async (body: ProductPayload) => {
 // UPDATE PRODUCT API REQUEST HANDLER
 const updateProduct = async (id: number, body: ProductPayload) => {
   try {
-    // await axios.put<{ product: Product }>("/api/products", body, {
-    //   params: { id },
-    // });
     await $fetch<{ product: Product }>(
-      `/api/products/${route.params.productEditId}`,
+      `/api/products/${route.params.productId}`,
       {
         method: "PUT",
         body: { id: id, updatedData: body },
@@ -146,10 +142,8 @@ const onSubmit = handleSubmit((values, { resetForm }) => {
 
   if (product) {
     updateProduct(product.id, payload);
-    router.push({ name: "Products" });
-    return;
+    return navigateTo("/products");
   }
-
   createNewProduct(payload);
   resetForm();
 });

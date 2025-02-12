@@ -8,6 +8,7 @@ export interface Order {
     name: string;
     email: string;
     phone: string;
+    image: string;
   };
   billing: string;
   shipping: string;

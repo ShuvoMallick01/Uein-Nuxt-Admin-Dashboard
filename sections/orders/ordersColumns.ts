@@ -74,10 +74,10 @@ export const columns: ColumnDef<Order>[] = [
     cell: ({ row }) => row.getValue<string>("invoiceId"),
   },
   {
-    accessorKey: "customer",
+    accessorKey: "customer.name",
     header: sortingHeader("Customer"),
     cell: ({ row }) => {
-      const { email, image, name } = row.original.customer;
+      const { email, name, image } = row.original.customer;
 
       return h("div", { class: "flex items-center gap-3" }, [
         h(Avatar, { shape: "square" }, () => [
@@ -112,6 +112,12 @@ export const columns: ColumnDef<Order>[] = [
     accessorKey: "paymentMethod",
     header: sortingHeader("Payment Method"),
     cell: ({ row }) => String(row.original.payment.paymentMethod),
+    filterFn: (row, columnId, filterValue) => {
+      if (!filterValue) return true;
+      return row.original.payment.paymentMethod
+        .toLowerCase()
+        .includes(filterValue.toLowerCase());
+    },
   },
   {
     accessorKey: "totalAmount",

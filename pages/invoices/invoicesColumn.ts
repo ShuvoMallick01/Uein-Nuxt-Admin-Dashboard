@@ -65,7 +65,7 @@ export const columns: ColumnDef<Invoice>[] = [
     },
   },
   {
-    accessorKey: "name",
+    accessorKey: "customer.name",
     header: sortingHeader("Customer"),
     cell: ({ row }) => {
       const name = row.original.customer.name;
@@ -88,6 +88,7 @@ export const columns: ColumnDef<Invoice>[] = [
       ]);
     },
   },
+
   {
     accessorKey: "issueDate",
     header: sortingHeader("Issue"),
