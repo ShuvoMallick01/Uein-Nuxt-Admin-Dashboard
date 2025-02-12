@@ -17,23 +17,28 @@ if (error.value) console.log(error.value);
 </script>
 
 <template>
-  <CustomBreadcrumb
-    v-if="invoice"
-    heading="Invoice Edit"
-    :links="[
-      { name: 'Home', href: '/' },
-      { name: 'Invoices', href: '/invoices' },
-      { name: invoice?.id || '', current: true },
-    ]"
-  />
+  <div>
+    <CustomBreadcrumb
+      v-if="invoice"
+      heading="Invoice Edit"
+      :links="[
+        { name: 'Home', href: '/' },
+        { name: 'Invoices', href: '/invoices' },
+        { name: invoice?.id || '', current: true },
+      ]"
+    />
 
-  <Card class="p-6 mt-2 mb-6">
-    <!-- SHOW LOADING SKELETON -->
-    <InvoiceFormSkeleton v-if="status === 'pending'" />
+    <Card class="p-6 mt-2 mb-6">
+      <!-- SHOW LOADING SKELETON -->
+      <InvoiceFormSkeleton v-if="status === 'pending'" />
 
-    <!-- INVOICE FORM WITH DATA -->
-    <ClientOnly>
-      <InvoiceForm v-if="status !== 'pending' && invoice" :invoice="invoice" />
-    </ClientOnly>
-  </Card>
+      <!-- INVOICE FORM WITH DATA -->
+      <ClientOnly>
+        <InvoiceForm
+          v-if="status !== 'pending' && invoice"
+          :invoice="invoice"
+        />
+      </ClientOnly>
+    </Card>
+  </div>
 </template>

@@ -27,18 +27,20 @@ if (error.value) {
 </script>
 
 <template>
-  <CustomBreadcrumb
-    heading="Edit User"
-    :links="[
-      { name: 'Home', href: '/' },
-      { name: 'Users', href: '/users' },
-      { name: user?.name || '', current: true },
-    ]"
-  />
+  <div>
+    <CustomBreadcrumb
+      heading="Edit User"
+      :links="[
+        { name: 'Home', href: '/' },
+        { name: 'Users', href: '/users' },
+        { name: user?.name || '', current: true },
+      ]"
+    />
 
-  <!-- SHOW LOADING SKELETON -->
-  <UserFormSkeleton v-if="status === 'pending'" />
+    <!-- SHOW LOADING SKELETON -->
+    <UserFormSkeleton v-if="status === 'pending'" />
 
-  <!-- USER FORM WITH DATA -->
-  <UserForm v-if="user" :user="user" />
+    <!-- USER FORM WITH DATA -->
+    <UserForm v-if="user" :user="user" />
+  </div>
 </template>

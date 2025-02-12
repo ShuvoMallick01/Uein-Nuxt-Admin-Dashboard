@@ -5,13 +5,15 @@ definePageMeta({
 </script>
 
 <template>
-  <HomeHeader />
-  <HomeBanner />
+  <div>
+    <HomeHeader />
+    <HomeBanner />
 
-  <main>
-    <DemoTemplates />
-    <Features />
-    <HomeFAQ />
-    <HomeFooter />
-  </main>
+    <main>
+      <DemoTemplates />
+      <Features />
+      <HomeFAQ />
+      <HomeFooter />
+    </main>
+  </div>
 </template>

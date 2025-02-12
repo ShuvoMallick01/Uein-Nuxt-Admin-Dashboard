@@ -5,28 +5,27 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: "Uno - Admin Dashboard",
-      // titleTemplate: `%s - Dashboard`,
+      title: `%s | Nuxt 3 Admin Dashboard`,
+      htmlAttrs: { lang: "en" },
       meta: [
         { charset: "utf-8" },
         { name: "viewport", content: "width=device-width, initial-scale=1" },
-        // {
-        //   hid: "description",
-        //   name: "description",
-        //   content: process.env.npm_package_description || "",
-        // },
+        {
+          name: "description",
+          content:
+            "Uno is a high-performance, modern Nuxt 3 admin dashboard template designed for scalability and customization.",
+        },
       ],
-      link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.svg" }],
-      bodyAttrs: {
-        class: "",
-      },
+      link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
+      bodyAttrs: { class: "overflow-hidden" },
     },
+    pageTransition: { name: "page", mode: "out-in" },
+    layoutTransition: { name: "layout", mode: "out-in" },
   },
 
   modules: [
     "@nuxtjs/tailwindcss",
     "shadcn-nuxt",
-    // "nuxt-lucide-icons",
     "@vueuse/nuxt",
     "@pinia/nuxt",
     "@nuxtjs/google-fonts",
@@ -35,10 +34,10 @@ export default defineNuxtConfig({
   ],
 
   css: [
+    "~/assets/css/tailwind.css",
     "simplebar-vue/dist/simplebar.min.css",
     "notivue/notification.css",
     "notivue/animations.css",
-    // "nprogress/nprogress.css"
   ],
 
   tailwindcss: {
@@ -53,24 +52,13 @@ export default defineNuxtConfig({
 
   image: {
     format: ["webp"],
-    quality: 80,
+    quality: 85,
   },
 
   shadcn: {
-    /**
-     * Prefix for all the imported component
-     */
     prefix: "",
-    /**
-     * Directory that the component lives in.
-     * @default "./components/ui"
-     */
     componentDir: "./components/ui",
   },
-
-  // lucide: {
-  //   namePrefix: "Icon",
-  // },
 
   components: [
     {
@@ -80,21 +68,22 @@ export default defineNuxtConfig({
     { path: "~/sections", pathPrefix: false },
   ],
 
-  // lodash: {
-  //   prefix: "_",
-  //   prefixSkip: ["string"],
-  //   upperAfterPrefix: false,
-  //   exclude: ["map"],
-  //   alias: [
-  //     ["camelCase", "stringToCamelCase"], // => stringToCamelCase
-  //     ["kebabCase", "stringToKebab"], // => stringToKebab
-  //     ["isDate", "isLodashDate"], // => _isLodashDate
-  //   ],
-  // },
-
   routeRules: {
     // "/": { swr: true, cache: { maxAge: 10 } },
     // "/": { isr: true, cache: { maxAge: 20 } },
     // "/learning-management": { prerender: true },
+  },
+
+  build: {
+    transpile: ["@iconify/vue"],
+  },
+
+  runtimeConfig: {
+    public: {
+      appName: "Uno Admin Dashboard",
+      apiBaseUrl:
+        process.env.NUXT_PUBLIC_API_BASE_URL ||
+        "https://bitskyber.com/template/uno-nuxt",
+    },
   },
 });
