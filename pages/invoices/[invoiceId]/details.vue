@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { useRoute } from "vue-router";
 // TYPES
 import type { Invoice } from "~/types/Invoice";
@@ -16,6 +17,10 @@ const {
     lazy: false,
   }
 );
+
+definePageMeta({
+  title: "Details",
+});
 </script>
 
 <template>

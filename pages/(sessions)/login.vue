@@ -5,6 +5,11 @@ import * as yup from "yup";
 
 definePageMeta({
   layout: false,
+  title: "Login",
+});
+
+useHead({
+  titleTemplate: `Login - %s `,
 });
 
 const validationSchema = yup.object({

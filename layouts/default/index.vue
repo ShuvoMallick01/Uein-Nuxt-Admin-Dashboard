@@ -2,6 +2,17 @@
 import Header from "./header/Header.vue";
 import MobileSidebar from "./MobileSidebar.vue";
 import SidebarNavigation from "./sidebar/SidebarNavigation.vue";
+
+const route = useRoute();
+
+useHead({
+  title: () => {
+    // Get the title from route.meta.title, fallback to "Nuxt 3 Admin Dashboard"
+    return route.meta.title
+      ? `${route.meta.title} - Nuxt 3 Admin Dashboard`
+      : "Nuxt 3 Admin Dashboard";
+  },
+});
 </script>
 
 <template>

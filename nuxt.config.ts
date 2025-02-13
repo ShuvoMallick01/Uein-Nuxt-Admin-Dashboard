@@ -5,7 +5,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: `%s | Nuxt 3 Admin Dashboard`,
+      title: `Nuxt 3 Admin Dashboard`,
       htmlAttrs: { lang: "en" },
       meta: [
         { charset: "utf-8" },

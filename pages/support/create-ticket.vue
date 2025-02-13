@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "support-layout",
+  title: "Create Ticket",
 });
 </script>
 

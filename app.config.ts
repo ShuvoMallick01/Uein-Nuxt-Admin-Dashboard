@@ -1,5 +1,4 @@
 export default defineAppConfig({
-  siteName: "Uno - Nuxt 3 Admin Dashboard",
   shortDescription:
     "A modern, high-performance Nuxt 3 admin dashboard template with Tailwind CSS.",
   description:

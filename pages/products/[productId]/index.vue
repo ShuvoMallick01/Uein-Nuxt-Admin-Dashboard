@@ -5,6 +5,10 @@ import type { Product } from "~/types/Product";
 
 const route = useRoute();
 
+definePageMeta({
+  title: "Products Edit",
+});
+
 const {
   data: product,
   status,

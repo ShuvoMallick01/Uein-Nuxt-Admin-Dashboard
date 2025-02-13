@@ -4,6 +4,11 @@ import { Icon } from "@iconify/vue";
 
 definePageMeta({
   layout: false,
+  title: "Not Found",
+});
+
+useHead({
+  titleTemplate: `Not Found - %s `,
 });
 
 // SHADCN COMPONENTS

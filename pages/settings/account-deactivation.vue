@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   layout: "settings-layout",
+  title: "Account Deactivation",
 });
 </script>
 

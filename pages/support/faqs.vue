@@ -4,6 +4,7 @@ import { faqs } from "~/data/support/faqs";
 
 definePageMeta({
   layout: "support-layout",
+  title: "FAQs",
 });
 
 // STATE

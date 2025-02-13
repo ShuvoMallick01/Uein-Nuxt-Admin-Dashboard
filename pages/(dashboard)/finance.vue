@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: "Finance",
+});
+</script>
 
 <template>
   <div class="grid grid-cols-12 mt-2 mb-6 gap-7">

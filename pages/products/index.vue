@@ -10,6 +10,10 @@ import type { Product } from "~/types/Product";
 
 let isLoading = ref(true);
 
+definePageMeta({
+  title: "Products",
+});
+
 const {
   status,
   error,

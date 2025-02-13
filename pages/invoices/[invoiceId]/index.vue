@@ -5,6 +5,10 @@ import type { Invoice } from "~/types/Invoice";
 
 const route = useRoute();
 
+definePageMeta({
+  title: "Invoice Edit",
+});
+
 const {
   data: invoice,
   status,

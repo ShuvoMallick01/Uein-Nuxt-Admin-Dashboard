@@ -4,6 +4,11 @@ import * as yup from "yup";
 
 definePageMeta({
   layout: false,
+  title: "Forget Password",
+});
+
+useHead({
+  titleTemplate: `Forget Password - %s `,
 });
 
 const { handleSubmit, isSubmitting } = useForm({

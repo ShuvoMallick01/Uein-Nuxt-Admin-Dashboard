@@ -8,6 +8,10 @@ import type { User, UserStatus } from "~/types/User";
 
 let isLoading = ref(true);
 
+definePageMeta({
+  title: "Users",
+});
+
 const { data: roles } = useAsyncData("roles", () => $fetch("/api/users/roles"));
 const { data: statuses } = useAsyncData<UserStatus[]>("statuses", () =>
   $fetch("/api/users/status")

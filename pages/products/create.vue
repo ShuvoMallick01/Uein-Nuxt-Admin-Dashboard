@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+definePageMeta({
+  title: "Product Create",
+});
+</script>
 
 <template>
   <div class="grid grid-cols-12 mb-8">

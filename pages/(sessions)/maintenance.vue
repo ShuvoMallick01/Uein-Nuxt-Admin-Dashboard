@@ -4,6 +4,11 @@ import { Icon } from "@iconify/vue";
 
 definePageMeta({
   layout: false,
+  title: "Maintenance",
+});
+
+useHead({
+  titleTemplate: `Maintenance - %s `,
 });
 </script>
 

@@ -4,6 +4,7 @@ import { tickets } from "~/data/support/tickets";
 
 definePageMeta({
   layout: "support-layout",
+  title: "Tickets",
 });
 
 // STATE

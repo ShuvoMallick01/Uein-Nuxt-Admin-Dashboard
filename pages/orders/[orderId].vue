@@ -5,6 +5,10 @@ import type { Order } from "~/types/Order";
 
 const route = useRoute();
 
+definePageMeta({
+  title: "Order Edit",
+});
+
 const {
   status,
   error,

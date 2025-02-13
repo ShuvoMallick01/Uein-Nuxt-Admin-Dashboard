@@ -1,6 +1,7 @@
 <script setup lang="ts">
 definePageMeta({
   alias: ["/dashboard"],
+  title: "Course",
 });
 </script>
 

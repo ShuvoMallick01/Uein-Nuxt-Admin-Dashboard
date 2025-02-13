@@ -4,6 +4,7 @@ import * as yup from "yup";
 
 definePageMeta({
   layout: "settings-layout",
+  title: "Profile Info",
 });
 
 // FORM FIELDS VALIDATION SCHEMA

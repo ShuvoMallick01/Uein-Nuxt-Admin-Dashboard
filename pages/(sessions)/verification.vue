@@ -1,6 +1,11 @@
 <script setup lang="ts">
 definePageMeta({
   layout: false,
+  title: "Vertification",
+});
+
+useHead({
+  titleTemplate: `Vertification - %s `,
 });
 </script>
 

@@ -5,6 +5,10 @@ import type { User } from "~/types/User";
 
 const route = useRoute();
 
+definePageMeta({
+  title: "Users",
+});
+
 const {
   data: user,
   status,

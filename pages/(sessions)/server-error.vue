@@ -4,6 +4,11 @@ import { Icon } from "@iconify/vue";
 
 definePageMeta({
   layout: false,
+  title: "Server Error",
+});
+
+useHead({
+  titleTemplate: `Server Error - %s `,
 });
 </script>
 

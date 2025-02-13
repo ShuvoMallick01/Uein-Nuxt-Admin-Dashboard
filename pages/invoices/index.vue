@@ -14,6 +14,10 @@ const {
   data: invoices,
 } = useAsyncData<Invoice[], Error>("products", () => $fetch("/api/invoices"));
 
+definePageMeta({
+  title: "Invoices",
+});
+
 // HANDLE DELETE USERS BY IDS
 const handleDeleteInvoices = async (invoices: Invoice[]) => {
   try {
