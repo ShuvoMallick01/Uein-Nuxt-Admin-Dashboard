@@ -203,12 +203,21 @@
         </div>
 
         <div class="space-y-8">
-          <h4 class="mt-7 font-semibold">APIs</h4>
-
           <div class="space-y-3">
-            <h5 class="font-semibold">invoices/index.get.ts</h5>
-            <p>Api using sent get request</p>
+            <h4 class="mt-7 font-semibold">APIs</h4>
+            <p>
+              You can make API requests from anywhere in the project using the
+              server API. It allows seamless data fetching, CRUD operations, and
+              real-time updates, ensuring smooth interaction between the
+              frontend and backend.
+            </p>
+          </div>
+
+          <div class="space-y-2">
+            <h5 class="font-semibold">GET Request</h5>
+
             <div class="pt-5">
+              <p class="pb-3 font-medium">invoices/index.get.ts</p>
               <pre><code class="rounded-md">import invoices from "../../data/invoices";
 
 export default defineEventHandler(async (event) => {
@@ -226,7 +235,134 @@ export default defineEventHandler(async (event) => {
 
 </code></pre>
             </div>
+
+            <div class="pt-5">
+              <p class="pb-3 font-medium">invoices/index.post.ts</p>
+              <pre><code class="rounded-md">import invoices from "../../data/invoices";
+import { users } from "../../data/users";
+
+export default defineEventHandler(async (event) => {
+  try {
+    const body = await readBody(event);
+    const user = users[Math.floor(Math.random() * users.length)];
+    const newInvoice = {
+      id: invoices[invoices.length - 1].id + 1,
+      ...body,
+      customer: { id: user.id, name: user.name, image: user.image },
+    };
+
+    invoices.push(newInvoice);
+    console.log("New Product:", newInvoice);
+
+    return { success: true, data: newInvoice };
+  } catch (error) {
+    console.error("Error creating invoice:", error);
+    return sendError(event, error as Error);
+  }
+});
+</code></pre>
+            </div>
+
+            <div class="pt-5">
+              <p class="pb-3 font-medium">invoices/[id]/index.get.ts</p>
+              <pre><code class="rounded-md">import invoices from "../../../data/invoices";
+
+export default defineEventHandler(async (event) => {
+  try {
+    const id = getRouterParam(event, "id");
+    if (!id)
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Invoice ID is required!",
+      });
+
+    const invoice = invoices.find((invoice) => invoice.id === id);
+
+    if (!invoice) {
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Invoice not found!",
+      });
+    }
+    console.log(invoice);
+    return invoice;
+  } catch (error) {
+    return sendError(event, error as Error);
+  }
+});
+</code></pre>
+            </div>
+
+            <div class="pt-5">
+              <p class="pb-3 font-medium">invoices/[id]/index.delete.ts</p>
+              <pre><code class="rounded-md">import invoices from "../../../data/invoices";
+
+export default defineEventHandler(async (event) => {
+  try {
+    const id = getRouterParam(event, "id");
+    if (!id)
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Product ID is required!",
+      });
+
+    const invoiceIndex = invoices.findIndex((invoice) => invoice.id === id);
+    if (invoiceIndex === -1)
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Invoice not found",
+      });
+
+    const deleteInvoice = invoices.splice(invoiceIndex, 1);
+    return deleteInvoice;
+  } catch (error) {
+    return sendError(event, error as Error);
+  }
+});
+
+</code></pre>
+            </div>
+
+            <div class="pt-5">
+              <p class="pb-3 font-medium">invoices/[id]/index.put.ts</p>
+              <pre><code class="rounded-md">import invoices from "../../../data/invoices";
+
+export default defineEventHandler(async (event) => {
+  try {
+    const id = getRouterParam(event, "id");
+    if (!id)
+      throw createError({
+        statusCode: 400,
+        statusMessage: "Invoice ID is required!",
+      });
+
+    const invoiceIndex = invoices.findIndex((invoice) => invoice.id === id);
+    if (invoiceIndex === -1)
+      throw createError({
+        statusCode: 404,
+        statusMessage: "Invoice not found",
+      });
+
+    const body = await readBody(event);
+    invoices[invoiceIndex] = { ...invoices[invoiceIndex], ...body };
+
+    return invoices[invoiceIndex];
+  } catch (error) {
+    return sendError(event, error as Error);
+  }
+});
+</code></pre>
+            </div>
           </div>
+        </div>
+
+        <div class="space-y-8">
+          <h5 class="font-semibold">Other APIs</h5>
+          <p>
+            The API structure for orders, products, and users follows the same
+            CRUD operations as the invoices API. You can perform create, read,
+            update, and delete actions in a similar manner.
+          </p>
         </div>
 
         <!-- FOOTER NAVIGATION -->
