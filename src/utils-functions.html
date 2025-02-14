@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uno is a Nuxt 3 Admin & Client Dashboard Template designed for modern web applications. Discover its sleek design, responsive layout, and advanced features that streamline your workflow."
+    />
+    <meta
+      name="keywords"
+      content="Nuxt 3, Admin Dashboard, Client Dashboard, Dashboard Template, Responsive Design, Modern Web Applications, Vue.js, Web App UI, Admin UI, Client Management, UI Kit, Admin Template, Web Development, Uno Dashboard."
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Uno Documentation</title>
+    <!-- CSS FILE -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link href="./assets/css/atom-one-dark.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="relative">
+    <!-- HEADER SECTION -->
+    <header class="bg-white sticky top-0 z-[12] py-5 border-b border-border">
+      <div
+        class="flex justify-between items-center px-4 mx-auto max-w-screen-xl xl:px-0"
+      >
+        <div>
+          <a href="index.html" class="flex gap-3 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno Admin Dashboard"
+              class="w-8"
+            />
+            <p class="text-lg font-semibold">Uno Documentation</p>
+          </a>
+        </div>
+
+        <button id="burger" class="lg:hidden">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!--  SIDEBAR FOR MOBILE SCREEN -->
+    <aside
+      id="sidebar"
+      class="p-6 fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-[1111] shadow-lg lg:hidden"
+    >
+      <button id="closeSidebar" class="absolute right-4 top-5">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <a href="index.html" class="flex gap-2 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno-logo"
+              class="w-4"
+            />
+            <p class="font-semibold truncate text-md">Uno</p>
+          </a>
+        </div>
+
+        <ul class="py-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div
+      id="overlay"
+      class="hidden absolute top-0 left-0 z-20 w-full h-full bg-black opacity-20 lg:hidden"
+    ></div>
+
+    <main class="mx-auto max-w-screen-xl top-22">
+      <!-- SIDEBAR FOR LARGE SCREEN -->
+      <aside class="fixed h-screen w-[260px] hidden lg:block lg:pl-4 xl:pl-0">
+        <ul class="py-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN PAGE CONTENT -->
+      <div
+        class="bg-white divide-y space-y-10 py-8 px-4 sm:px-8 2xl:px-16 lg:ml-[260px]"
+      >
+        <p class="font-medium">Utils Function</p>
+
+        <!-- CURRENCY -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Currency Format</h5>
+
+          <div class="pt-4">
+            <p class="pb-3 font-semibold">currency.ts</p>
+
+            <pre><code class="rounded-md">export function currency(amount: number, fraction = 2, currencyCode = "USD") {
+  return new Intl.NumberFormat(undefined, {
+    style: "currency",
+    currency: currencyCode,
+    currencyDisplay: "narrowSymbol",
+    maximumFractionDigits: fraction,
+  }).format(amount);
+}
+
+export function formatK(amount: number, fraction = 1, currencyCode = "USD") {
+  return new Intl.NumberFormat(undefined, {
+    style: "currency",
+    notation: "compact",
+    compactDisplay: "short",
+    currency: currencyCode,
+    maximumFractionDigits: fraction,
+  }).format(amount);
+}
+
+</code></pre>
+          </div>
+        </div>
+
+        <!-- DATE FORMAT -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Date Format</h5>
+
+          <div class="pt-4">
+            <p class="pb-3 font-semibold">dateFormat.ts</p>
+
+            <pre><code class="rounded-md">import { useDateFormat } from "@vueuse/core";
+
+export function dateFormat(date: Date | string, formatString = "DD MMM YYYY") {
+  const formatted = useDateFormat(new Date(date), formatString);
+  return formatted.value;
+}</code></pre>
+          </div>
+        </div>
+
+        <!-- PHONE NUMBER FORMAT FORMAT -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Phone Number Format</h5>
+
+          <div class="pt-4">
+            <p class="pb-3 font-semibold">libPhoneNumber.ts</p>
+
+            <pre><code class="rounded-md">import { CountryCode, parsePhoneNumberFromString } from "libphonenumber-js";
+
+export function formatPhoneNumber(number: string, country: CountryCode = "US") {
+  const phoneNumber = parsePhoneNumberFromString(number, country);
+  if (phoneNumber) return phoneNumber.formatInternational();
+  return null;
+}
+</code></pre>
+          </div>
+        </div>
+
+        <!-- CSS MERGER & PRIORITIES  -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">CSS Merger & Priorities Function</h5>
+
+          <div class="pt-4">
+            <p class="pb-3 font-semibold">utils.ts</p>
+
+            <pre><code class="rounded-md">import type { Ref } from "vue";
+import type { Updater } from "@tanstack/vue-table";
+
+import { type ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  return twMerge(clsx(inputs));
+}
+
+export function valueUpdater<T extends Updater<any>>(
+  updaterOrValue: T,
+  ref: Ref
+) {
+  ref.value =
+    typeof updaterOrValue === "function"
+      ? updaterOrValue(ref.value)
+      : updaterOrValue;
+}
+
+</code></pre>
+          </div>
+        </div>
+
+        <!-- FOOTER NAVIGATION -->
+        <div class="grid grid-cols-2 gap-6 py-10">
+          <div>
+            <a href="data-fetching.html">
+              <div
+                class="px-4 py-3 rounded-lg border transition-all duration-300 text-start hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Previous page</p>
+                <p class="text-sm font-medium text-primary-darker">
+                  Data Fetching
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="dependencies.html">
+              <div
+                class="px-4 py-3 rounded border transition-all duration-300 text-end hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Next page</p>
+                <p class="text-sm font-medium text-primary-darker">Dependencies</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ALL THE SCRIPTS -->
+    <script src="./assets/js/lucide.min.js"></script>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

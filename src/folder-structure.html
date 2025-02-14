@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uno is a Nuxt 3 Admin & Client Dashboard Template designed for modern web applications. Discover its sleek design, responsive layout, and advanced features that streamline your workflow."
+    />
+    <meta
+      name="keywords"
+      content="Nuxt 3, Admin Dashboard, Client Dashboard, Dashboard Template, Responsive Design, Modern Web Applications, Vue.js, Web App UI, Admin UI, Client Management, UI Kit, Admin Template, Web Development, Uno Dashboard."
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Uno Documentation</title>
+    <!-- CSS FILE -->
+    <link href="./assets/css/atom-one-dark.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="relative">
+    <!-- HEADER SECTION -->
+    <header class="bg-white sticky top-0 z-[12] py-5 border-b border-border">
+      <div
+        class="flex justify-between items-center px-4 mx-auto max-w-screen-xl xl:px-0"
+      >
+        <div>
+          <a href="index.html" class="flex gap-3 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno Admin Dashboard"
+              class="w-8"
+            />
+            <p class="text-lg font-semibold">Uno Documentation</p>
+          </a>
+        </div>
+
+        <button id="burger" class="lg:hidden">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!--  SIDEBAR FOR MOBILE DEVICE -->
+    <aside
+      id="sidebar"
+      class="p-6 fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-[1111] shadow-lg lg:hidden"
+    >
+      <button id="closeSidebar" class="absolute right-4 top-5">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <a href="index.html" class="flex gap-2 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno-logo"
+              class="w-4"
+            />
+            <p class="font-semibold truncate text-md">Uno</p>
+          </a>
+        </div>
+
+        <ul class="pt-3 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div
+      id="overlay"
+      class="hidden absolute top-0 left-0 z-20 w-full h-full bg-black opacity-20 lg:hidden"
+    ></div>
+
+    <main class="mx-auto max-w-screen-xl top-22">
+      <!-- SIDEBAR FOR LARGE SCREEN -->
+      <aside class="fixed h-screen w-[260px] hidden lg:block lg:pl-4 xl:pl-0">
+        <ul class="py-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN PAGE CONTENT -->
+      <div
+        class="bg-white divide-y space-y-10 py-8 px-4 sm:px-8 2xl:px-16 lg:ml-[260px]"
+      >
+        <p class="font-medium">Folder Structure</p>
+
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Folder structure</h5>
+          <p class="italic text-muted">
+            Finding what you need is made simpler by a clear and simple folder
+            structure. The folder structure can be found in the directory
+            Uno-dashboard
+          </p>
+
+          <ul class="ml-5 space-y-6 list-disc list-outside">
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >assets/</span
+              >: Stores all static assets like images (JPGs, PNGs, SVGs), fonts,
+              and CSS files. These are processed and optimized by Vite during
+              the build process in Nuxt.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >components/</span
+              >: Contains reusable UI components, including those from ShadCN
+              along with custom components designed for the template.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >composables/</span
+              >: Holds global composables like (e.g., useApexChartOptions) for
+              reusable logic throughout the app.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >layout/</span
+              >: Contains the default layout as well as additional layouts used
+              for different pages and sections across the application, providing
+              flexibility in the overall site structure.
+            </li>
+
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >lib/</span
+              >: Stores utility functions and helper methods used across the
+              application for better maintainability.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >pages/</span
+              >: Includes all the pages of the application, each representing a
+              distinct view or route.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >plugins/</span
+              >: Contains any external or custom plugins integrated into the
+              application, enhancing functionality.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >public/</span
+              >: Stores publicly accessible static files like images, icons, and
+              documents that don’t require processing.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >sections/</span
+              >: Holds sections for different pages (e.g., course, analytics
+              etc). Sections include pre-built components and hooks specific to
+              the page's functionality.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >server/</span
+              >: Contains mock APIs and mock data for users, products, and
+              invoices. It is used for local development and testing purposes,
+              helping to simulate server-side data interactions in Nuxt 3.
+            </li>
+
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >stores/</span
+              >: Stores global state management using Pinia, for managing
+              app-wide data and states.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >types/</span
+              >: Contains TypeScript type definitions for better type safety
+              throughout the project.
+            </li>
+            <li>
+              <span
+                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
+                >utils/</span
+              >: Stores helper functions that provide reusable logic and
+              utilities for various tasks throughout the project.
+            </li>
+          </ul>
+
+          <div class="pt-4">
+            <pre><code class="rounded-md language-markdown">Uno-admin-dashboard
+├─ assets
+|  └─ css
+|     └─ tailwind.css
+│
+├─ components
+│  ├─ dataTable
+│  │  ├─ DataTable.vue
+│  │  ├─ DataTableActions.vue
+│  │  ├─ DataTablePagination.vue
+│  │  ├─ TextFieldSkeleton.vue
+│  │  └─ useTable.ts
+│  ├─ form
+│  │  ├─ SelectField.vue
+│  │  ├─ TextareaField.vue
+│  │  ├─ TextField.vue
+│  │  └─ TextFieldSkeleton.vue
+│  ├─ ui
+│  │  ├─ accordion
+│  │  |  ├─ Accordion.vue
+│  │  |  ├─ AccordionContent.vue
+│  │  |  ├─ AccordionItem.vue
+│  │  |  └─ AccordionTrigger.vue
+│  │  ├─ alert
+│  │  |  ├─ Alert.vue
+│  │  |  ├─ AlertDescription.vue
+│  │  |  ├─ AlertTitle.vue
+│  │  |  └─ index.ts
+│  │  └─ few more folders..
+│  ├─ AvatarGroup.vue
+│  ├─ CustomBreadcrumb.vue
+│  ├─ DataNotFound.vue
+│  ├─ Footer.vue
+│  ├─ Icon.vue
+│  ├─ Rating.vue
+│  └─ SearchInput.vue
+│
+├─ composables
+│  └─ useApexChartOptions.ts
+│
+├─ data
+│  ├─ dashboards
+│  │  ├─ analytics.ts
+│  │  ├─ career.ts
+│  │  ├─ course.ts
+│  │  ├─ finance.ts
+│  │  └─ sales.ts
+│  ├─ few more folders..
+│  ├─ notifications.ts
+│  ├─ navigation.ts
+│
+├─ layout
+│  ├─ auth
+│  |  └─ accountsetting.vue
+│  ├─ default
+│  │  ├─ header
+│  │  |  ├─ popovers
+│  │  |  └─ Header.vue
+│  │  ├─ sidebar
+│  │  |  ├─ NavAccordion.vue
+│  │  |  └─ SidebarNavigation.vue
+│  │  ├─ index.vue
+│  │  └─ MobileSidebar.vue
+│  ├─ settings-layout.vue
+│  └─ support-layout.vue
+│
+├─ lib
+│  ├─ currency.ts
+│  ├─ dateFormat.ts
+│  ├─ libPhoneNumber.ts
+│  └─ utils.ts
+│
+├─ pages
+│  ├─ (dashboard)
+│  │  ├─ analytics.vue
+│  │  ├─ career.vue
+│  │  ├─ course.vue
+│  │  ├─ finance.vue
+│  │  └─ sales.vue
+│  ├─ (home)
+│  │  └─ index.vue
+│  ├─ (sessions)
+│  │  ├─ forget-password.vue
+│  │  ├─ login.vue
+│  │  ├─ maintenance.vue
+│  │  ├─ not-found.vue
+│  │  ├─ register.vue
+│  │  ├─ server-error.vue
+│  │  └─ verification.vue
+│  ├─ invoices
+│  │  ├─ [invoiceId]
+│  │  │  ├─ details.vue
+│  │  │  ├─ index.vue
+│  │  │  └─ invoicesColumn.ts
+│  │  ├─ create.vue
+│  │  └─ index.vue
+│  ├─ orders
+│  │  ├─ [orderId].vue
+│  │  └─ index.vue
+│  ├─ products
+│  │  ├─ [productId]
+│  │  │  ├─ index.vue
+│  │  │  └─ overview.vue
+│  │  ├─ create.vue
+│  │  ├─ index.vue
+│  │  └─ ProductsColumns.ts
+│  ├─ settings
+│  │  └─ some more files...
+│  ├─ support
+│  │  └─ some more files...
+│  └─ users
+│     └─ some more files...
+│
+├─ plugins
+│  ├─ error.handler.ts
+│  └─ router-error-bandler.ts
+│
+├─ public
+|  ├─ images
+|  ├─ logos
+|  └─ favicon.svg
+│
+├─ sections
+│  ├─ analytics
+│  │  └─ some more files..
+│  ├─ career
+│  │  └─ some more files..
+│  ├─ course
+│  │  └─ some more files..
+│  ├─ finance
+│  │  └─ some more files..
+│  ├─ invoices
+│  │  └─ some more files..
+│  ├─ orders
+│  │  └─ some more files..
+│  ├─ products
+│  │  └─ some more files..
+│  ├─ profile
+│  │  └─ some more files..
+│  ├─ sales
+│  │  └─ some more files..
+│  ├─ settings
+│  │  └─ some more files..
+│  ├─ support
+│  │  └─ some more files..
+│  └─ users
+|     └─ some more files..
+│
+├─ server
+│  ├─ api
+│  │  ├─ invoices
+│  │  │  ├─ [id]
+│  │  │  │  ├─ index.delete.ts
+│  │  │  │  ├─ index.get.ts
+│  │  │  │  └─ index.put.ts
+│  │  │  └─ index.get.ts
+│  │  │  └─ index.post.ts
+│  │  ├─ orders
+│  │  │  └─ some more files..
+│  │  ├─ products
+│  │  │  └─ some more files..
+│  │  ├─ users
+│  │  │  └─ some more files..
+│  ├─ data
+│  │  ├─ invoices.js
+│  │  └─ some more files..
+│  └─ some more files..
+|  
+├─ stores
+│  └─ sidebar.ts
+│
+├─ types
+│  ├─ Invoice.ts
+│  ├─ Meta.ts
+│  ├─ Order.ts
+│  ├─ Post.ts
+│  ├─ Product.ts
+│  ├─ Status.ts
+│  └─ User.ts
+|
+├─ .gitignore
+├─ app.config.ts
+├─ components.json
+├─ error.vue
+├─ eslint.config.mjs
+├─ nuxt.config.ts
+├─ package-lock.json
+├─ package.json
+├─ README.md
+└─ tsconfig.json</code></pre>
+          </div>
+        </div>
+
+        <!-- FOOTER NAVIGATION -->
+        <div class="grid grid-cols-2 gap-6 py-10">
+          <div>
+            <a href="index.html">
+              <div
+                class="px-4 py-3 rounded-lg border transition-all duration-300 text-start hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Previous page</p>
+                <p class="text-sm font-medium text-primary-darker">
+                  Quick Start
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="layout.html">
+              <div
+                class="px-4 py-3 rounded-lg border transition-all duration-300 text-end hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Next page</p>
+                <p class="text-sm font-medium text-primary-darker">Layout</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ALL THE SCRIPTS -->
+    <script src="./assets/js/lucide.min.js"></script>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

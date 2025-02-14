@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uno is a Nuxt 3 Admin Dashboard Template built for modern web applications. With a sleek design, fully responsive layout, and powerful features, Uno simplifies admin panel development, offering seamless performance and customization for any project."
+    />
+    <meta
+      name="keywords"
+      content="Nuxt 3 Admin Dashboard, SSR (Server-Side Rendering) Admin Template, CSR (Client-Side Rendering) Dashboard, DSR (Dynamic Server Rendering) Admin Panel, Nuxt 3 Dashboard Template, Responsive Admin UI, Vue.js Dashboard, Modern Admin Template, Web App Dashboard, Client Management UI, Tailwind CSS Admin, Nuxt 3 UI Kit, Admin Panel UI, Scalable Dashboard, SSR Optimized Admin Template, CSR Optimized Dashboard, Web Development, Uno Admin Template."
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Uno Documentation</title>
+    <!-- CSS FILE -->
+    <link href="./assets/css/atom-one-dark.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+
+  <body class="relative">
+    <!-- HEADER SECTION -->
+    <header class="bg-white sticky top-0 z-[12] py-5 border-b border-border">
+      <div
+        class="flex justify-between items-center px-4 mx-auto max-w-screen-xl xl:px-0"
+      >
+        <div>
+          <a href="index.html" class="flex gap-3 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno Admin Dashboard"
+              class="w-8"
+            />
+            <p class="text-lg font-semibold">Uno Documentation</p>
+          </a>
+        </div>
+
+        <button id="burger" class="lg:hidden">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!-- SIDEBAR FOR MOBILE SCREEN -->
+    <aside
+      id="sidebar"
+      class="p-6 fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-[1111] shadow-lg lg:hidden"
+    >
+      <button id="closeSidebar" class="absolute right-4 top-5">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <a href="index.html" class="flex gap-2 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno-logo"
+              class="w-4"
+            />
+            <p class="font-semibold truncate text-md">Uno</p>
+          </a>
+        </div>
+
+        <ul class="pt-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div
+      id="overlay"
+      class="hidden absolute top-0 left-0 z-20 w-full h-full bg-black opacity-20 lg:hidden"
+    ></div>
+
+    <main class="mx-auto max-w-screen-xl top-22">
+      <!-- SIDEBAR FOR LARGE SCREEN -->
+      <aside class="fixed h-screen w-[260px] hidden lg:block lg:pl-4 xl:pl-0">
+        <ul class="py-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN PAGE CONTENT -->
+      <div
+        class="bg-white divide-y space-y-10 py-8 px-4 sm:px-8 2xl:px-16 lg:ml-[260px]"
+      >
+        <p class="font-medium">Quick Start</p>
+
+        <!-- INTRODUCTION -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">
+            Uno - Nuxt Admin Dashboard Template
+          </h5>
+          <p class="italic text-muted">
+            Uno is a fully professional, minimal design admin dashboard template
+            built with Nuxt 3. It features a comprehensive set of pages,
+            components, and ready-to-use applications, leveraging the power of
+            SSR (Server-Side Rendering) and CSR (Client-Side Rendering) for
+            optimal performance. With its responsive layout and advanced
+            features, Uno provides everything you need to kickstart your web
+            application development with Nuxt 3, making it the perfect choice
+            for modern web applications.
+          </p>
+        </div>
+
+        <!-- KEY FEATURES -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Key Features</h5>
+          <ul class="ml-5 space-y-3 list-disc list-outside">
+            <li>
+              <b class="font-semibold">Extensive Pages and Components: </b>Uno
+              offers a wide range of pre-designed pages and components, fully
+              optimized for Nuxt 3, enabling rapid development and seamless
+              integration into your admin dashboard.
+            </li>
+            <li>
+              <b class="font-semibold"> Ready-to-Use Applications: </b>Included
+              with Uno are various fully-functional, ready-to-use applications,
+              tailored to enhance productivity and speed up the development
+              cycle for your admin dashboard.
+            </li>
+            <li>
+              <b class="font-semibold">Optimized for Nuxt 3: </b> Each page and
+              component is built with Nuxt 3 best practices, leveraging SSR
+              (Server-Side Rendering) and CSR (Client-Side Rendering) for
+              exceptional performance, ensuring your web application is both
+              fast and scalable.
+            </li>
+            <li>
+              <b class="font-semibold">Responsive and Mobile-Friendly: </b> Uno
+              is fully responsive, providing a consistent user experience across
+              desktop, tablet, and mobile devices, making it ideal for modern,
+              cross-platform web applications.
+            </li>
+            <li>
+              <b class="font-semibold"> Customizable and Scalable: </b>With a
+              flexible structure and modern design, Uno can be easily customized
+              to match your unique branding, ensuring your dashboard grows
+              alongside your application needs.
+            </li>
+            <li>
+              <b class="font-semibold"> Integrated Developer Tools:</b> Uno
+              integrates seamlessly with Nuxt 3 development tools and ecosystem,
+              offering a streamlined setup with powerful features to support
+              your development process.
+            </li>
+          </ul>
+        </div>
+
+        <!-- REQUIREMENTS -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Requirements</h5>
+
+          <p>
+            Make sure that you have the last stable
+            <a
+              href="https://nodejs.org/en/download/package-manager"
+              class="text-primary visited:text-purple-600 hover:underline"
+            >
+              Node.js
+            </a>
+            and npm version.
+          </p>
+
+          <ul class="ml-5 space-y-3 list-disc list-outside">
+            <li>
+              Do not delete the
+              <span class="px-2 py-1 rounded bg-slate-200 text-primary-darker">
+                package-lock.json / yarn.lock
+              </span>
+              file
+            </li>
+          </ul>
+        </div>
+
+        <!-- INSTALL -->
+        <div>
+          <h5 class="mt-7 font-semibold">Install</h5>
+          <p class="mb-6">
+            Navigate to the project root folder using the terminal and install
+            the dependencies
+          </p>
+
+          <pre><code class="rounded-md language-bash">npm install</code></pre>
+          <p class="py-2">or</p>
+          <pre><code class="rounded-md language-bash">yarn install</code></pre>
+        </div>
+
+        <!-- START -->
+        <div>
+          <h5 class="mt-7 font-semibold">Start</h5>
+          <p class="mb-6">
+            After the installation is complete, you can launch your app by
+            running:
+          </p>
+
+          <pre><code class="rounded-md language-bash">npm run dev</code></pre>
+          <p class="py-2">or</p>
+          <pre><code class="rounded-md language-bash">yarn dev</code></pre>
+        </div>
+
+        <!-- BUILD -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Build</h5>
+
+          <pre><code class="rounded-md language-bash">npm run build</code></pre>
+          <p class="py-2">or</p>
+          <pre><code class="rounded-md language-bash">yarn build</code></pre>
+        </div>
+
+        <!-- FOOTER NAVIGATION -->
+        <div class="flex justify-end py-10">
+          <a href="folder-structure.html">
+            <div
+              class="px-4 py-3 w-60 rounded-lg border transition-all duration-300 lg:w-80 text-end hover:border-primary"
+            >
+              <p class="mb-1 text-xs text-muted">Next page</p>
+              <p class="text-sm font-medium text-primary-darker">
+                Folder Structure
+              </p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <!-- ALL THE SCRIPTS -->
+    <script src="./assets/js/lucide.min.js"></script>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

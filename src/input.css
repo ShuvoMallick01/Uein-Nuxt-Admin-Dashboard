@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* == START == */
+@layer base {
+  :root {
+    --foreground: #011e3d;
+    --background: #f5f8fa;
+
+    --card: #ffffff;
+    --card-foreground: #011e3d;
+
+    --hover: #e5f3fd;
+    --active: #e5eef5;
+    --border: #e5e7eb;
+
+    --muted: #738499;
+
+    --radius: 0.5rem;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+  }
+
+  body {
+    color: var(--foreground);
+    background-color: var(--background);
+  }
+
+  h1 {
+    font-size: 4rem;
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  h3 {
+    font-size: 1.75rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
+  }
+
+  h5 {
+    font-size: 1.125rem;
+  }
+
+  h6 {
+    font-size: 0.875rem;
+  }
+}
+
+/* MENU */

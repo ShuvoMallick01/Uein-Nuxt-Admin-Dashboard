@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uno is a Nuxt 3 Admin & Client Dashboard Template designed for modern web applications. Discover its sleek design, responsive layout, and advanced features that streamline your workflow."
+    />
+    <meta
+      name="keywords"
+      content="Nuxt 3, Admin Dashboard, Client Dashboard, Dashboard Template, Responsive Design, Modern Web Applications, Vue.js, Web App UI, Admin UI, Client Management, UI Kit, Admin Template, Web Development, Uno Dashboard."
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Uno Documentation</title>
+    <!-- CSS FILE -->
+    <link href="./assets/css/atom-one-dark.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="relative">
+    <!-- HEADER SECTION -->
+    <header class="bg-white sticky top-0 z-[12] py-5 border-b border-border">
+      <div
+        class="flex justify-between items-center px-4 mx-auto max-w-screen-xl xl:px-0"
+      >
+        <div>
+          <a href="index.html" class="flex gap-3 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno Admin Dashboard"
+              class="w-8"
+            />
+            <p class="text-lg font-semibold">Uno Documentation</p>
+          </a>
+        </div>
+
+        <button id="burger" class="lg:hidden">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!--  SIDEBAR FOR MOBILE SCREEN -->
+    <aside
+      id="sidebar"
+      class="p-6 fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-[1111] shadow-lg lg:hidden"
+    >
+      <button id="closeSidebar" class="absolute right-4 top-5">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <a href="index.html" class="flex gap-2 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno-logo"
+              class="w-4"
+            />
+            <p class="font-semibold truncate text-md">Uno</p>
+          </a>
+        </div>
+
+        <ul class="pt-3 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div
+      id="overlay"
+      class="hidden absolute top-0 left-0 z-20 w-full h-full bg-black opacity-20 lg:hidden"
+    ></div>
+
+    <main class="mx-auto max-w-screen-xl top-22">
+      <!-- SIDEBAR FOR LARGE SCREEN -->
+      <aside class="fixed h-screen w-[260px] hidden lg:block lg:pl-4 xl:pl-0">
+        <ul class="py-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN PAGE CONTENT -->
+      <div
+        class="bg-white divide-y space-y-10 py-8 px-4 sm:px-8 2xl:px-16 lg:ml-[260px]"
+      >
+        <p class="font-medium">Composables Functions</p>
+
+        <!-- CURRENCY -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Aplex Chart Options</h5>
+
+          <div class="pt-4">
+            <p class="pb-3 font-semibold">useApexChartOptions.ts</p>
+
+            <pre><code class="rounded-md">import { onMounted, ref, watch } from "vue";
+import { useDark } from "@vueuse/core";
+import merge from "lodash/merge";
+import type { ApexOptions } from "apexcharts";
+
+// DEFAULT & COMMON APEX CHART OPTIONS
+const baseOptions = {
+  theme: { mode: "light" },
+  dataLabels: { enabled: false },
+  grid: {
+    show: false,
+    strokeDashArray: 3,
+    borderColor: "#f3f4f6",
+  },
+  chart: {
+    foreColor: "#1f2937",
+    toolbar: { show: false },
+    zoom: { enabled: false },
+    background: "rgba(0, 0, 0, 0)",
+    fontFamily: "Inter, sans-serif",
+  },
+  states: {
+    active: { filter: { type: "none" } },
+    hover: { filter: { type: "none" } },
+  },
+  xaxis: {
+    axisBorder: { show: false },
+    axisTicks: { show: false },
+  },
+  markers: { strokeWidth: 5 },
+  plotOptions: {
+    radialBar: {
+      track: { background: "#f3f4f6" },
+    },
+  },
+};
+
+const DARK_FORE_COLOR = "#fff";
+const DARK_STROKE_COLOR = "#111827";
+const DARK_BORDER_COLOR = "#262b4260";
+const DARK_CROSS_HAIRS_COLOR = "#262b42";
+
+export const useApexChartOptions = (options: ApexOptions = {}) => {
+  const isDark = useDark();
+  const chartOptions = ref<ApexOptions>(merge({}, baseOptions, options));
+
+  // const getCurrentColor = (cssVar: string) => {
+  //   return getComputedStyle(document.documentElement).getPropertyValue(cssVar);
+  // };
+
+  const updateColors = () => {
+    chartOptions.value = {
+      ...chartOptions.value,
+      theme: {
+        ...chartOptions.value.theme,
+        mode: "dark",
+      },
+      chart: {
+        ...chartOptions.value.chart,
+        foreColor: DARK_FORE_COLOR,
+      },
+      grid: {
+        ...chartOptions.value.grid,
+        borderColor: DARK_BORDER_COLOR,
+      },
+      markers: {
+        ...chartOptions.value.markers,
+        strokeColors: DARK_STROKE_COLOR,
+      },
+      xaxis: {
+        ...chartOptions.value.xaxis,
+        crosshairs: {
+          ...chartOptions.value.xaxis?.crosshairs,
+          stroke: {
+            ...chartOptions.value.xaxis?.crosshairs?.stroke,
+            color: DARK_CROSS_HAIRS_COLOR,
+          },
+        },
+      },
+
+      // UPDATE RADIAL BAR TRACK COLOR
+      plotOptions: {
+        ...chartOptions.value.plotOptions,
+        radialBar: {
+          ...chartOptions.value.plotOptions?.radialBar,
+          track: {
+            ...chartOptions.value.plotOptions?.radialBar?.track,
+            background: DARK_BORDER_COLOR,
+          },
+        },
+      },
+    };
+  };
+
+  onMounted(() => {
+    if (isDark.value) {
+      updateColors();
+    }
+  });
+
+  watch(
+    isDark,
+    (newValue) => {
+      if (newValue) {
+        updateColors();
+      } else {
+        chartOptions.value = merge({}, baseOptions, options);
+      }
+    },
+    { immediate: true }
+  );
+
+  return chartOptions;
+};</code></pre>
+          </div>
+        </div>
+
+        <!-- FOOTER NAVIGATION -->
+        <div class="grid grid-cols-2 gap-6 py-10">
+          <div>
+            <a href="data-fetching.html">
+              <div
+                class="px-4 py-3 rounded-lg border transition-all duration-300 text-start hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Previous page</p>
+                <p class="text-sm font-medium text-primary-darker">
+                  Data Fetching
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="dependencies.html">
+              <div
+                class="px-4 py-3 rounded border transition-all duration-300 text-end hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Next page</p>
+                <p class="text-sm font-medium text-primary-darker">Dependencies</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ALL THE SCRIPTS -->
+    <script src="./assets/js/lucide.min.js"></script>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>

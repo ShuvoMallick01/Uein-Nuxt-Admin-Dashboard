@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Uno is a Nuxt 3 Admin & Client Dashboard Template designed for modern web applications. Discover its sleek design, responsive layout, and advanced features that streamline your workflow."
+    />
+    <meta
+      name="keywords"
+      content="Nuxt 3, Admin Dashboard, Client Dashboard, Dashboard Template, Responsive Design, Modern Web Applications, Vue.js, Web App UI, Admin UI, Client Management, UI Kit, Admin Template, Web Development, Uno Dashboard."
+    />
+    <link
+      rel="shortcut icon"
+      href="./assets/images/favicon.png"
+      type="image/x-icon"
+    />
+    <title>Uno Documentation</title>
+    <!-- CSS FILE -->
+    <link href="./assets/css/atom-one-dark.css" rel="stylesheet" />
+    <link href="./assets/css/style.css" rel="stylesheet" />
+  </head>
+  <body class="relative">
+    <!-- HEADER SECTION -->
+    <header class="bg-white sticky top-0 z-[12] py-5 border-b border-border">
+      <div
+        class="flex justify-between items-center px-4 mx-auto max-w-screen-xl xl:px-0"
+      >
+        <div>
+          <a href="index.html" class="flex gap-3 items-center">
+            <img
+              src="./assets/images/uno-logo_icon.svg"
+              alt="Uno Admin Dashboard"
+              class="w-8"
+            />
+            <p class="text-lg font-semibold">Uno Documentation</p>
+          </a>
+        </div>
+
+        <button id="burger" class="lg:hidden">
+          <i data-lucide="menu"></i>
+        </button>
+      </div>
+    </header>
+
+    <!--  SIDEBAR FOR MOBILE SCREEN -->
+    <aside
+      id="sidebar"
+      class="p-6 fixed inset-y-0 left-0 w-64 bg-white transform -translate-x-full lg:translate-x-0 transition-transform duration-300 z-[1111] shadow-lg lg:hidden"
+    >
+      <button id="closeSidebar" class="absolute right-4 top-5">
+        <i data-lucide="x" class="w-4 h-4"></i>
+      </button>
+
+      <div class="space-y-5">
+        <div>
+          <a href="index.html" class="flex gap-2 items-center">
+            <img
+              src="./assets/images/Uno-logo_icon.svg"
+              alt="Uno-logo"
+              class="w-4"
+            />
+            <p class="font-semibold truncate text-md">Uno</p>
+          </a>
+        </div>
+
+        <ul class="pt-3 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- SIDEBAR OVERLAY -->
+    <div
+      id="overlay"
+      class="hidden absolute top-0 left-0 z-20 w-full h-full bg-black opacity-20 lg:hidden"
+    ></div>
+
+    <main class="mx-auto max-w-screen-xl top-22">
+      <!-- SIDEBAR FOR LARGE SCREEN -->
+      <aside class="fixed h-screen w-[260px] hidden lg:block lg:pl-4 xl:pl-0">
+        <ul class="py-5 space-y-4">
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="index.html">Quick Start</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="folder-structure.html">Folder Structure</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer text-primary"
+          >
+            <a href="layout.html">Layout</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="composables.html">Composables</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="server.html">Server</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="utils-functions.html">Utils Functions</a>
+          </li>
+          <li
+            class="text-sm font-medium transition-all duration-300 ease-in-out cursor-pointer hover:text-primary"
+          >
+            <a href="dependencies.html">Dependencies</a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- MAIN PAGE CONTENT -->
+      <div
+        class="bg-white divide-y space-y-10 py-8 px-4 sm:px-8 2xl:px-16 lg:ml-[260px]"
+      >
+        <h5 class="font-medium">Layout</h5>
+
+        <!-- LAYOUT -->
+        <div>
+          <h5 class="mt-7 font-semibold">
+            Default Layout + Two Additional Layout
+          </h5>
+          <p class="text-base text-muted">
+            Understand folder structure of template and what everything contains
+          </p>
+
+          <div class="pt-4">
+            <pre><code class="rounded-md language-markdown">project
+└─ layout
+   ├─ auth
+   |  └─ accountsetting.vue
+   ├─ default
+   │  ├─ header
+   │  |  ├─ popovers
+   │  |  └─ Header.vue
+   │  ├─ sidebar
+   │  |  ├─ NavAccordion.vue
+   │  |  └─ SidebarNavigation.vue
+   │  ├─ index.vue
+   │  └─ MobileSidebar.vue
+   ├─ settings-layout.vue
+   └─ support-layout.vue</code></pre>
+          </div>
+
+          <div class="pt-4">
+            <p class="mb-4 text-base font-semibold">Default Layout Code</p>
+
+            <pre><code class="rounded-md">&lt;script setup lang="ts"&gt;
+import Header from "./header/Header.vue";
+import MobileSidebar from "./MobileSidebar.vue";
+import SidebarNavigation from "./sidebar/SidebarNavigation.vue";
+
+const route = useRoute();
+
+useHead({
+  title: () => {
+    // Get the title from route.meta.title, fallback to "Nuxt 3 Admin Dashboard"
+    return route.meta.title
+      ? `${route.meta.title} - Nuxt 3 Admin Dashboard`
+      : "Nuxt 3 Admin Dashboard";
+  },
+});
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;aside
+      class="fixed h-screen left-0 top-0 w-[260px] 2xl:w-[280px] z-40 hidden border-e border-e-border lg:block bg-card rtl:right-0 rtl:left-auto"&gt;
+      &lt;SidebarNavigation /&gt;
+    &lt;/aside&gt;
+
+    &lt;main class="h-full lg:ml-[260px] 2xl:ml-[280px] rtl:lg:mr-[260px] rtl:2xl:mr-[280px] rtl:ml-auto"&gt;
+      &lt;Header&gt;&lt;/Header&gt;
+      &lt;MobileSidebar /&gt;
+
+      &lt;div class="px-4 mx-auto max-w-screen-2xl sm:px-7 2xl:px-20"&gt;
+        &lt;slot /&gt;
+      &lt;/div&gt;
+    &lt;/main&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+          </div>
+        </div>
+
+        <!-- SIDEBAR NAVIGATION -->
+        <div class="space-y-3">
+          <h5 class="mt-7 font-semibold">Sidebar Navigation Structure</h5>
+          <p>
+            You can find the navigation file from
+            <span class="px-2 py-1 rounded bg-slate-200 text-primary-darker"
+              >/data/navigation.ts</span
+            >
+          </p>
+
+          <!-- Code -->
+          <div class="pt-4 space-y-3">
+            <p class="font-semibold">navigation.ts</p>
+            <pre><code class="rounded-md">export const navigation = [
+   {
+    id: 1,
+    menu: [
+      {
+        label: "Dashboard",
+        route: "/dashboard",
+        icon: "cuida:dashboard-outline",
+        children: [
+          { label: "Course", route: "/course" },
+          { label: "Analytics", route: "/analytics" },
+          { label: "Finance", route: "/finance" },
+          { label: "Career", route: "/career" },
+          { label: "Sales", route: "/sales" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 2,
+    name: "Management",
+    menu: [
+      {
+        label: "Users",
+        route: "/users",
+        icon: "cuida:users-outline",
+        children: [
+          { label: "List", route: "/users" },
+          { label: "Edit", route: "/users/2" },
+          { label: "Create", route: "/users/create" },
+          { label: "Profile", route: "/users/user-profile" },
+        ],
+      },
+      {
+        label: "Products",
+        route: "/products",
+        icon: "cuida:box-outline",
+        children: [
+          { label: "List", route: "/products" },
+          { label: "Edit", route: "/products/1" },
+          { label: "Create", route: "/products/create" },
+          { label: "Details", route: "/products/1/overview" },
+        ],
+      },
+      {
+        label: "Orders",
+        route: "/orders",
+        icon: "solar:cart-4-outline",
+        children: [
+          { label: "List", route: "/orders" },
+          { label: "Details", route: "/orders/1" },
+        ],
+      },
+      {
+        label: "Invoices",
+        route: "/invoices",
+        icon: "nimbus:invoice",
+        children: [
+          { label: "List", route: "/invoices" },
+          { label: "Edit", route: "/invoices/INV-002" },
+          { label: "Create", route: "/invoices/create" },
+          { label: "Details", route: "/invoices/INV-002/details" },
+        ],
+      },
+    ],
+  },
+  {
+    id: 3,
+    name: "Others",
+    menu: [
+      {
+        label: "Account Settings",
+        route: "/settings",
+        icon: "mdi:account-cog-outline",
+        children: [
+          { label: "Profile Info", route: "/settings" },
+          { label: "Security", route: "/settings/security" },
+          { label: "Plan & Billing", route: "/settings/plan-billing" },
+          {
+            label: "Two Factor Authentication",
+            route: "/settings/two-factor-authentication",
+          },
+          { label: "Notification", route: "/settings/notification" },
+          {
+            label: "Social Media Links",
+            route: "/settings/social-media-links",
+          },
+          {
+            label: "Account Deactivation",
+            route: "/settings/account-deactivation",
+          },
+        ],
+      },
+      {
+        label: "Authentication",
+        route: "/sessions",
+        icon: "material-symbols:fingerprint",
+        children: [
+          { label: "Login", route: "/login" },
+          { label: "Register", route: "/register" },
+          { label: "Forget Password", route: "/forget-password" },
+          { label: "Verify Email", route: "/verification" },
+          { label: "Not Found", route: "/not-found" },
+          { label: "Server Error", route: "/server-error" },
+          { label: "Maintenance", route: "/maintenance" },
+        ],
+      },
+      {
+        label: "Support",
+        route: "/support",
+        icon: "ri:headphone-line",
+        children: [
+          { label: "Overview", route: "/support" },
+          { label: "Tickets", route: "/support/tickets" },
+          { label: "Create Ticket", route: "/support/create-ticket" },
+          { label: "FAQs", route: "/support/faqs" },
+          { label: "Contact", route: "/support/contact" },
+        ],
+      },
+    ],
+  },
+];</code></pre>
+          </div>
+        </div>
+
+        <!-- FOOTER NAVIGATION -->
+        <div class="grid grid-cols-2 gap-6 py-10">
+          <div>
+            <a href="folder-structure.html">
+              <div
+                class="px-4 py-3 rounded-lg border transition-all duration-300 text-start hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Previous page</p>
+                <p class="text-sm font-medium text-primary-darker">
+                  Folder Structure
+                </p>
+              </div>
+            </a>
+          </div>
+
+          <div>
+            <a href="server.html">
+              <div
+                class="px-4 py-3 rounded border transition-all duration-300 text-end hover:border-primary"
+              >
+                <p class="mb-1 text-xs text-muted">Next page</p>
+                <p class="text-sm font-medium text-primary-darker">Server</p>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <!-- ALL THE SCRIPTS -->
+    <script src="./assets/js/lucide.min.js"></script>
+    <script src="./assets/js/highlight.min.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
