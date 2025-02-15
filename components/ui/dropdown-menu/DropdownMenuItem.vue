@@ -5,7 +5,7 @@ import {
   type DropdownMenuItemProps,
   useForwardProps,
 } from "radix-vue";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 import { type OptionVariants, optionVariants } from ".";
 
 interface Props extends DropdownMenuItemProps {

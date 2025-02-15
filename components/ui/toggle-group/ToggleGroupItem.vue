@@ -7,7 +7,7 @@ import {
   useForwardProps,
 } from "radix-vue";
 import { toggleVariants } from "~/components/ui/toggle";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 type ToggleGroupVariants = VariantProps<typeof toggleVariants>;
 

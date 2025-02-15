@@ -9,11 +9,11 @@ import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
 
 // CUSTOM UTILS METHODS
-import { dateFormat } from "~/lib/dateFormat";
+import { dateFormat } from "~/utils/dateFormat";
 
 // TYPE
 import type { Product } from "~/types/Product";
-import { currency } from "~/lib/currency";
+import { currency } from "~/utils/currency";
 import { Progress } from "~/components/ui/progress";
 
 const sortingHeader = (name: string) => {

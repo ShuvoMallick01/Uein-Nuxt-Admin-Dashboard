@@ -10,7 +10,7 @@ import {
   useForwardPropsEmits,
 } from "radix-vue";
 import { X } from "lucide-vue-next";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const props = defineProps<
   DialogContentProps & { class?: HTMLAttributes["class"] }

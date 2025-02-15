@@ -3,8 +3,8 @@ import { computed } from "vue";
 import Scrollbar from "simplebar-vue";
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
-import { currency } from "~/lib/currency";
-import { dateFormat } from "~/lib/dateFormat";
+import { currency } from "~/utils/currency";
+import { dateFormat } from "~/utils/dateFormat";
 // TYPES
 import type { Invoice } from "~/types/Invoice";
 

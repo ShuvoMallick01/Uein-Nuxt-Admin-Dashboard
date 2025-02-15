@@ -3,7 +3,7 @@ import { ErrorMessage, useField } from "vee-validate";
 import { type FileRejectReason, useDropzone } from "vue3-dropzone";
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHOD
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const { value, errorMessage, setValue, setErrors } = useField<any>("images");
 

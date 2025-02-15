@@ -6,7 +6,7 @@ import {
   type MenubarRootProps,
   useForwardPropsEmits,
 } from "radix-vue";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const props = defineProps<
   MenubarRootProps & { class?: HTMLAttributes["class"] }

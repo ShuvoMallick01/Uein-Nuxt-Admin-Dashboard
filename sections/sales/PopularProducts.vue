@@ -3,7 +3,7 @@ import Scrollbar from "simplebar-vue";
 // SHADCN COMPONENTS
 import { Badge, type BadgeVariants } from "~/components/ui/badge";
 // CUSTOM UTILS METHOD
-import { currency } from "~/lib/currency";
+import { currency } from "~/utils/currency";
 // CUSTOM DATA
 import { popularProducts } from "~/data/dashboards/sales";
 

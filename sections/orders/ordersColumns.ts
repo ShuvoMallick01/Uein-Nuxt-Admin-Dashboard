@@ -9,8 +9,8 @@ import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 // CUSTOM COMPONENTS
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
 // CUSTOM UTILS METHODS
-import { dateFormat } from "~/lib/dateFormat";
-import { currency } from "~/lib/currency";
+import { dateFormat } from "~/utils/dateFormat";
+import { currency } from "~/utils/currency";
 // TYPE
 import type { Order } from "~/types/Order";
 

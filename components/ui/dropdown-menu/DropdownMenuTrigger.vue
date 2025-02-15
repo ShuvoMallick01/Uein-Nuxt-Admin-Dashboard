@@ -6,7 +6,7 @@ import {
 } from "radix-vue";
 import type { HTMLAttributes } from "vue";
 import { ButtonVariants, buttonVariants } from ".";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 interface Props extends DropdownMenuTriggerProps {
   variant?: ButtonVariants["variant"];

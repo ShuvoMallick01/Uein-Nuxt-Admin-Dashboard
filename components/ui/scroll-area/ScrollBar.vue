@@ -5,7 +5,7 @@ import {
   type ScrollAreaScrollbarProps,
   ScrollAreaThumb,
 } from "radix-vue";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const props = withDefaults(
   defineProps<ScrollAreaScrollbarProps & { class?: HTMLAttributes["class"] }>(),

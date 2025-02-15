@@ -12,7 +12,7 @@ import {
   getPaginationRowModel,
 } from "@tanstack/vue-table";
 // CUSTOM UTILS METHOD
-import { valueUpdater } from "~/lib/utils";
+import { valueUpdater } from "~/utils/utils";
 
 // ==============================================================
 interface Options<T> {

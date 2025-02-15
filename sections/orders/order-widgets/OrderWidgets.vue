@@ -2,8 +2,8 @@
 // CUSTOM COMPONENTS
 import OrderWidgetCard from "./OrderWidgetCard.vue";
 // CUSTOM UTILS METHODS
-import { currency } from "~/lib/currency";
-import { dateFormat } from "~/lib/dateFormat";
+import { currency } from "~/utils/currency";
+import { dateFormat } from "~/utils/dateFormat";
 // TYPES
 import type { Order } from "~/types/Order";
 

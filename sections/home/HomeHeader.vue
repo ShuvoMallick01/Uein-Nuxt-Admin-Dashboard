@@ -3,7 +3,7 @@ import { useWindowScroll, useDark, useToggle } from "@vueuse/core";
 import { RouterLink } from "vue-router";
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHOD
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const isDark = useDark();
 const toggleDark = useToggle(isDark);

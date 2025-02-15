@@ -1,4 +1,4 @@
-import { currency } from "~/lib/currency";
+import { currency } from "~/utils/currency";
 
 export const widgets = [
   {

@@ -1,8 +1,8 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
-import { cn } from "~/lib/utils";
-import { currency } from "~/lib/currency";
+import { cn } from "~/utils/utils";
+import { currency } from "~/utils/currency";
 // DATA LIST
 import { widgets } from "~/data/dashboards/sales";
 </script>

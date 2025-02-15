@@ -2,7 +2,7 @@
 // CUSTOM COMPONENT
 import TableRowItem from "./TableRowItem.vue";
 // CUSTOM UTILS METHOD
-import { currency } from "~/lib/currency";
+import { currency } from "~/utils/currency";
 // TYPES
 import type { Order } from "~/types/Order";
 

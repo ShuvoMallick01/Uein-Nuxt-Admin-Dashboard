@@ -5,7 +5,7 @@ import {
   type MenubarSeparatorProps,
   useForwardProps,
 } from "radix-vue";
-import { cn } from "~/lib/utils";
+import { cn } from "~/utils/utils";
 
 const props = defineProps<
   MenubarSeparatorProps & { class?: HTMLAttributes["class"] }
