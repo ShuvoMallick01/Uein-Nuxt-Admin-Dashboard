@@ -177,7 +177,7 @@
           </div>
 
           <div class="space-y-3">
-            <h5 class="font-semibold">server/api/invoices/</h5>
+            <h5 class="font-semibold">Folder Structure</h5>
 
             <pre><code class="rounded-md">├─ server
    ├─ api
@@ -214,9 +214,9 @@
           </div>
 
           <div class="space-y-2">
-            <h5 class="font-semibold">GET Request</h5>
-
             <div class="pt-5">
+              <h5 class="font-semibold mb-4">GET Request</h5>
+
               <p class="pb-3 font-medium">invoices/index.get.ts</p>
               <pre><code class="rounded-md">import invoices from "../../data/invoices";
 
@@ -237,6 +237,8 @@ export default defineEventHandler(async (event) => {
             </div>
 
             <div class="pt-5">
+              <h5 class="font-semibold mb-4">POST Request</h5>
+
               <p class="pb-3 font-medium">invoices/index.post.ts</p>
               <pre><code class="rounded-md">import invoices from "../../data/invoices";
 import { users } from "../../data/users";
@@ -264,6 +266,8 @@ export default defineEventHandler(async (event) => {
             </div>
 
             <div class="pt-5">
+              <h5 class="font-semibold mb-4">GET Request by ID</h5>
+
               <p class="pb-3 font-medium">invoices/[id]/index.get.ts</p>
               <pre><code class="rounded-md">import invoices from "../../../data/invoices";
 
@@ -294,6 +298,8 @@ export default defineEventHandler(async (event) => {
             </div>
 
             <div class="pt-5">
+              <h5 class="font-semibold mb-4">DELETE Request by ID</h5>
+
               <p class="pb-3 font-medium">invoices/[id]/index.delete.ts</p>
               <pre><code class="rounded-md">import invoices from "../../../data/invoices";
 
@@ -324,6 +330,8 @@ export default defineEventHandler(async (event) => {
             </div>
 
             <div class="pt-5">
+              <h5 class="font-semibold mb-4">PUT Request by ID</h5>
+
               <p class="pb-3 font-medium">invoices/[id]/index.put.ts</p>
               <pre><code class="rounded-md">import invoices from "../../../data/invoices";
 
@@ -357,7 +365,7 @@ export default defineEventHandler(async (event) => {
         </div>
 
         <div class="space-y-8">
-          <h5 class="font-semibold">Other APIs</h5>
+          <h5 class="font-semibold !pt-10">Other APIs</h5>
           <p>
             The API structure for orders, products, and users follows the same
             CRUD operations as the invoices API. You can perform create, read,
