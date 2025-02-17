@@ -7,7 +7,6 @@ const route = useRoute();
 
 useHead({
   title: () => {
-    // Get the title from route.meta.title, fallback to "Nuxt 3 Admin Dashboard"
     return route.meta.title
       ? `${route.meta.title} - Nuxt 3 Admin Dashboard`
       : "Nuxt 3 Admin Dashboard";
@@ -17,6 +16,8 @@ useHead({
 
 <template>
   <div>
+    <NuxtLoadingIndicator height:4 color="#5a6fe4" :duration="500" />
+
     <!-- SIDEBAR NAVIGATION SECTION FOR DESKTOP DEVICE -->
     <aside
       class="fixed h-screen left-0 top-0 w-[260px] 2xl:w-[280px] z-40 hidden border-e border-e-border lg:block bg-card rtl:right-0 rtl:left-auto"

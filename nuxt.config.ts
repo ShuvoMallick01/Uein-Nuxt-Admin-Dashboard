@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2024-04-03",
-  devtools: { enabled: true },
+  devtools: { enabled: false },
 
   app: {
     head: {
@@ -17,10 +17,8 @@ export default defineNuxtConfig({
         },
       ],
       link: [{ rel: "icon", type: "image/svg+xml", href: "/favicon.svg" }],
-      bodyAttrs: { class: "overflow-hidden" },
     },
     pageTransition: { name: "page", mode: "out-in" },
-    layoutTransition: { name: "layout", mode: "out-in" },
   },
 
   modules: [
@@ -69,9 +67,8 @@ export default defineNuxtConfig({
   ],
 
   routeRules: {
-    // "/": { swr: true, cache: { maxAge: 10 } },
-    // "/": { isr: true, cache: { maxAge: 20 } },
-    // "/learning-management": { prerender: true },
+    "/": { swr: true, cache: { maxAge: 10 } },
+    "/course": { prerender: true },
   },
 
   build: {
@@ -85,5 +82,9 @@ export default defineNuxtConfig({
         process.env.NUXT_PUBLIC_API_BASE_URL ||
         "https://bitskyber.com/template/uno-nuxt",
     },
+  },
+
+  nitro: {
+    dev: process.env.NODE_ENV !== "production", // Disable Nitro logs in production
   },
 });

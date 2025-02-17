@@ -18,7 +18,7 @@ export const useChartOptions = () => {
         horizontal: false,
         borderRadius: 5,
         borderRadiusApplication: "end",
-        borderRadiusWhenStacked: "all",
+        borderRadiusWhenStacked: "last",
         columnWidth: "22%",
       },
     },

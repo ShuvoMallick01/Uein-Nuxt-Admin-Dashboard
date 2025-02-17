@@ -44,10 +44,6 @@ export const useApexChartOptions = (options: ApexOptions = {}) => {
   const isDark = useDark();
   const chartOptions = ref<ApexOptions>(merge({}, baseOptions, options));
 
-  // const getCurrentColor = (cssVar: string) => {
-  //   return getComputedStyle(document.documentElement).getPropertyValue(cssVar);
-  // };
-
   const updateColors = () => {
     chartOptions.value = {
       ...chartOptions.value,
@@ -77,7 +73,6 @@ export const useApexChartOptions = (options: ApexOptions = {}) => {
           },
         },
       },
-
       // UPDATE RADIAL BAR TRACK COLOR
       plotOptions: {
         ...chartOptions.value.plotOptions,
