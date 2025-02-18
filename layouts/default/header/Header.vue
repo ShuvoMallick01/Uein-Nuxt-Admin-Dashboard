@@ -15,10 +15,11 @@ import MessagePopover from "./popovers/MessagePopover.vue";
 import ProfilePopover from "./popovers/ProfilePopover.vue";
 import NotificationPopover from "./popovers/NotificationPopover.vue";
 
-const isDark = useDark();
+// const isDark = useDark();
 const dir = useTextDirection();
-const toggleDark = useToggle(isDark);
+// const toggleDark = useToggle(isDark);
 const { y } = useWindowScroll({ behavior: "smooth" });
+const colorMode = useColorMode();
 
 const { handleSidebarToggle } = useSidebarStore();
 const changeDirection = () => {
@@ -73,12 +74,22 @@ onMounted(() => {
             <MessagePopover />
 
             <!-- THEME BUTTON -->
-            <button @click="toggleDark()">
+            <button
+              @click="
+                colorMode.preference =
+                  colorMode.preference === 'light' ? 'dark' : 'light'
+              "
+            >
               <Icon
                 height="20"
                 class="text-gray-500 hover:text-primary"
-                :icon="isDark ? 'solar:sun-2-outline' : 'solar:moon-outline'"
+                :icon="
+                  colorMode.preference === 'dark'
+                    ? 'solar:sun-2-outline'
+                    : 'solar:moon-outline'
+                "
               />
+              {{ colorMode.preference }}
             </button>
 
             <!-- PROFILE BUTTON WITH OPTIONS -->

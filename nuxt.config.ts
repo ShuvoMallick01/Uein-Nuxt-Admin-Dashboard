@@ -29,7 +29,20 @@ export default defineNuxtConfig({
     "@nuxtjs/google-fonts",
     "@nuxt/image",
     "nuxt-lodash",
+    "@nuxtjs/color-mode",
   ],
+
+  colorMode: {
+    preference: "light",
+    fallback: "light",
+    // hid: "nuxt-color-mode-script",
+    // globalName: "__NUXT_COLOR_MODE__",
+    // componentName: "ColorScheme",
+    classPrefix: "",
+    classSuffix: "",
+    // storage: "localStorage", // or 'sessionStorage' or 'cookie'
+    // storageKey: "nuxt-color-mode",
+  },
 
   css: [
     "~/assets/css/tailwind.css",

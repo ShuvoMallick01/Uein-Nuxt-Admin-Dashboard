@@ -5,7 +5,7 @@ export default defineAppConfig({
     "Uno delivers exceptional performance, scalability, and customization options for modern admin dashboards. Easily adapt components to streamline your workflow.",
 
   theme: {
-    mode: "light",
+    // mode: "light",
     colors: {
       primary: "#ff0000",
     },
