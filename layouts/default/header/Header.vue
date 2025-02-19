@@ -1,11 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import {
-  useWindowScroll,
-  useDark,
-  useToggle,
-  useTextDirection,
-} from "@vueuse/core";
+import { useWindowScroll, useTextDirection } from "@vueuse/core";
 import { Icon } from "@iconify/vue";
 // CUSTOM STORE
 import { useSidebarStore } from "~/stores/sidebar";
@@ -15,9 +10,7 @@ import MessagePopover from "./popovers/MessagePopover.vue";
 import ProfilePopover from "./popovers/ProfilePopover.vue";
 import NotificationPopover from "./popovers/NotificationPopover.vue";
 
-// const isDark = useDark();
 const dir = useTextDirection();
-// const toggleDark = useToggle(isDark);
 const { y } = useWindowScroll({ behavior: "smooth" });
 const colorMode = useColorMode();
 
@@ -26,8 +19,14 @@ const changeDirection = () => {
   dir.value = dir.value === "rtl" ? "ltr" : "rtl";
 };
 
+// Toggle theme function
+const toggleTheme = () => {
+  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
+};
+
 onMounted(() => {
   dir.value = "ltr";
+  colorMode.preference = "light";
 });
 </script>
 
@@ -74,22 +73,16 @@ onMounted(() => {
             <MessagePopover />
 
             <!-- THEME BUTTON -->
-            <button
-              @click="
-                colorMode.preference =
-                  colorMode.preference === 'light' ? 'dark' : 'light'
-              "
-            >
+            <button @click="toggleTheme">
               <Icon
                 height="20"
                 class="text-gray-500 hover:text-primary"
                 :icon="
-                  colorMode.preference === 'dark'
-                    ? 'solar:sun-2-outline'
-                    : 'solar:moon-outline'
+                  colorMode.value === 'light'
+                    ? 'solar:moon-outline'
+                    : 'solar:sun-2-outline'
                 "
               />
-              {{ colorMode.preference }}
             </button>
 
             <!-- PROFILE BUTTON WITH OPTIONS -->
