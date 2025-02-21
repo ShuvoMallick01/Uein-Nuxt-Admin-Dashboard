@@ -1,5 +1,5 @@
 import { onMounted, ref, watch } from "vue";
-import { useDark } from "@vueuse/core";
+// import { useDark } from "@vueuse/core";
 import merge from "lodash/merge";
 import type { ApexOptions } from "apexcharts";
 
@@ -87,23 +87,23 @@ export const useApexChartOptions = (options: ApexOptions = {}) => {
     };
   };
 
-  onMounted(() => {
-    if (isDark.value) {
-      updateColors();
-    }
-  });
+  // onMounted(() => {
+  //   if (isDark.value) {
+  //     updateColors();
+  //   }
+  // });
 
-  watch(
-    isDark,
-    (newValue) => {
-      if (newValue) {
-        updateColors();
-      } else {
-        chartOptions.value = merge({}, baseOptions, options);
-      }
-    },
-    { immediate: true }
-  );
+  // watch(
+  //   isDark,
+  //   (newValue) => {
+  //     if (newValue) {
+  //       updateColors();
+  //     } else {
+  //       chartOptions.value = merge({}, baseOptions, options);
+  //     }
+  //   },
+  //   { immediate: true }
+  // );
 
   return chartOptions;
 };

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // DATA LIST
 import { categories } from "~/data/dashboards/course";
 </script>
@@ -17,7 +16,7 @@ import { categories } from "~/data/dashboards/course";
       >
         <div class="flex items-start gap-3">
           <Avatar shape="square">
-            <AvatarImage :src="cat.image" :alt="cat.title" />
+            <AvatarImage as="img" :src="cat.image" :alt="cat.title" />
             <AvatarFallback>{{ cat.title[0] }}</AvatarFallback>
           </Avatar>
 
@@ -35,7 +34,7 @@ import { categories } from "~/data/dashboards/course";
         </div>
 
         <Icon
-          icon="heroicons:chevron-right-20-solid"
+          name="heroicons:chevron-right-20-solid"
           class="w-5 h-5 text-gray-500 rtl:rotate-180"
         />
       </RouterLink>

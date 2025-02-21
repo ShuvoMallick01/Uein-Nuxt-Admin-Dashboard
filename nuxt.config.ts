@@ -30,18 +30,19 @@ export default defineNuxtConfig({
     "@nuxt/image",
     "nuxt-lodash",
     "@nuxtjs/color-mode",
+    "@nuxt/icon",
   ],
 
   colorMode: {
     preference: "light",
-    fallback: "light",
-    hid: "nuxt-color-mode-script",
-    globalName: "__NUXT_COLOR_MODE__",
-    componentName: "ColorScheme",
-    classPrefix: "",
+    // fallback: "light",
+    // hid: "nuxt-color-mode-script",
+    // globalName: "__NUXT_COLOR_MODE__",
+    // componentName: "ColorScheme",
+    // classPrefix: "",
     classSuffix: "",
-    storage: "localStorage", // or 'sessionStorage' or 'cookie'
-    storageKey: "nuxt-color-mode",
+    // storage: "localStorage", // or 'sessionStorage' or 'cookie'
+    // storageKey: "nuxt-color-mode",
   },
 
   css: [
@@ -78,6 +79,12 @@ export default defineNuxtConfig({
     },
     { path: "~/sections", pathPrefix: false },
   ],
+
+  icon: {
+    serverBundle: {
+      collections: ["solar", "tabler", "iconamoon", "heroicons"],
+    },
+  },
 
   routeRules: {
     "/": { swr: true, cache: { maxAge: 10 } },
