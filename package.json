@@ -49,6 +49,9 @@
   "devDependencies": {
     "@iconify-json/heroicons": "^1.2.2",
     "@iconify-json/iconamoon": "^1.2.2",
+    "@iconify-json/majesticons": "^1.2.2",
+    "@iconify-json/mynaui": "^1.2.9",
+    "@iconify-json/pajamas": "^1.2.5",
     "@iconify-json/solar": "^1.2.2",
     "@iconify-json/tabler": "^1.2.16",
     "@nuxt/types": "^2.18.1",

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 import ProductReviewSkeleton from "./skeletons/ProductReviewSkeleton.vue";
 // TYPES
 import type { Review } from "~/types/Product";
@@ -50,12 +49,12 @@ if (error.value) {
 
       <div class="flex items-center gap-6 text-gray-600">
         <div class="flex items-start gap-1">
-          <Icon icon="uil:thumbs-up" :height="16" />
+          <Icon name="uil:thumbs-up" :size="16" />
           <p class="text-sm">({{ review.likes }})</p>
         </div>
 
         <div class="flex items-start gap-1">
-          <Icon icon="uil:thumbs-down" :height="16" />
+          <Icon name="uil:thumbs-down" :size="16" />
           <p class="text-sm leading-none">({{ review.dislikes }})</p>
         </div>
       </div>

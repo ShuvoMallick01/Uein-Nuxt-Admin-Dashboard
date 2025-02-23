@@ -1,5 +1,4 @@
 import { onMounted, ref, watch } from "vue";
-// import { useDark } from "@vueuse/core";
 import merge from "lodash/merge";
 import type { ApexOptions } from "apexcharts";
 
@@ -41,7 +40,7 @@ const DARK_BORDER_COLOR = "#262b4260";
 const DARK_CROSS_HAIRS_COLOR = "#262b42";
 
 export const useApexChartOptions = (options: ApexOptions = {}) => {
-  const isDark = useDark();
+  const colorMode = useColorMode();
   const chartOptions = ref<ApexOptions>(merge({}, baseOptions, options));
 
   const updateColors = () => {
@@ -87,23 +86,23 @@ export const useApexChartOptions = (options: ApexOptions = {}) => {
     };
   };
 
-  // onMounted(() => {
-  //   if (isDark.value) {
-  //     updateColors();
-  //   }
-  // });
+  onMounted(() => {
+    if (colorMode.preference === "dark") {
+      updateColors();
+    }
+  });
 
-  // watch(
-  //   isDark,
-  //   (newValue) => {
-  //     if (newValue) {
-  //       updateColors();
-  //     } else {
-  //       chartOptions.value = merge({}, baseOptions, options);
-  //     }
-  //   },
-  //   { immediate: true }
-  // );
+  watch(
+    colorMode,
+    (newValue) => {
+      if (newValue.value === "dark") {
+        updateColors();
+      } else {
+        chartOptions.value = merge({}, baseOptions, options);
+      }
+    },
+    { immediate: true }
+  );
 
   return chartOptions;
 };

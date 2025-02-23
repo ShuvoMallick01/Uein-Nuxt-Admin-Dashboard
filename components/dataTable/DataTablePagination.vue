@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T">
 import { computed } from "vue";
-import { Icon } from "@iconify/vue";
+
 import type { Table } from "@tanstack/vue-table";
 const { table } = defineProps<{ table: Table<T> }>();
 
@@ -61,7 +61,7 @@ const lastIndex = computed(() => {
           @click="table.setPageIndex(0)"
         >
           <span class="sr-only">Go to first page</span>
-          <Icon icon="lucide:chevrons-left" height="16" />
+          <Icon name="lucide:chevrons-left" size="16" />
         </Button>
 
         <Button
@@ -71,7 +71,7 @@ const lastIndex = computed(() => {
           @click="table.previousPage()"
         >
           <span class="sr-only">Go to previous page</span>
-          <Icon icon="lucide:chevron-left" height="16" />
+          <Icon name="lucide:chevron-left" size="16" />
         </Button>
 
         <Button
@@ -81,7 +81,7 @@ const lastIndex = computed(() => {
           @click="table.nextPage()"
         >
           <span class="sr-only">Go to next page</span>
-          <Icon icon="lucide:chevron-right" height="16" />
+          <Icon name="lucide:chevron-right" size="16" />
         </Button>
 
         <Button
@@ -91,7 +91,7 @@ const lastIndex = computed(() => {
           @click="table.setPageIndex(table.getPageCount() - 1)"
         >
           <span class="sr-only">Go to last page</span>
-          <Icon icon="lucide:chevrons-right" height="16" />
+          <Icon name="lucide:chevrons-right" size="16" />
         </Button>
       </div>
     </div>

@@ -13,20 +13,20 @@ definePageMeta({
 
     <CardContent>
       <div class="space-y-3">
-        <SocialLinkItem icon="devicon:linkedin" name="Linkedin" />
+        <SocialLinkItem name="devicon:linkedin" icon="Linkedin" />
         <SocialLinkItem
-          icon="ri:twitter-x-fill"
-          name="Twitter"
+          name="ri:twitter-x-fill"
+          icon="Twitter"
           :isConnected="true"
           url="#"
         />
         <SocialLinkItem
-          icon="logos:facebook"
-          name="Facebook"
+          name="logos:facebook"
+          icon="Facebook"
           :isConnected="true"
           url="#"
         />
-        <SocialLinkItem icon="devicon:google" name="Google" />
+        <SocialLinkItem name="devicon:google" icon="Google" />
       </div>
     </CardContent>
   </Card>

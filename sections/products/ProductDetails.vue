@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
 import { cn } from "~/utils/utils";
 import { currency } from "~/utils/currency";
@@ -98,7 +97,7 @@ defineProps<{ product: Product }>();
         :key="index"
       >
         <Icon
-          icon="akar-icons:tag"
+          name="akar-icons:tag"
           height="15"
           class="me-2 shrink-0 text-primary"
         />
@@ -112,7 +111,7 @@ defineProps<{ product: Product }>();
     <div
       class="flex items-center gap-4 px-6 py-3 border border-gray-200 rounded-lg dark:border-gray-50"
     >
-      <Icon icon="clarity:truck-solid" height="32" class="text-gray-600" />
+      <Icon name="clarity:truck-solid" height="32" class="text-gray-600" />
 
       <div>
         <p class="text-sm font-semibold leading-6">Estimated Delivery</p>
@@ -123,7 +122,7 @@ defineProps<{ product: Product }>();
     <div
       class="flex items-center gap-4 px-6 py-3 border border-gray-200 rounded-lg dark:border-gray-50"
     >
-      <Icon icon="mdi:cart-outline" height="32" class="text-gray-600" />
+      <Icon name="mdi:cart-outline" height="32" class="text-gray-600" />
 
       <div>
         <p class="text-sm font-semibold leading-6">Free Shipping & Returns</p>

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
-
 defineProps<{
   modelValue?: string;
   placeholder?: string;
@@ -20,7 +18,7 @@ defineProps<{
 
     <Icon
       height="18"
-      icon="eva:search-outline"
+      name="eva:search-outline"
       class="absolute inset-y-0 my-auto text-muted start-3"
     />
   </div>

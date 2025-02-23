@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // SHADCN COMPONENTS
 import type { BadgeVariants } from "~/components/ui/badge";
 
@@ -21,7 +20,7 @@ defineProps<Props>();
       <CardTitle class="text-base font-semibold">{{ heading }}</CardTitle>
 
       <Badge class="justify-center rounded-lg w-11 h-11" :variant="iconColor">
-        <Icon :icon="icon" height="22" />
+        <Icon :name="icon" height="22" />
       </Badge>
     </CardHeader>
 

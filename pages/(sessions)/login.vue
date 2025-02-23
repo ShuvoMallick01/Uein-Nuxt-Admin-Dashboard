@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useForm } from "vee-validate";
-import { Icon } from "@iconify/vue";
+
 import * as yup from "yup";
 
 definePageMeta({
@@ -111,14 +111,14 @@ const onSubmit = handleSubmit((values) => {
           <Button
             class="w-full bg-primary-25 text-foreground hover:bg-primary-50 dark:bg-primary/5 dark:hover:bg-primary/10"
           >
-            <Icon icon="flat-color-icons:google" height="20" class="me-2" />
+            <Icon name="flat-color-icons:google" height="20" class="me-2" />
             Sign in with Google
           </Button>
 
           <Button
             class="w-full bg-primary-25 text-foreground hover:bg-primary-50 dark:bg-primary/5 dark:hover:bg-primary/10"
           >
-            <Icon icon="logos:facebook" height="20" class="me-2" />
+            <Icon name="logos:facebook" height="20" class="me-2" />
             Sign in with Facebook
           </Button>
         </div>

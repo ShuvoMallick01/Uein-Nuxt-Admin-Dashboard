@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from "vue";
-import { Icon } from "@iconify/vue";
+
 // TABLE COLUMNS DEFINITION
 import { columns } from "./invoicesColumn";
 // TYPES
@@ -124,13 +124,13 @@ watch(status, (newStatus) => {
                 @click="handleResetFilters"
                 color="error"
               >
-                <Icon icon="heroicons:trash" height="18" class="me-2" />
+                <Icon name="heroicons:trash" height="18" class="me-2" />
                 Clear
               </Button>
 
               <!-- NAVIGATE BUTTON -->
               <Button @click="$router.push('/invoices/create')">
-                <Icon icon="ic:round-plus" height="18" class="me-2" />
+                <Icon name="ic:round-plus" height="18" class="me-2" />
                 Add Invoice
               </Button>
             </div>

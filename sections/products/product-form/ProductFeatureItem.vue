@@ -1,6 +1,5 @@
 <script lang="ts" setup>
 import { useFieldArray } from "vee-validate";
-import { Icon } from "@iconify/vue";
 
 defineProps<{ id: number }>();
 
@@ -26,7 +25,7 @@ const { remove } = useFieldArray("features");
 
   <div class="self-start px-2 item">
     <button class="p-3 text-error" @click="remove(id)">
-      <Icon icon="heroicons:trash" height="18" />
+      <Icon name="heroicons:trash" height="18" />
     </button>
   </div>
 </template>

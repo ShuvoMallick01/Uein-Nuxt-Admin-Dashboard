@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // CUSTOM UTILS METHODS
 import { currency } from "~/utils/currency";
 // CUSTOM DATA
@@ -20,7 +19,7 @@ import { transactions } from "~/data/dashboards/analytics";
           <div
             class="grid w-10 h-10 rounded-lg place-content-center text-primary bg-primary-50 dark:bg-primary/20"
           >
-            <Icon :icon="item.icon" height="20" />
+            <Icon :name="item.icon" height="20" />
           </div>
 
           <div>

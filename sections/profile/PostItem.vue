@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // TYPES
 import type { Post } from "~/types/Post";
 
@@ -28,26 +27,26 @@ defineProps<{ post: Post }>();
           <MenubarTrigger
             class="grid p-0 text-gray-500 rounded-lg w-7 h-7 place-items-center"
           >
-            <Icon icon="pajamas:ellipsis-v" height="13" />
+            <Icon name="pajamas:ellipsis-v" height="13" />
           </MenubarTrigger>
 
           <MenubarContent align="end" class="">
             <MenubarItem
               class="gap-2 px-4 py-2 font-medium text-card-foreground"
             >
-              <Icon icon="lucide:eye" /> Save post
+              <Icon name="lucide:eye" /> Save post
             </MenubarItem>
 
             <MenubarItem
               class="gap-2 px-4 py-2 text-[13px] text-card-foreground font-medium"
             >
-              <Icon icon="lucide:eye-off" /> Hide post
+              <Icon name="lucide:eye-off" /> Hide post
             </MenubarItem>
 
             <MenubarItem
               class="gap-2 px-4 py-2 text-[13px] text-card-foreground font-medium"
             >
-              <Icon icon="lucide:eye-off" /> Hide all
+              <Icon name="lucide:eye-off" /> Hide all
             </MenubarItem>
 
             <hr class="my-2 dark:border-border" />
@@ -55,13 +54,13 @@ defineProps<{ post: Post }>();
             <MenubarItem
               class="gap-2 px-4 py-2 text-[13px] text-card-foreground font-medium"
             >
-              <Icon icon="lucide:badge-alert" /> Report post
+              <Icon name="lucide:badge-alert" /> Report post
             </MenubarItem>
 
             <MenubarItem
               class="gap-2 px-4 py-2 text-[13px] text-card-foreground font-medium"
             >
-              <Icon icon="lucide:bell" /> Turn on notifications
+              <Icon name="lucide:bell" /> Turn on notifications
             </MenubarItem>
           </MenubarContent>
         </MenubarMenu>
@@ -84,7 +83,7 @@ defineProps<{ post: Post }>();
           <button
             class="grid w-8 h-8 text-xs transition-all rounded-full text-muted place-items-center bg-primary-50 hover:bg-primary-100 dark:bg-primary/10"
           >
-            <Icon icon="mdi:heart-outline" height="16" />
+            <Icon name="mdi:heart-outline" size="16" />
           </button>
 
           <div class="items-center hidden gap-3 xxs:flex">
@@ -107,13 +106,13 @@ defineProps<{ post: Post }>();
           <button
             class="grid w-8 h-8 text-xs transition-all rounded-full text-muted place-items-center bg-primary-50 hover:bg-primary-100 dark:bg-primary/10"
           >
-            <Icon icon="ic:outline-chat" height="15" />
+            <Icon name="ic:outline-chat" height="15" />
           </button>
 
           <button
             class="grid w-8 h-8 text-xs transition-all rounded-full text-muted place-items-center bg-primary-50 hover:bg-primary-100 dark:bg-primary/10"
           >
-            <Icon icon="solar:share-bold" height="15" />
+            <Icon name="solar:share-bold" height="15" />
           </button>
         </div>
       </div>
@@ -139,13 +138,13 @@ defineProps<{ post: Post }>();
         <button
           class="grid rounded-full w-7 h-7 place-items-center hover:bg-primary-50 dark:hover:bg-primary/10"
         >
-          <Icon height="19" icon="solar:gallery-broken" />
+          <Icon size="19" name="solar:gallery-broken" />
         </button>
 
         <button
           class="grid rounded-full w-7 h-7 place-items-center hover:bg-primary-50 dark:hover:bg-primary/10"
         >
-          <Icon height="19" icon="iconoir:emoji" />
+          <Icon size="19" name="iconoir:emoji" />
         </button>
       </div>
     </div>

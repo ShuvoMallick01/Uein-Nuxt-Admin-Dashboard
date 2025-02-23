@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 import { toast } from "vue-sonner";
 // CUSTOM COMPONENTS
 import ProductListSkeleton from "~/sections/products/skeletons/ProductListSkeleton.vue";
@@ -144,13 +143,13 @@ watch(status, (newStatus) => {
                 @click="handleResetFilters"
                 color="error"
               >
-                <Icon icon="heroicons:trash" height="18" class="me-2" />
+                <Icon name="heroicons:trash" height="18" class="me-2" />
                 Clear
               </Button>
 
               <!-- NAVIGATE BUTTON -->
               <Button @click="$router.push('/products/create')">
-                <Icon icon="ic:round-plus" height="18" class="me-2" />
+                <Icon name="ic:round-plus" height="18" class="me-2" />
                 Add Product
               </Button>
             </div>

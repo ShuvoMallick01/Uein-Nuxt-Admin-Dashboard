@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Icon } from "@iconify/vue";
+
 // TABLE COLUMNS DEFINITION
 import { columns } from "./ordersColumns";
 // TYPES
@@ -140,7 +140,7 @@ watch(status, (newStatus) => {
 
           <!-- CLEAR FILTER BUTTON -->
           <Button v-if="isFiltered" @click="handleResetFilters" color="error">
-            <Icon icon="heroicons:trash" height="18" class="me-2" />
+            <Icon name="heroicons:trash" height="18" class="me-2" />
             Clear
           </Button>
         </div>

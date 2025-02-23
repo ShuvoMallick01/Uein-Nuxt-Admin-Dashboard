@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // TYPE
 import { type NavItem } from "./type";
 import { cn } from "~/utils/utils";
@@ -37,12 +36,12 @@ watch(
       >
         <div class="flex items-center justify-between p-3 mb-1">
           <div class="flex items-center gap-2">
-            <Icon :icon="item.icon" style="font-size: large" />
+            <Icon :name="item.icon" style="font-size: large" />
             <span class="text-sm font-medium truncate">{{ item.label }}</span>
           </div>
 
           <Icon
-            icon="material-symbols:keyboard-arrow-right"
+            name="material-symbols:keyboard-arrow-right"
             class="transition-all duration-300 rtl:rotate-180"
             :class="{
               'rotate-90 rtl:rotate-90': isOpen,

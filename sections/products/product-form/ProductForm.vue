@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRouter } from "vue-router";
 import { useFieldArray, useForm } from "vee-validate";
-import { Icon } from "@iconify/vue";
+
 import * as yup from "yup";
 // CUSTOM COMPONENTS
 import Sizes from "./Sizes.vue";
@@ -219,7 +219,7 @@ const onSubmit = handleSubmit((values, { resetForm }) => {
             @click="push({ name: '', value: '' })"
           >
             <Icon
-              icon="mynaui:plus-solid"
+              name="mynaui:plus-solid"
               :size="18"
               style="font-size: large"
               class="me-1"

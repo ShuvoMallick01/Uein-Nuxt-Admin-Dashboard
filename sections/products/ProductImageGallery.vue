@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Icon } from "@iconify/vue";
+
 // CUSTOM UTILS METHODS
 import { cn } from "~/utils/utils";
 
@@ -42,21 +42,21 @@ const selectedImage = ref(props.images[0]);
       <button
         class="inline-flex items-center text-sm font-medium hover:text-primary"
       >
-        <Icon icon="fluent:arrow-swap-20-filled" height="15" class="me-2" />
+        <Icon name="fluent:arrow-swap-20-filled" height="15" class="me-2" />
         <span>Compare</span>
       </button>
 
       <button
         class="inline-flex items-center text-sm font-medium whitespace-nowrap hover:text-primary"
       >
-        <Icon icon="ri:question-line" height="15" class="me-2" />
+        <Icon name="ri:question-line" height="15" class="me-2" />
         <span>Ask a Question</span>
       </button>
 
       <button
         class="inline-flex items-center text-sm font-medium hover:text-primary"
       >
-        <Icon icon="material-symbols:share-outline" class="me-2" />
+        <Icon name="material-symbols:share-outline" class="me-2" />
         <span>Share</span>
       </button>
     </div>

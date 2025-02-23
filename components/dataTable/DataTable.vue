@@ -1,6 +1,6 @@
 <script setup lang="ts" generic="T">
 import { FlexRender, type ColumnDef } from "@tanstack/vue-table";
-import { Icon } from "@iconify/vue";
+
 import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENTS
 import DataTablePagination from "./DataTablePagination.vue";
@@ -52,7 +52,7 @@ const handleDeleteRows = () => {
       @click="handleDeleteRows()"
       class="grid w-10 h-10 transition-all duration-150 rounded-full place-items-center hover:text-primary"
     >
-      <Icon icon="lucide:trash-2" height="18" />
+      <Icon name="lucide:trash-2" height="18" />
     </button>
   </div>
 

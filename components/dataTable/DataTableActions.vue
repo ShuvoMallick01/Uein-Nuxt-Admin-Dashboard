@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
-
 defineProps<{
   viewLink: string;
   editLink?: string;
@@ -14,7 +12,7 @@ defineProps<{
       <MenubarTrigger
         class="grid text-gray-500 rounded-lg w-7 h-7 place-items-center"
       >
-        <Icon icon="pajamas:ellipsis-v" height="12" />
+        <Icon name="pajamas:ellipsis-v" size="12" />
       </MenubarTrigger>
 
       <MenubarContent align="end">
@@ -22,8 +20,8 @@ defineProps<{
           <MenubarItem>
             <Icon
               class="text-gray-400 me-2"
-              icon="majesticons:eye-line"
-              height="16"
+              name="majesticons:eye-line"
+              size="16"
             />
             View
           </MenubarItem>
@@ -31,7 +29,7 @@ defineProps<{
 
         <RouterLink v-if="editLink" :to="editLink">
           <MenubarItem>
-            <Icon class="text-gray-400 me-2" icon="tabler:edit" height="16" />
+            <Icon class="text-gray-400 me-2" name="tabler:edit" size="16" />
             Edit
           </MenubarItem>
         </RouterLink>
@@ -40,7 +38,7 @@ defineProps<{
           class="text-error hover:!text-error"
           @click="handleDelete()"
         >
-          <Icon icon="mynaui:trash" height="16" class="me-2" /> Delete
+          <Icon name="mynaui:trash" size="16" class="me-2" /> Delete
         </MenubarItem>
       </MenubarContent>
     </MenubarMenu>

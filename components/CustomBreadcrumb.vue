@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
-
 // ==============================================================
 type Link =
   | { name: string; current: boolean; href?: never }
@@ -32,7 +30,7 @@ defineProps<Props>();
             </BreadcrumbItem>
 
             <BreadcrumbSeparator>
-              <Icon icon="lucide:chevron-right" />
+              <Icon name="lucide:chevron-right" />
             </BreadcrumbSeparator>
           </template>
 

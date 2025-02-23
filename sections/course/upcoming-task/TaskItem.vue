@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import { Icon } from "@iconify/vue";
 
 // ==============================================================
 interface Props {
@@ -40,15 +39,15 @@ const checked = ref(props.status);
         <MenubarTrigger
           class="grid p-0 text-gray-500 rounded-lg w-7 h-7 place-items-center"
         >
-          <Icon icon="pajamas:ellipsis-v" height="12" />
+          <Icon name="pajamas:ellipsis-v" size="12" />
         </MenubarTrigger>
 
         <MenubarContent align="end">
           <MenubarItem>
-            <Icon icon="majesticons:eye-line" height="16" /> View
+            <Icon name="majesticons:eye-line" size="16" /> View
           </MenubarItem>
           <MenubarItem>
-            <Icon icon="mynaui:trash" height="16" /> Delete
+            <Icon name="mynaui:trash" size="16" /> Delete
           </MenubarItem>
         </MenubarContent>
       </MenubarMenu>

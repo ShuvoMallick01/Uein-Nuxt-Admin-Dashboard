@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useFieldArray, useField } from "vee-validate";
-import { Icon } from "@iconify/vue";
+
 import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENTS
 import Item from "./InvoiceItem.vue";
@@ -65,7 +65,7 @@ const { value: tax } = useField<number>("tax");
               color="success"
               @click="push({ ...initialItem })"
             >
-              <Icon icon="humbleicons:plus" class="me-1" /> Add
+              <Icon name="humbleicons:plus" class="me-1" /> Add
             </Button>
           </div>
         </TableBody>

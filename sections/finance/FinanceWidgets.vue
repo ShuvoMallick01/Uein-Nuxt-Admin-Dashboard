@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // SHADCN COMPONENT
 import { Badge, type BadgeVariants } from "~/components/ui/badge";
 // DATA LIST
@@ -42,7 +41,7 @@ const getVariant = (color: string): BadgeVariants["variant"] => {
             'bg-info-50 text-info dark:bg-info/10': item.color === 'info',
           }"
         >
-          <Icon :icon="item.icon" height="25" />
+          <Icon :name="item.icon" height="25" />
         </div>
       </div>
     </Card>

@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { Icon } from "@iconify/vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Dialog>
@@ -15,7 +13,7 @@ import { Icon } from "@iconify/vue";
 
         <Icon
           height="20"
-          icon="eva:search-outline"
+          name="eva:search-outline"
           class="absolute text-gray-500 transform -translate-y-1/2 top-1/2 end-0 me-3"
         />
       </div>
@@ -30,17 +28,17 @@ import { Icon } from "@iconify/vue";
 
           <CommandGroup heading="Suggestions">
             <CommandItem value="Calendar">
-              <Icon icon="uil:calender" class="w-4 h-4 me-2" />
+              <Icon name="uil:calender" class="w-4 h-4 me-2" />
               <span>Calendar</span>
             </CommandItem>
 
             <CommandItem value="Search Emoji">
-              <Icon icon="uil:smile" class="w-4 h-4 me-2" />
+              <Icon name="uil:smile" class="w-4 h-4 me-2" />
               <span>Search Emoji</span>
             </CommandItem>
 
             <CommandItem value="Calculator">
-              <Icon icon="proicons:calculator" class="w-4 h-4 me-2" />
+              <Icon name="proicons:calculator" class="w-4 h-4 me-2" />
               <span>Calculator</span>
             </CommandItem>
           </CommandGroup>
@@ -49,19 +47,19 @@ import { Icon } from "@iconify/vue";
 
           <CommandGroup heading="Settings">
             <CommandItem value="Profile">
-              <Icon icon="lucide:user-round" class="w-4 h-4 me-2" />
+              <Icon name="lucide:user-round" class="w-4 h-4 me-2" />
               <span>Profile</span>
               <CommandShortcut>⌘P</CommandShortcut>
             </CommandItem>
 
             <CommandItem value="Billing">
-              <Icon icon="f7:creditcard" class="w-4 h-4 me-2" />
+              <Icon name="f7:creditcard" class="w-4 h-4 me-2" />
               <span>Billing</span>
               <CommandShortcut>⌘B</CommandShortcut>
             </CommandItem>
 
             <CommandItem value="Settings">
-              <Icon icon="si:settings-duotone" class="w-4 h-4 me-2" />
+              <Icon name="si:settings-duotone" class="w-4 h-4 me-2" />
               <span>Settings</span>
               <CommandShortcut>⌘S</CommandShortcut>
             </CommandItem>

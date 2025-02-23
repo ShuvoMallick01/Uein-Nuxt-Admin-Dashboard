@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { RouterLink } from "vue-router";
-import { Icon } from "@iconify/vue";
 
 definePageMeta({
   layout: false,
@@ -31,7 +30,7 @@ import { Button } from "~/components/ui/button";
 
       <Button :as="RouterLink" to="/" variant="link" class="mt-8">
         <Icon
-          icon="majesticons:chevron-left"
+          name="majesticons:chevron-left"
           style="font-size: large"
           class="rtl:rotate-180"
         />

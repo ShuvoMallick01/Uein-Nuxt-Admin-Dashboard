@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { watch } from "vue";
-import { Icon } from "@iconify/vue";
+
 import { useFieldArray } from "vee-validate";
 // TYPES
 import type { InvoiceItem } from "./types";
@@ -77,7 +77,7 @@ watch(
         variant="outline"
         @click="remove(id)"
       >
-        <Icon icon="mage:trash" height="18" />
+        <Icon name="mage:trash" height="18" />
       </Button>
     </TableCell>
   </TableRow>

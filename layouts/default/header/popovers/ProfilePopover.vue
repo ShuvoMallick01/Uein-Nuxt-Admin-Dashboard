@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { Icon } from "@iconify/vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Popover>
@@ -45,7 +43,7 @@ import { Icon } from "@iconify/vue";
           class="flex items-center gap-2 px-5 py-2 transition-all hover:bg-hover"
         >
           <Icon
-            icon="lucide:user-round"
+            name="lucide:user-round"
             class="text-gray-400 dark:text-gray-200"
           />
           Profile
@@ -55,7 +53,7 @@ import { Icon } from "@iconify/vue";
           class="flex items-center gap-2 px-5 py-2 transition-all hover:bg-hover"
         >
           <Icon
-            icon="si:settings-line"
+            name="si:settings-line"
             class="text-gray-400 dark:text-gray-200"
           />
           Account
@@ -65,7 +63,7 @@ import { Icon } from "@iconify/vue";
           class="flex items-center gap-2 px-5 py-2 transition-all hover:bg-hover"
         >
           <Icon
-            icon="lucide:users-round"
+            name="lucide:users-round"
             class="text-gray-400 dark:text-gray-200"
           />
           Manage Team
@@ -78,7 +76,7 @@ import { Icon } from "@iconify/vue";
         <li
           class="flex items-center gap-2 px-5 py-2 transition-all text-error-400 hover:bg-hover"
         >
-          <Icon icon="material-symbols:logout-sharp" />
+          <Icon name="material-symbols:logout-sharp" />
           Log Out
         </li>
       </ul>

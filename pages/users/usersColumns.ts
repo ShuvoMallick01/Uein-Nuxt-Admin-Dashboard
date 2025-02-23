@@ -1,6 +1,6 @@
 import { h } from "vue";
 import type { ColumnDef, HeaderContext } from "@tanstack/vue-table";
-import { Icon } from "@iconify/vue";
+
 // SHADCN COMPONENTS
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";

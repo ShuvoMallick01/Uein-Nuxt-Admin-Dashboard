@@ -35,7 +35,7 @@ export default defineNuxtConfig({
 
   colorMode: {
     preference: "light",
-    // fallback: "light",
+    fallback: "light",
     // hid: "nuxt-color-mode-script",
     // globalName: "__NUXT_COLOR_MODE__",
     // componentName: "ColorScheme",
@@ -82,7 +82,15 @@ export default defineNuxtConfig({
 
   icon: {
     serverBundle: {
-      collections: ["solar", "tabler", "iconamoon", "heroicons"],
+      collections: [
+        "solar",
+        "tabler",
+        "iconamoon",
+        "heroicons",
+        "pajamas",
+        "majesticons",
+        "mynaui",
+      ],
     },
   },
 

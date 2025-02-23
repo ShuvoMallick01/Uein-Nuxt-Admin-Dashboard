@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // DATA LIST
 import { notifications } from "~/data/notifications";
 </script>
@@ -8,8 +7,8 @@ import { notifications } from "~/data/notifications";
   <Popover>
     <PopoverTrigger as-child>
       <Icon
-        height="20"
-        icon="solar:chat-dots-broken"
+        size="20"
+        name="solar:chat-dots-broken"
         class="text-gray-500 cursor-pointer hover:text-primary"
       />
     </PopoverTrigger>
@@ -29,7 +28,7 @@ import { notifications } from "~/data/notifications";
           <div
             class="grid rounded-lg w-7 h-7 text-primary place-items-center bg-primary-50 dark:bg-primary/10"
           >
-            <Icon height="14" icon="solar:chat-dots-broken" />
+            <Icon size="14" name="solar:chat-dots-broken" />
           </div>
 
           <p class="text-base font-medium">Messages</p>

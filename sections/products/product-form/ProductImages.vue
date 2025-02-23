@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { ErrorMessage, useField } from "vee-validate";
 import { type FileRejectReason, useDropzone } from "vue3-dropzone";
-import { Icon } from "@iconify/vue";
+
 // CUSTOM UTILS METHOD
 import { cn } from "~/utils/utils";
 
@@ -52,7 +52,7 @@ const handleDelete = (index: number) => {
         )
       "
     >
-      <Icon icon="solar:camera-broken" height="40" class="text-muted" />
+      <Icon name="solar:camera-broken" height="40" class="text-muted" />
       <p class="mt-4 mb-1 text-sm text-muted">Drop your images here or</p>
       <p
         class="text-sm font-medium"
@@ -83,7 +83,7 @@ const handleDelete = (index: number) => {
           @click="handleDelete(index)"
           class="absolute grid rounded-md place-items-center bg-error/5 size-5 top-1 right-1"
         >
-          <Icon icon="radix-icons:cross-2" height="13" class="text-error" />
+          <Icon name="radix-icons:cross-2" height="13" class="text-error" />
         </button>
       </div>
     </div>

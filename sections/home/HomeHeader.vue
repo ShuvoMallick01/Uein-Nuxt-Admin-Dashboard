@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll, useDark, useToggle } from "@vueuse/core";
 import { RouterLink } from "vue-router";
-import { Icon } from "@iconify/vue";
+
 // CUSTOM UTILS METHOD
 import { cn } from "~/utils/utils";
 
@@ -34,7 +34,7 @@ const { y } = useWindowScroll({ behavior: "smooth" });
           <Icon
             height="20"
             class="text-gray-500 hover:text-primary"
-            :icon="isDark ? 'solar:sun-2-outline' : 'solar:moon-outline'"
+            :name="isDark ? 'solar:sun-2-outline' : 'solar:moon-outline'"
           />
         </button>
       </div>

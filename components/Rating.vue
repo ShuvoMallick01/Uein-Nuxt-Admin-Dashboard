@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import { Icon } from "@iconify/vue";
 
 // ==============================================================
 interface RatingProps {
@@ -18,14 +17,14 @@ const remaining = computed(() => 5 - Math.floor(props.rating));
   <div class="flex items-center gap-1">
     <Icon
       :height="size"
-      icon="iconamoon:star-fill"
+      name="iconamoon:star-fill"
       class="text-warning stroke-none"
       v-for="no in Math.floor(rating)"
       :key="no"
     />
 
     <Icon
-      icon="iconoir:star"
+      name="iconoir:star"
       :height="size"
       class="text-warning"
       v-for="no in remaining"

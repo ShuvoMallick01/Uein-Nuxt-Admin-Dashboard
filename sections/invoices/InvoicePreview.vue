@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { computed } from "vue";
 import Scrollbar from "simplebar-vue";
-import { Icon } from "@iconify/vue";
+
 // CUSTOM UTILS METHODS
 import { currency } from "~/utils/currency";
 import { dateFormat } from "~/utils/dateFormat";
@@ -160,10 +160,10 @@ const subtotal = computed(() => {
 
       <div class="flex justify-end gap-4">
         <Button type="submit">
-          <Icon icon="prime:save" height="19" class="me-2" /> Save PDF</Button
+          <Icon name="prime:save" height="19" class="me-2" /> Save PDF</Button
         >
         <Button type="submit" color="success" @click="printPage">
-          <Icon icon="solar:printer-linear" height="18" class="me-2" /> Print
+          <Icon name="solar:printer-linear" height="18" class="me-2" /> Print
           Invoice
         </Button>
       </div>

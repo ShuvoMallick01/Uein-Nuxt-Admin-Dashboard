@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from "vue-router";
 import { useForm } from "vee-validate";
-import { Icon } from "@iconify/vue";
+
 import * as yup from "yup";
 // CUSTOM COMPONENTS
 import InvoiceItems from "./InvoiceItems.vue";
@@ -262,7 +262,7 @@ const onSubmit = handleSubmit((values, { resetForm }) => {
 
     <div class="flex justify-end">
       <Button type="submit" :disabled="isSubmitting">
-        <Icon icon="mi:save" class="me-2" />
+        <Icon name="mi:save" class="me-2" />
         {{ invoice ? "Update" : "Create" }}
       </Button>
     </div>

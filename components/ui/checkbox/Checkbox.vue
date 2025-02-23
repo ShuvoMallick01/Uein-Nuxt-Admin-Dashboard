@@ -6,7 +6,6 @@ import {
   CheckboxRoot,
   useForwardPropsEmits,
 } from "radix-vue";
-import { Icon } from "@iconify/vue";
 
 import { cn } from "~/utils/utils";
 
@@ -37,7 +36,7 @@ const forwarded = useForwardPropsEmits(delegatedProps, emits);
       class="flex items-center justify-center w-full h-full text-current"
     >
       <slot>
-        <Icon icon="mingcute:check-fill" />
+        <Icon name="mingcute:check-fill" />
       </slot>
     </CheckboxIndicator>
   </CheckboxRoot>

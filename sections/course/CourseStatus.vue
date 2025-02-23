@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 // DATA
 import { status } from "~/data/dashboards/course";
 </script>
@@ -21,7 +20,7 @@ import { status } from "~/data/dashboards/course";
           item.color === 'success',
       }"
     >
-      <Icon :icon="item.icon" height="24" />
+      <Icon :name="item.icon" height="24" />
     </div>
 
     <div class="truncate">

@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import { Icon } from "@iconify/vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Card class="p-6">
@@ -17,14 +15,14 @@ import { Icon } from "@iconify/vue";
 
       <div class="space-y-3">
         <div class="flex items-center gap-2">
-          <Icon icon="tabler:map-pin" height="18" class="text-gray-400" />
+          <Icon name="tabler:map-pin" height="18" class="text-gray-400" />
           <p class="text-sm">
             Live at <span class="font-medium hover:underline">Australia</span>
           </p>
         </div>
 
         <div class="flex items-center gap-2">
-          <Icon icon="tabler:briefcase" height="18" class="text-gray-400" />
+          <Icon name="tabler:briefcase" height="18" class="text-gray-400" />
           <p class="text-sm">
             Software Engineer at
             <span class="font-medium hover:underline">Google</span>
@@ -32,7 +30,7 @@ import { Icon } from "@iconify/vue";
         </div>
 
         <div class="flex items-center gap-2">
-          <Icon icon="tabler:gift" height="18" class="text-gray-400" />
+          <Icon name="tabler:gift" height="18" class="text-gray-400" />
           <p class="text-sm">
             Studied at
             <span class="font-medium hover:underline">DevOps Academy</span>

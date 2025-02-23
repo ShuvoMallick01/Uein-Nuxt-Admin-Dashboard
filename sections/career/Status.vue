@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 import VueApexCharts from "vue3-apexcharts";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
@@ -56,7 +55,7 @@ const chartOptions = useApexChartOptions({
           >
             <Icon
               height="12"
-              :icon="
+              :name="
                 item.increment > 0
                   ? 'iconamoon:trend-up'
                   : 'iconamoon:trend-down'

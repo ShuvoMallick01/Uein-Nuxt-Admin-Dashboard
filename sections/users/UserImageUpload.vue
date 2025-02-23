@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
 import { useField } from "vee-validate";
 import { type FileRejectReason, useDropzone } from "vue3-dropzone";
 import { cn } from "~/utils/utils";
@@ -63,7 +62,7 @@ const { getRootProps, getInputProps } = useDropzone({
       "
     >
       <input class="hidden" v-bind="getInputProps()" />
-      <Icon icon="solar:camera-broken" height="36" />
+      <Icon name="solar:camera-broken" height="36" />
     </div>
   </div>
 

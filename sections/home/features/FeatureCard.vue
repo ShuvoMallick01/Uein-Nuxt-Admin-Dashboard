@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { Icon } from "@iconify/vue";
-
 // ===========================
 interface Props {
   color: string;
@@ -25,7 +23,7 @@ defineProps<Props>();
           'bg-success-50 text-success dark:bg-success/10': color === 'success',
         }"
       >
-        <Icon :icon="iconName" height="32" />
+        <Icon :name="iconName" height="32" />
       </div>
 
       <h5 class="text-sm font-medium">{{ title }}</h5>

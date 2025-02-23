@@ -5,7 +5,7 @@ import {
   AccordionTrigger,
   type AccordionTriggerProps,
 } from "radix-vue";
-import { Icon } from "@iconify/vue";
+
 import { cn } from "~/utils/utils";
 
 const props = defineProps<
@@ -32,7 +32,7 @@ const delegatedProps = computed(() => {
 
       <slot name="icon">
         <Icon
-          icon="lucide:chevron-down"
+          name="lucide:chevron-down"
           class="w-4 h-4 transition-transform duration-200 shrink-0 text-primary"
         />
       </slot>
