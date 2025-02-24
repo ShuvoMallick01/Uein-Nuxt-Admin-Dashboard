@@ -159,5 +159,35 @@ watch(selected, (value) => {
         class="ps-1 pe-1"
       />
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full xl:col-span-6">
+        <div class="flex items-start justify-between px-5">
+          <p class="text-base font-semibold">Revenue</p>
+
+          <Select v-model:model-value="selected">
+            <SelectTrigger
+              class="text-[13px] font-medium text-gray-600 w-20 h-8 border-none rounded-lg bg-active"
+            >
+              <SelectValue placeholder="Select a day" />
+            </SelectTrigger>
+
+            <SelectContent class="text-[13px] font-medium text-gray-600">
+              <SelectGroup>
+                <SelectItem value="week">Week</SelectItem>
+                <SelectItem value="month">Month</SelectItem>
+                <SelectItem value="year">Year</SelectItem>
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+
+        <div class="mt-6">
+          <div
+            class="w-full rounded-md h-[280px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

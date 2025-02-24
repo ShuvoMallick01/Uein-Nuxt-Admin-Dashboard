@@ -35,5 +35,17 @@ const chartOptions = useApexChartOptions({
         height="330"
       />
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full md:col-span-6 xl:col-span-4">
+        <CardTitle class="text-center xl:mb-5">Support Tracker</CardTitle>
+
+        <div class="mt-10">
+          <div
+            class="w-full rounded-md h-[340px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

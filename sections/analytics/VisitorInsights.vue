@@ -99,5 +99,17 @@ watchEffect(() => {
         class="2xl:-mt-9 ps-1"
       />
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full md:col-span-6 xl:col-span-4">
+        <CardTitle>Visitor Insights</CardTitle>
+
+        <div class="mt-6">
+          <div
+            class="w-full rounded-md h-[260px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

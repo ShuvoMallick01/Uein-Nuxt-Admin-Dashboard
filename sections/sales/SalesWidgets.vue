@@ -31,7 +31,7 @@ import { widgets } from "~/data/dashboards/sales";
       >
         <Icon
           :name="widget.isUp ? 'iconamoon:trend-up' : 'iconamoon:trend-down'"
-          height="14"
+          size="14"
         />
         <span>{{ widget.value }}%</span>
       </Badge>
@@ -51,7 +51,7 @@ import { widgets } from "~/data/dashboards/sales";
         'bg-info-25 text-info-500 dark:bg-info/10': widget.color === 'info',
       }"
     >
-      <Icon :name="widget.icon" height="32" />
+      <Icon :name="widget.icon" size="32" />
     </div>
   </Card>
 </template>

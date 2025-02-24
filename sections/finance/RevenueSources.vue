@@ -33,13 +33,6 @@ const chartOptions = useApexChartOptions({
   tooltip: {
     y: { formatter: (val) => `${val}%` },
   },
-
-  responsive: [
-    // { breakpoint: 2000, options: { chart: { width: 390 } } },
-    // { breakpoint: 1300, options: { chart: { width: 360 } } },
-    // { breakpoint: 1100, options: { chart: { width: 300 } } },
-    // { breakpoint: 1000, options: { chart: { width: 300 } } }
-  ],
 });
 </script>
 
@@ -56,5 +49,17 @@ const chartOptions = useApexChartOptions({
         />
       </CardContent>
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full xl:col-span-4">
+        <CardTitle>Revenue Sources</CardTitle>
+
+        <div class="mt-6">
+          <div
+            class="w-full rounded-md h-[300px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

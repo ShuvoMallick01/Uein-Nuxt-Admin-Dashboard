@@ -36,7 +36,7 @@ import { widgets } from "~/data/dashboards/analytics";
           <div
             class="grid w-6 h-6 text-gray-500 rounded-lg place-items-center bg-primary-50 dark:bg-primary/10 dark:text-primary"
           >
-            <Icon name="solar:eye-linear" height="14" />
+            <Icon name="solar:eye-linear" size="14" />
           </div>
 
           <p class="text-xs font-medium text-gray-500">

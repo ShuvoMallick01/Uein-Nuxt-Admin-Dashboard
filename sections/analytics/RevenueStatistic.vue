@@ -84,5 +84,17 @@ const chartOptions = useApexChartOptions({
         class="ps-1 pe-1"
       />
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full xl:col-span-6">
+        <CardTitle>Revenue Statistic</CardTitle>
+
+        <div class="mt-6">
+          <div
+            class="w-full rounded-md h-[250px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

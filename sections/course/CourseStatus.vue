@@ -20,7 +20,7 @@ import { status } from "~/data/dashboards/course";
           item.color === 'success',
       }"
     >
-      <Icon :name="item.icon" height="24" />
+      <Icon :name="item.icon" size="24" />
     </div>
 
     <div class="truncate">

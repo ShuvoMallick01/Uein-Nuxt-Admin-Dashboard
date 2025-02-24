@@ -19,5 +19,17 @@ const { chartOptions, series } = useChartOptions();
         />
       </div>
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full xl:col-span-4">
+        <CardTitle>Vacancy Status</CardTitle>
+
+        <div class="mt-6">
+          <div
+            class="w-full rounded-md h-[300px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

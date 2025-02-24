@@ -48,5 +48,17 @@ const chartOptions = useApexChartOptions({
         :series="series"
       />
     </Card>
+
+    <template #fallback>
+      <Card class="p-5 col-span-full xl:col-span-4">
+        <CardTitle>Profile Strength</CardTitle>
+
+        <div class="mt-6">
+          <div
+            class="w-full rounded-md h-[300px] bg-skeleton animate-pulse"
+          ></div>
+        </div>
+      </Card>
+    </template>
   </ClientOnly>
 </template>

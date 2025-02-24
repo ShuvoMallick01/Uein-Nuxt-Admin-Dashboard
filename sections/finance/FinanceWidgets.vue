@@ -41,7 +41,7 @@ const getVariant = (color: string): BadgeVariants["variant"] => {
             'bg-info-50 text-info dark:bg-info/10': item.color === 'info',
           }"
         >
-          <Icon :name="item.icon" height="25" />
+          <Icon :name="item.icon" size="25" />
         </div>
       </div>
     </Card>
