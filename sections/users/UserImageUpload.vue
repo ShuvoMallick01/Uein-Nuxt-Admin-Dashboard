@@ -62,7 +62,7 @@ const { getRootProps, getInputProps } = useDropzone({
       "
     >
       <input class="hidden" v-bind="getInputProps()" />
-      <Icon name="solar:camera-broken" height="36" />
+      <Icon name="solar:camera-broken" size="36" />
     </div>
   </div>
 

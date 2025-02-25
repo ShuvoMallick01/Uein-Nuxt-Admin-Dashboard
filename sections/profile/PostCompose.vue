@@ -15,7 +15,7 @@
         <Button
           class="h-8 px-2 text-xs rounded-full text-foreground bg-primary-25 hover:bg-primary-50 dark:bg-primary/5"
         >
-          <Icon name="solar:gallery-broken" height="15" class="me-2" /> Photo /
+          <Icon name="solar:gallery-broken" size="15" class="me-2" /> Photo /
           Video
         </Button>
 

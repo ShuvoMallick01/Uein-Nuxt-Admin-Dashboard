@@ -8,6 +8,7 @@ import { Badge, type BadgeVariants } from "~/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 // CUSTOM COMPONENTS
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
+import { Icon } from "#components";
 // CUSTOM UTILS METHODS
 import { dateFormat } from "~/utils/dateFormat";
 import { formatPhoneNumber } from "~/utils/libPhoneNumber";
@@ -26,8 +27,8 @@ const sortingHeader = (name: string) => {
       () => [
         name,
         h(Icon, {
-          icon: "lucide:arrow-down-up",
-          height: 13,
+          name: "lucide:arrow-down-up",
+          size: 13,
           class:
             "ms-2 opacity-0 group-hover:opacity-100 transition-transform duration-200 ease-in-out",
         }),

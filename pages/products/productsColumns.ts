@@ -1,16 +1,14 @@
 import { h } from "vue";
 import type { ColumnDef, HeaderContext } from "@tanstack/vue-table";
-
+import { Icon } from "#components";
 // SHADCN COMPONENTS
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
 import { Badge, type BadgeVariants } from "~/components/ui/badge";
 import { Avatar, AvatarImage, AvatarFallback } from "~/components/ui/avatar";
 import DataTableActions from "~/components/dataTable/DataTableActions.vue";
-
 // CUSTOM UTILS METHODS
 import { dateFormat } from "~/utils/dateFormat";
-
 // TYPE
 import type { Product } from "~/types/Product";
 import { currency } from "~/utils/currency";
@@ -28,8 +26,8 @@ const sortingHeader = (name: string) => {
       () => [
         name,
         h(Icon, {
-          icon: "lucide:arrow-down-up",
-          height: 13,
+          name: "lucide:arrow-down-up",
+          size: 13,
           class:
             "ms-2 opacity-0 group-hover:opacity-100 transition-transform duration-200 ease-in-out",
         }),

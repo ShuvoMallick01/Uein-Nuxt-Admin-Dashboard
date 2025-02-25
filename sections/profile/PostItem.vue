@@ -106,13 +106,13 @@ defineProps<{ post: Post }>();
           <button
             class="grid w-8 h-8 text-xs transition-all rounded-full text-muted place-items-center bg-primary-50 hover:bg-primary-100 dark:bg-primary/10"
           >
-            <Icon name="ic:outline-chat" height="15" />
+            <Icon name="ic:outline-chat" size="15" />
           </button>
 
           <button
             class="grid w-8 h-8 text-xs transition-all rounded-full text-muted place-items-center bg-primary-50 hover:bg-primary-100 dark:bg-primary/10"
           >
-            <Icon name="solar:share-bold" height="15" />
+            <Icon name="solar:share-bold" size="15" />
           </button>
         </div>
       </div>

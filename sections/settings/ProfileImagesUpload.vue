@@ -81,7 +81,7 @@ const {
         "
       >
         <input class="hidden" v-bind="getCoverInputProps()" />
-        <Icon name="solar:camera-broken" height="36" />
+        <Icon name="solar:camera-broken" size="36" />
       </div>
     </div>
 
@@ -125,7 +125,7 @@ const {
           "
         >
           <input class="hidden" v-bind="getProfileInputProps()" />
-          <Icon name="solar:camera-broken" height="36" />
+          <Icon name="solar:camera-broken" size="36" />
         </div>
       </div>
     </div>

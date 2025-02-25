@@ -42,14 +42,14 @@ const selectedImage = ref(props.images[0]);
       <button
         class="inline-flex items-center text-sm font-medium hover:text-primary"
       >
-        <Icon name="fluent:arrow-swap-20-filled" height="15" class="me-2" />
+        <Icon name="fluent:arrow-swap-20-filled" size="15" class="me-2" />
         <span>Compare</span>
       </button>
 
       <button
         class="inline-flex items-center text-sm font-medium whitespace-nowrap hover:text-primary"
       >
-        <Icon name="ri:question-line" height="15" class="me-2" />
+        <Icon name="ri:question-line" size="15" class="me-2" />
         <span>Ask a Question</span>
       </button>
 

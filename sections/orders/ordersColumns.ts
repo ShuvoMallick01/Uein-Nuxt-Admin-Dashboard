@@ -1,6 +1,6 @@
 import { h } from "vue";
 import type { ColumnDef, HeaderContext } from "@tanstack/vue-table";
-
+import { Icon } from "#components";
 // SHADCN COMPONENTS
 import { Button } from "~/components/ui/button";
 import { Checkbox } from "~/components/ui/checkbox";
@@ -26,8 +26,8 @@ const sortingHeader = (name: string) => {
       () => [
         name,
         h(Icon, {
-          icon: "lucide:arrow-down-up",
-          height: 13,
+          name: "lucide:arrow-down-up",
+          size: 13,
           class:
             "ms-2 opacity-0 group-hover:opacity-100 transition-transform duration-200 ease-in-out",
         }),

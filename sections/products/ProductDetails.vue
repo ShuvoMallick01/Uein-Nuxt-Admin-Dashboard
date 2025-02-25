@@ -98,7 +98,7 @@ defineProps<{ product: Product }>();
       >
         <Icon
           name="akar-icons:tag"
-          height="15"
+          size="15"
           class="me-2 shrink-0 text-primary"
         />
         <p class="text-sm">{{ offer }}</p>
