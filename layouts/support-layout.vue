@@ -39,6 +39,6 @@ import DefaultLayout from "~/layouts/default/index.vue";
     </Card>
 
     <!-- CONTENT -->
-    <RouterView />
+    <slot />
   </DefaultLayout>
 </template>

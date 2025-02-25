@@ -68,7 +68,7 @@ const route = useRoute();
                 'bg-primary/10 text-primary': route.path == item.route,
               }"
             >
-              <Icon :name="item.icon" :height="20" class="shrink-0" />
+              <Icon :name="item.icon" :size="20" class="shrink-0" />
               <span class="truncate">{{ item.label }}</span>
             </RouterLink>
           </div>

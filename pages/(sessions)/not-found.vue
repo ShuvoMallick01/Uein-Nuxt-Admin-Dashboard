@@ -31,7 +31,7 @@ import { Button } from "~/components/ui/button";
       <Button :as="RouterLink" to="/" variant="link" class="mt-8">
         <Icon
           name="majesticons:chevron-left"
-          style="font-size: large"
+          size="20"
           class="rtl:rotate-180"
         />
         Go Back

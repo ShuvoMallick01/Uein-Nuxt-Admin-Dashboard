@@ -122,14 +122,14 @@ const onSubmit = handleSubmit((values) => {
           <Button
             class="w-full bg-primary-25 text-foreground hover:bg-primary-50 dark:bg-primary/5 dark:hover:bg-primary/10"
           >
-            <Icon name="flat-color-icons:google" height="20" class="me-2" />
+            <Icon name="flat-color-icons:google" size="20" class="me-2" />
             Sign in with Google
           </Button>
 
           <Button
             class="w-full bg-primary-25 text-foreground hover:bg-primary-50 dark:bg-primary/5 dark:hover:bg-primary/10"
           >
-            <Icon name="logos:facebook" height="20" class="me-2" />
+            <Icon name="logos:facebook" size="20" class="me-2" />
             Sign in with Facebook
           </Button>
         </div>
