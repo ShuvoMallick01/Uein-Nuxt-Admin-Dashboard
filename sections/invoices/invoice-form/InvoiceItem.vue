@@ -77,7 +77,7 @@ watch(
         variant="outline"
         @click="remove(id)"
       >
-        <Icon name="mage:trash" height="18" />
+        <Icon name="mage:trash" size="18" />
       </Button>
     </TableCell>
   </TableRow>

@@ -10,7 +10,7 @@ defineProps<{ order: Order }>();
 <template>
   <div class="grid grid-cols-12 mt-2 mb-6 gap-7">
     <OrderInfoCard
-      name="mingcute:truck-line"
+      icon="mingcute:truck-line"
       iconColor="success"
       :title="order.customer.name"
       heading="Shipping Details"
@@ -19,7 +19,7 @@ defineProps<{ order: Order }>();
     </OrderInfoCard>
 
     <OrderInfoCard
-      name="ion:card-outline"
+      icon="ion:card-outline"
       iconColor="default"
       :title="order.customer.name"
       heading="Billing Details"
@@ -28,7 +28,7 @@ defineProps<{ order: Order }>();
     </OrderInfoCard>
 
     <OrderInfoCard
-      name="solar:dollar-linear"
+      icon="solar:dollar-linear"
       iconColor="warning"
       title="ID: #TSD456DF41SD5"
       heading="Payment Details"
@@ -38,7 +38,7 @@ defineProps<{ order: Order }>();
     </OrderInfoCard>
 
     <OrderInfoCard
-      name="fluent:book-information-24-regular"
+      icon="fluent:book-information-24-regular"
       iconColor="info"
       :title="order.customer.name"
       heading="Customer Info"

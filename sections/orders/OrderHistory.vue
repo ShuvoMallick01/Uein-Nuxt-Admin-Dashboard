@@ -39,7 +39,7 @@ if (error.value) console.log(error.value);
       <Card v-for="item in orderHistories">
         <div class="flex items-center gap-4">
           <div class="grid rounded-lg place-items-center size-12 bg-active">
-            <Icon :name="item.icon" height="27" :class="item.color" />
+            <Icon :name="item.icon" size="27" :class="item.color" />
           </div>
 
           <div>

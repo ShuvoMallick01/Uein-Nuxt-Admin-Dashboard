@@ -20,7 +20,7 @@ defineProps<Props>();
       <CardTitle class="text-base font-semibold">{{ heading }}</CardTitle>
 
       <Badge class="justify-center rounded-lg w-11 h-11" :variant="iconColor">
-        <Icon :name="icon" height="22" />
+        <Icon :name="icon" size="22" />
       </Badge>
     </CardHeader>
 

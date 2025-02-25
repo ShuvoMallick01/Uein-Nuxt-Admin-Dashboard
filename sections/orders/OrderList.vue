@@ -140,7 +140,7 @@ watch(status, (newStatus) => {
 
           <!-- CLEAR FILTER BUTTON -->
           <Button v-if="isFiltered" @click="handleResetFilters" color="error">
-            <Icon name="heroicons:trash" height="18" class="me-2" />
+            <Icon name="heroicons:trash" size="18" class="me-2" />
             Clear
           </Button>
         </div>

@@ -160,10 +160,10 @@ const subtotal = computed(() => {
 
       <div class="flex justify-end gap-4">
         <Button type="submit">
-          <Icon name="prime:save" height="19" class="me-2" /> Save PDF</Button
+          <Icon name="prime:save" size="19" class="me-2" /> Save PDF</Button
         >
         <Button type="submit" color="success" @click="printPage">
-          <Icon name="solar:printer-linear" height="18" class="me-2" /> Print
+          <Icon name="solar:printer-linear" size="18" class="me-2" /> Print
           Invoice
         </Button>
       </div>
