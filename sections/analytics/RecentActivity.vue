@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Scrollbar from "simplebar-vue";
 // CUSTOM DATA
 import { recentActivity } from "~/data/dashboards/analytics";
 </script>

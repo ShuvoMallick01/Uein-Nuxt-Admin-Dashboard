@@ -75,9 +75,11 @@ defineProps<{ product: Product }>();
 
     <ToggleGroup type="single" class="inline-flex gap-2" default-value="l">
       <ToggleGroupItem
-        class="!data-[state=on]:text-main size-8 text-xs uppercase"
         v-for="size in product.sizes"
         :value="size.toLowerCase()"
+        class="size-8 text-xs"
+        size="sm"
+        variant="outline"
       >
         {{ size }}
       </ToggleGroupItem>

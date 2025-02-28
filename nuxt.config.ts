@@ -109,6 +109,7 @@ export default defineNuxtConfig({
         "flat-color-icons",
         "majesticons",
         "lucide",
+        "iconoir",
       ],
     },
   },

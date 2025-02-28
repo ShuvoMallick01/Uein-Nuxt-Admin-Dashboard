@@ -45,7 +45,7 @@ if (error.value) {
           :value="size.value"
           size="sm"
           variant="outline"
-          class="hover:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=on]:bg-gray-200 data-[state=on]:text-accent-foreground border border-gray-200 hover:bg-gray-100 dark:border-gray-50 dark:hover:bg-gray-50"
+          class="size-8 text-xs"
         >
           {{ size.title }}
         </ToggleGroupItem>

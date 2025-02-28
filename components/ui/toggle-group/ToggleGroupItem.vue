@@ -38,6 +38,11 @@ const forwardedProps = useForwardProps(delegatedProps);
           variant: context?.variant || variant,
           size: context?.size || size,
         }),
+        'uppercase focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2',
+        'hover:text-muted-foreground hover:bg-gray-100 dark:hover:bg-gray-50',
+        'disabled:pointer-events-none disabled:opacity-50',
+        'border border-gray-200 dark:border-gray-50',
+        'data-[state=on]:bg-gray-200 data-[state=on]:text-accent-foreground',
         props.class
       )
     "

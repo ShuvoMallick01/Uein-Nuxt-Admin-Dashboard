@@ -16,7 +16,7 @@ const remaining = computed(() => 5 - Math.floor(props.rating));
 <template>
   <div class="flex items-center gap-1">
     <Icon
-      :height="size"
+      :size="size"
       name="iconamoon:star-fill"
       class="text-warning stroke-none"
       v-for="no in Math.floor(rating)"
@@ -25,7 +25,7 @@ const remaining = computed(() => 5 - Math.floor(props.rating));
 
     <Icon
       name="iconoir:star"
-      :height="size"
+      :size="size"
       class="text-warning"
       v-for="no in remaining"
       :key="no"

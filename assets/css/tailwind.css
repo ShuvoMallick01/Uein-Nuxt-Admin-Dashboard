@@ -237,3 +237,19 @@
 #nprogress .peg {
   @apply !shadow-none;
 }
+
+/* ===== SCROLLBAR ====== */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #9ca3af;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f3f4f6;
+  border-radius: 9999px;
+}
