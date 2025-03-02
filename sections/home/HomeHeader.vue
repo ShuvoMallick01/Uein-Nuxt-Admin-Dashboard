@@ -2,10 +2,8 @@
 import { RouterLink } from "vue-router";
 // CUSTOM UTILS METHOD
 import { cn } from "~/utils/utils";
-// CUSTOM STORE
-import { useHeaderStore } from "~/stores/header";
 
-const headerStore = useHeaderStore();
+const { y } = useWindowScroll({ behavior: "smooth" });
 const colorMode = useColorMode();
 
 // Toggle theme function
@@ -15,7 +13,6 @@ const toggleTheme = () => {
 
 onMounted(() => {
   colorMode.preference = "light";
-  headerStore.scrollY = window.scrollY;
 });
 </script>
 
@@ -24,7 +21,7 @@ onMounted(() => {
     :class="
       cn({
         'sticky top-0 z-[12] w-full py-5 transition-all  ': true,
-        'backdrop-blur-lg bg-transparent shadow-sm': headerStore.scrollY > 0,
+        'backdrop-blur-lg bg-transparent shadow-sm': y > 0,
       })
     "
   >

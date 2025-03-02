@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
-import { useWindowScroll, useTextDirection } from "@vueuse/core";
 // CUSTOM STORE
 import { useSidebarStore } from "~/stores/sidebar";
 // CUSTOM COMPONENTS
