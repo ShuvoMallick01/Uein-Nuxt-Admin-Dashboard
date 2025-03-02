@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { onMounted } from "vue";
 import { useWindowScroll, useTextDirection } from "@vueuse/core";
-//
 // CUSTOM STORE
 import { useSidebarStore } from "~/stores/sidebar";
 // CUSTOM COMPONENTS
@@ -24,7 +23,6 @@ const toggleTheme = () => {
   colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
 };
 
-console.log("solar:sun-2-outline");
 onMounted(() => {
   dir.value = "ltr";
   colorMode.preference = "light";

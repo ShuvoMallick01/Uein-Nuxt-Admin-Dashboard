@@ -107,6 +107,11 @@ export default defineNuxtConfig({
         "icon-park-outline",
         "hugeicons",
         "streamline",
+        "ic",
+        "gg",
+        "vscode-icons",
+        "uil",
+        "oui",
       ],
     },
   },
@@ -114,6 +119,12 @@ export default defineNuxtConfig({
   routeRules: {
     "/": { swr: true, cache: { maxAge: 10 } },
     "/course": { prerender: true },
+  },
+
+  router: {
+    options: {
+      scrollBehaviorType: "smooth",
+    },
   },
 
   build: {

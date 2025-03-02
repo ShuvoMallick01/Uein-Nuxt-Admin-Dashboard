@@ -23,7 +23,7 @@ defineProps<Props>();
           'bg-success-50 text-success dark:bg-success/10': color === 'success',
         }"
       >
-        <Icon :name="iconName" height="32" />
+        <Icon :name="iconName" size="32" />
       </div>
 
       <h5 class="text-sm font-medium">{{ title }}</h5>

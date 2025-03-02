@@ -1,13 +1,22 @@
 <script setup lang="ts">
-import { useWindowScroll, useDark, useToggle } from "@vueuse/core";
 import { RouterLink } from "vue-router";
-
 // CUSTOM UTILS METHOD
 import { cn } from "~/utils/utils";
+// CUSTOM STORE
+import { useHeaderStore } from "~/stores/header";
 
-const isDark = useDark();
-const toggleDark = useToggle(isDark);
-const { y } = useWindowScroll({ behavior: "smooth" });
+const headerStore = useHeaderStore();
+const colorMode = useColorMode();
+
+// Toggle theme function
+const toggleTheme = () => {
+  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
+};
+
+onMounted(() => {
+  colorMode.preference = "light";
+  headerStore.scrollY = window.scrollY;
+});
 </script>
 
 <template>
@@ -15,7 +24,7 @@ const { y } = useWindowScroll({ behavior: "smooth" });
     :class="
       cn({
         'sticky top-0 z-[12] w-full py-5 transition-all  ': true,
-        'backdrop-blur-lg bg-transparent shadow-sm': y > 0,
+        'backdrop-blur-lg bg-transparent shadow-sm': headerStore.scrollY > 0,
       })
     "
   >
@@ -30,11 +39,15 @@ const { y } = useWindowScroll({ behavior: "smooth" });
         </RouterLink>
 
         <!-- THEME BUTTON -->
-        <button @click="toggleDark()">
+        <button @click="toggleTheme" class="flex items-center">
           <Icon
-            height="20"
+            size="18"
             class="text-gray-500 hover:text-primary"
-            :name="isDark ? 'solar:sun-2-outline' : 'solar:moon-outline'"
+            :name="
+              colorMode.value === 'dark'
+                ? 'solar:sun-2-outline'
+                : 'solar:moon-outline'
+            "
           />
         </button>
       </div>
