@@ -63,7 +63,7 @@ watch(selected, (value) => {
 <template>
   <ClientOnly>
     <Card class="px-0 pb-2 col-span-full xl:col-span-5 2xl:col-span-4">
-      <div class="flex items-start justify-between px-5 mb-2">
+      <div class="flex items-start justify-between px-5 mb-3">
         <CardTitle>Visitor Graph</CardTitle>
 
         <Select v-model:model-value="selected">
@@ -85,7 +85,7 @@ watch(selected, (value) => {
       <div class="ps-4 pe-3">
         <VueApexCharts
           type="area"
-          height="280"
+          height="300"
           :options="chartOptions"
           :series="data[selected].series"
         />

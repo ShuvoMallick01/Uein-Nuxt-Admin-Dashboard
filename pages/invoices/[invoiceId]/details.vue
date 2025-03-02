@@ -10,13 +10,7 @@ const {
   data: invoice,
   status,
   error,
-} = await useAsyncData<Invoice>(
-  "product",
-  () => $fetch(`/api/invoices/${route.params.invoiceId}`),
-  {
-    lazy: false,
-  }
-);
+} = useFetch<Invoice>(`/api/invoices/${route.params.invoiceId}`);
 
 definePageMeta({
   title: "Details",

@@ -12,7 +12,7 @@ import { recentOrders } from "~/data/dashboards/sales";
     <div
       :key="order.id"
       v-for="order in recentOrders"
-      class="flex items-center justify-between px-5 py-2 border-b border-border last-of-type:border-b-0"
+      class="flex items-center justify-between px-5 py-2.5 border-b border-border last-of-type:border-b-0"
     >
       <div class="flex items-center gap-3">
         <Avatar shape="square">

@@ -1,57 +1,37 @@
 <script setup lang="ts">
 import { watch, onMounted } from "vue";
-
 // TABLE COLUMNS DEFINITION
 import { columns } from "./usersColumns";
 // TYPES
 import type { User, UserStatus } from "~/types/User";
 
-let isLoading = ref(true);
-
 definePageMeta({
   title: "Users",
 });
 
-const { data: roles } = useAsyncData("roles", () => $fetch("/api/users/roles"));
-const { data: statuses } = useAsyncData<UserStatus[]>("statuses", () =>
-  $fetch("/api/users/status")
-);
-
+const { data: roles } = useFetch<string[]>("/api/users/roles");
+const { data: statuses } = useFetch<UserStatus[]>("/api/users/status");
 const {
+  data: users,
+  refresh: refreshUsers,
   status,
   error,
-  data: users,
-} = useAsyncData<User[]>("users", () => $fetch("/api/users"));
+} = useFetch<User[]>("/api/users");
 
 // HANDLE DELETE USERS BY IDS
 const handleDeleteUsers = async (users: User[]) => {
   try {
-    isLoading.value = true;
     const ids = users.map((user) => user.id);
-    // console.log(ids);
     await $fetch("/api/users", {
       method: "DELETE",
       body: { ids },
     });
+    await refreshUsers();
     console.log("Users deleted successfully");
   } catch (error) {
     console.log(error);
-  } finally {
-    isLoading.value = false;
   }
 };
-
-if (error.value) {
-  console.log(error.value);
-}
-
-onMounted(() => {
-  isLoading.value = status.value === "pending";
-});
-
-watch(status, (newStatus) => {
-  isLoading.value = newStatus === "pending";
-});
 </script>
 
 <template>
@@ -66,7 +46,7 @@ watch(status, (newStatus) => {
 
     <Card class="p-0 pt-5">
       <!-- SHOW LOADING SKELETON -->
-      <UserListSkeleton v-if="isLoading" />
+      <UserListSkeleton v-if="status === 'pending'" />
 
       <!-- DATA NOT FOUND UI -->
       <DataNotFound v-else-if="users?.length === 0" />

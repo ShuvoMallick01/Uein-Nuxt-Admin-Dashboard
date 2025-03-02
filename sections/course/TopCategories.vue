@@ -5,9 +5,9 @@ import { categories } from "~/data/dashboards/course";
 
 <template>
   <Card class="col-span-full md:col-span-6 2xl:col-span-4">
-    <CardTitle class="pb-6">Top Categories</CardTitle>
+    <CardTitle class="pb-8">Top Categories</CardTitle>
 
-    <div class="space-y-5">
+    <div class="space-y-6">
       <RouterLink
         v-for="cat in categories"
         :key="cat.id"

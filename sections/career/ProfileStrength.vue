@@ -39,7 +39,7 @@ const chartOptions = useApexChartOptions({
 
 <template>
   <ClientOnly>
-    <Card class="col-span-full xl:col-span-4">
+    <Card class="col-span-full xl:col-span-4 flex flex-col items-center">
       <CardTitle class="mb-2 text-center xl:mb-5">Profile Strength</CardTitle>
       <VueApexCharts
         type="polarArea"

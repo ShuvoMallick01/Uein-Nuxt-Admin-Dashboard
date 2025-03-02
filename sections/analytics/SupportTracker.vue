@@ -27,12 +27,12 @@ const chartOptions = useApexChartOptions({
 <template>
   <ClientOnly>
     <Card class="col-span-full md:col-span-6 xl:col-span-4">
-      <CardTitle class="mb-2 text-center xl:mb-5">Support Tracker</CardTitle>
+      <CardTitle class="mb-2 text-center xl:mb-8">Support Tracker</CardTitle>
       <VueApexCharts
         type="donut"
         :options="chartOptions"
         :series="series"
-        height="330"
+        height="350"
       />
     </Card>
 

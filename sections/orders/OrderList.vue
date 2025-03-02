@@ -1,25 +1,24 @@
 <script setup lang="ts">
 import { ref } from "vue";
-
 // TABLE COLUMNS DEFINITION
 import { columns } from "./ordersColumns";
 // TYPES
 import type { Order, OrderStatus, PaymentMethods } from "~/types/Order";
 
-let isLoading = ref(true);
-
-const { status, error, data: orders } = useFetch<Order[]>("/api/orders");
+const {
+  data: orders,
+  status,
+  error,
+  refresh: refreshOrders,
+} = useFetch<Order[]>("/api/orders");
 const { data: statuses } = useFetch<OrderStatus[]>("/api/orders/statuses");
 const { data: paymentMethods } = useFetch<PaymentMethods[]>(
   "/api/orders/payment-methods"
 );
 
-if (error.value) console.log(error.value);
-
 // HANDLE DELETE ORDERS BY IDS
 const handleDeleteOrders = async (orders: Order[]) => {
   try {
-    isLoading.value = true;
     const ids = orders.map((order) => order.id);
     await $fetch("/api/orders", {
       method: "DELETE",
@@ -27,27 +26,20 @@ const handleDeleteOrders = async (orders: Order[]) => {
         ids,
       },
     });
+    await refreshOrders();
     console.log("Orders deleted successfully");
   } catch (error) {
     console.log(error);
-  } finally {
-    isLoading.value = false;
   }
 };
 
-onMounted(() => {
-  isLoading.value = status.value === "pending";
-});
-
-watch(status, (newStatus) => {
-  isLoading.value = newStatus === "pending";
-});
+if (error.value) console.log(error.value);
 </script>
 
 <template>
   <Card class="p-0 pt-5 mb-6">
     <!-- SHOW LOADING SKELETON -->
-    <OrderListSkeleton v-if="isLoading" />
+    <OrderListSkeleton v-if="status === 'pending'" />
 
     <!-- DATA NOT FOUND UI -->
     <DataNotFound v-else-if="orders?.length === 0" />

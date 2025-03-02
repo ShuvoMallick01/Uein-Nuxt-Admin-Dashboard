@@ -36,13 +36,7 @@ export default defineNuxtConfig({
   colorMode: {
     preference: "light",
     fallback: "light",
-    // hid: "nuxt-color-mode-script",
-    // globalName: "__NUXT_COLOR_MODE__",
-    // componentName: "ColorScheme",
-    // classPrefix: "",
     classSuffix: "",
-    // storage: "localStorage", // or 'sessionStorage' or 'cookie'
-    // storageKey: "nuxt-color-mode",
   },
 
   css: [
@@ -110,6 +104,9 @@ export default defineNuxtConfig({
         "majesticons",
         "lucide",
         "iconoir",
+        "icon-park-outline",
+        "hugeicons",
+        "streamline",
       ],
     },
   },

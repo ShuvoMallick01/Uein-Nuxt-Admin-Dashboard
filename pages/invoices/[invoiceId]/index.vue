@@ -13,9 +13,7 @@ const {
   data: invoice,
   status,
   error,
-} = await useAsyncData<Invoice>("Invoice", () =>
-  $fetch(`/api/invoices/${route.params.invoiceId}`)
-);
+} = useFetch<Invoice>(`/api/invoices/${route.params.invoiceId}`);
 
 if (error.value) console.log(error.value);
 </script>

@@ -1,18 +1,16 @@
 <script setup lang="ts">
 import { ref, onMounted, watch } from "vue";
-
 // TABLE COLUMNS DEFINITION
 import { columns } from "./invoicesColumn";
 // TYPES
 import type { Invoice } from "~/types/Invoice";
 
-let isLoading = ref(true);
-
 const {
   status,
   error,
   data: invoices,
-} = useAsyncData<Invoice[], Error>("products", () => $fetch("/api/invoices"));
+  refresh: refreshInvoices,
+} = useFetch<Invoice[]>("/api/invoices");
 
 definePageMeta({
   title: "Invoices",
@@ -21,28 +19,14 @@ definePageMeta({
 // HANDLE DELETE USERS BY IDS
 const handleDeleteInvoices = async (invoices: Invoice[]) => {
   try {
-    isLoading.value = true;
     const ids = invoices.map((invoice) => invoice.id);
     await $fetch("/api/invoices", { method: "DELETE" as const, body: { ids } });
+    await refreshInvoices();
     console.log("Invoices deleted successfully");
   } catch (error) {
     console.log(error);
-  } finally {
-    isLoading.value = false;
   }
 };
-
-if (error.value) {
-  console.log(error.value);
-}
-
-onMounted(() => {
-  isLoading.value = status.value === "pending";
-});
-
-watch(status, (newStatus) => {
-  isLoading.value = newStatus === "pending";
-});
 </script>
 
 <template>
@@ -57,7 +41,7 @@ watch(status, (newStatus) => {
 
     <Card class="p-0 pt-5">
       <!-- SHOW LOADING SKELETON -->
-      <InvoiceListSkeleton v-if="isLoading" />
+      <InvoiceListSkeleton v-if="status === 'pending'" />
 
       <!-- DATA NOT FOUND UI -->
       <DataNotFound v-else-if="invoices?.length === 0" />

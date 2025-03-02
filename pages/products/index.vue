@@ -7,17 +7,16 @@ import { columns } from "./productsColumns";
 // TYPES
 import type { Product } from "~/types/Product";
 
-let isLoading = ref(true);
-
 definePageMeta({
   title: "Products",
 });
 
 const {
+  data: products,
   status,
   error,
-  data: products,
-} = useAsyncData<Product>("products", () => $fetch("/api/products"));
+  refresh,
+} = useFetch<Product>("/api/products");
 
 // HANDLE DELETE PRODUCT BY IDS
 const handleDeleteProducts = async (products: Product[]) => {
@@ -25,26 +24,13 @@ const handleDeleteProducts = async (products: Product[]) => {
     isLoading.value = true;
     const ids = products.map(({ id }) => id);
     await $fetch("/api/products", { method: "DELETE", body: { ids } });
+    await refresh();
     toast.success("Products deleted successfully");
   } catch (error) {
     console.error(error);
     toast.error("Something went wrong");
-  } finally {
-    isLoading.value = false;
   }
 };
-
-if (error.value) {
-  console.log(error.value);
-}
-
-onMounted(() => {
-  isLoading.value = status.value === "pending";
-});
-
-watch(status, (newStatus) => {
-  isLoading.value = newStatus === "pending";
-});
 </script>
 
 <template>
@@ -59,7 +45,7 @@ watch(status, (newStatus) => {
 
     <Card class="p-0 pt-5">
       <!-- SHOW LOADING SKELETON -->
-      <ProductListSkeleton v-if="isLoading" />
+      <ProductListSkeleton v-if="status === 'pending'" />
 
       <!-- DATA NOT FOUND UI -->
       <DataNotFound v-else-if="products?.length === 0" />

@@ -39,11 +39,11 @@ const chartOptions = useApexChartOptions({
 <template>
   <ClientOnly>
     <Card class="col-span-full xl:col-span-4">
-      <CardTitle class="mb-2 text-center xl:mb-5">Revenue Sources</CardTitle>
+      <CardTitle class="mb-2 text-center xl:mb-6">Revenue Sources</CardTitle>
       <CardContent class="flex flex-col items-center justify-center">
         <VueApexCharts
           type="polarArea"
-          height="280"
+          height="290"
           :options="chartOptions"
           :series="series"
         />
