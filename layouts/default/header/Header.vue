@@ -24,7 +24,6 @@ const toggleTheme = () => {
 
 onMounted(() => {
   dir.value = "ltr";
-  colorMode.preference = "light";
 });
 </script>
 

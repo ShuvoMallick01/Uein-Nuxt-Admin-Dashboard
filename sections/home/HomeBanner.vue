@@ -42,8 +42,7 @@ import { RouterLink } from "vue-router";
         />
 
         <div
-          class="absolute inset-0 pointer-events-none"
-          style="box-shadow: inset 0 -50px 50px rgba(0, 0, 0, 0.5)"
+          class="absolute bottom-0 z-10 w-full h-full pointer-events-none bg-gradient-to-t from-black/20 to-transparent from-10%"
         ></div>
       </div>
     </div>

@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 import DefaultLayout from "~/layouts/default/index.vue";
 
 // DATA LIST

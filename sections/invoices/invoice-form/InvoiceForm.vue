@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 import { useForm } from "vee-validate";
 
 import * as yup from "yup";

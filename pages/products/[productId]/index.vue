@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 // TYPES
 import type { Product } from "~/types/Product";
 

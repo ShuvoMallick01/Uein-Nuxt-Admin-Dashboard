@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { ref } from "vue";
-import Scrollbar from "simplebar-vue";
 
 const tableHeads = ref([
   "Item Name",
@@ -36,7 +35,7 @@ const tableHeads = ref([
     <div class="space-y-6">
       <h5 class="mb-4 text-sm font-semibold">Products Information</h5>
 
-      <Scrollbar>
+      <div class="overflow-x-auto">
         <Table class="min-w-[900px]">
           <TableHeader>
             <TableRow>
@@ -70,7 +69,7 @@ const tableHeads = ref([
             </div>
           </TableBody>
         </Table>
-      </Scrollbar>
+      </div>
 
       <Table class="flex justify-end w-full">
         <TableBody>

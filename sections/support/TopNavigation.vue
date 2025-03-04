@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRoute } from "vue-router";
 import { RouterLink } from "vue-router";
 // DATA LIST
 const supportNavigation = [

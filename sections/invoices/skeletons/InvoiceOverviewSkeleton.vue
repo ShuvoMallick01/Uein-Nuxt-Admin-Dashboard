@@ -1,6 +1,4 @@
-<script setup lang="ts">
-import Scrollbar from "simplebar-vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
   <Card class="p-6 col-span-full 2xl:col-span-8 2xl:col-start-3">
@@ -34,7 +32,7 @@ import Scrollbar from "simplebar-vue";
         </div>
       </div>
 
-      <Scrollbar>
+      <div class="overflow-x-auto">
         <Table class="min-w-[700px]">
           <TableHeader>
             <TableRow>
@@ -80,7 +78,7 @@ import Scrollbar from "simplebar-vue";
             </TableRow>
           </TableBody>
         </Table>
-      </Scrollbar>
+      </div>
 
       <Table class="flex justify-end w-full">
         <TableBody>

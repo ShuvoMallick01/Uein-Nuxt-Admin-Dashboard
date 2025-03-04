@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { useRouter } from "vue-router";
-import { useDark } from "@vueuse/core";
-
 // ===========================
 interface Props {
   image: string;
@@ -13,14 +10,13 @@ interface Props {
 // ===========================
 
 const props = defineProps<Props>();
-
+const colorMode = useColorMode();
 const router = useRouter();
-const isDark = useDark();
 
 const handleClickDemo = () => {
   router.push(props.route);
-  if (props.isDark) isDark.value = true;
-  else isDark.value = false;
+  if (props.isDark) colorMode.preference = "dark";
+  else colorMode.preference = "light";
 };
 </script>
 

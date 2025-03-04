@@ -1,14 +1,12 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
-import { useRouter } from "vue-router";
 
 const props = defineProps<{ error: NuxtError }>();
 const router = useRouter();
 
-// Handle error reset and redirect to home
 const handleError = () => {
-  clearError(); // Clears the error state
-  router.push("/"); // Redirects to home page
+  clearError();
+  router.push("/");
 };
 </script>
 

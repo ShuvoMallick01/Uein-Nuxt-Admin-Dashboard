@@ -6,14 +6,9 @@ import { cn } from "~/utils/utils";
 const { y } = useWindowScroll({ behavior: "smooth" });
 const colorMode = useColorMode();
 
-// Toggle theme function
 const toggleTheme = () => {
   colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
 };
-
-onMounted(() => {
-  colorMode.preference = "light";
-});
 </script>
 
 <template>

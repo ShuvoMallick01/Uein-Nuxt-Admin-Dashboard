@@ -1,8 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
 import { useFieldArray, useField } from "vee-validate";
-
-import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENTS
 import Item from "./InvoiceItem.vue";
 // CUSTOM UTILS METHOD
@@ -40,7 +38,7 @@ const { value: tax } = useField<number>("tax");
   <div class="space-y-6">
     <h5 class="text-sm font-semibold">Products Information</h5>
 
-    <Scrollbar>
+    <div class="overflow-x-auto">
       <Table class="min-w-[900px]">
         <TableHeader>
           <TableRow>
@@ -70,7 +68,7 @@ const { value: tax } = useField<number>("tax");
           </div>
         </TableBody>
       </Table>
-    </Scrollbar>
+    </div>
 
     <Table class="flex justify-end w-full">
       <TableBody>

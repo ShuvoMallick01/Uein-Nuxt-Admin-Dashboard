@@ -1,10 +1,5 @@
 <script setup lang="ts">
 import { computed } from "vue";
-import Scrollbar from "simplebar-vue";
-
-// CUSTOM UTILS METHODS
-import { currency } from "~/utils/currency";
-import { dateFormat } from "~/utils/dateFormat";
 // TYPES
 import type { Invoice } from "~/types/Invoice";
 
@@ -65,7 +60,7 @@ const subtotal = computed(() => {
       </div>
 
       <!-- ITEM LIST TABLE -->
-      <Scrollbar>
+      <div class="overflow-x-auto">
         <Table class="min-w-[700px]">
           <TableHeader>
             <TableRow>
@@ -96,7 +91,7 @@ const subtotal = computed(() => {
             </TableRow>
           </TableBody>
         </Table>
-      </Scrollbar>
+      </div>
 
       <!-- INVOICE SUMMARY -->
       <Table class="flex justify-end w-full">

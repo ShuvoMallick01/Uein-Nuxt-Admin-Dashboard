@@ -1,9 +1,7 @@
-<script setup lang="ts">
-import Scrollbar from "simplebar-vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-  <Scrollbar>
+  <div class="overflow-x-auto">
     <Table class="animate-pulse">
       <TableBody>
         <TableRow
@@ -35,5 +33,5 @@ import Scrollbar from "simplebar-vue";
         </TableRow>
       </TableBody>
     </Table>
-  </Scrollbar>
+  </div>
 </template>
