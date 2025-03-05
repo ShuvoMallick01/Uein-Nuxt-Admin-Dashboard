@@ -7,7 +7,7 @@ import { notifications } from "~/data/notifications";
   <Popover>
     <PopoverTrigger as-child>
       <Icon
-        height="20"
+        size="20"
         name="solar:bell-bing-linear"
         class="text-gray-500 cursor-pointer hover:text-primary"
       />

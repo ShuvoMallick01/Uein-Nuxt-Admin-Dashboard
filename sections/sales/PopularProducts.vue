@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Scrollbar from "simplebar-vue";
 // SHADCN COMPONENTS
 import { Badge, type BadgeVariants } from "~/components/ui/badge";
 // CUSTOM UTILS METHOD

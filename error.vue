@@ -1,23 +1,42 @@
 <script setup lang="ts">
 import type { NuxtError } from "#app";
+// SHADCN COMPONENTS
+import { Button } from "~/components/ui/button";
 
-const props = defineProps<{ error: NuxtError }>();
-const router = useRouter();
+defineProps<{ error: NuxtError }>();
 
 const handleError = () => {
-  clearError();
-  router.push("/");
+  clearError({ redirect: "/course" });
 };
+
+definePageMeta({
+  layout: false,
+  title: "Not Found",
+});
 </script>
 
 <template>
-  <div class="h-screen w-full flex flex-col justify-center items-center">
-    <div class="text-center p-28 bg-gray-100 shadow-md rounded-xl space-y-5">
-      <h1 class="font-bold text-error text-8xl">{{ error.statusCode }}</h1>
-      <p class="text-lg text-gray-600">
+  <div class="flex items-center justify-center h-screen text-center">
+    <div class="p-30 xl:w-1/3">
+      <img
+        src="/images/illustration/404.svg"
+        alt="maintenance"
+        class="w-56 mx-auto mb-10 sm:w-96 xl:mb-20"
+      />
+
+      <h4 class="mt-6 font-semibold">Ooops... {{ error.statusCode }}!</h4>
+      <p class="text-base text-gray-600">
         {{ error.message || "Something went wrong!" }}
       </p>
-      <Button @click="handleError"> Go Back Home </Button>
+
+      <Button @click="handleError" variant="link" class="mt-8">
+        <Icon
+          name="majesticons:chevron-left"
+          size="20"
+          class="rtl:rotate-180"
+        />
+        Go Back Home
+      </Button>
     </div>
   </div>
 </template>

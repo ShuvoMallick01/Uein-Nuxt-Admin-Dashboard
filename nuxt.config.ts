@@ -31,6 +31,7 @@ export default defineNuxtConfig({
     "nuxt-lodash",
     "@nuxtjs/color-mode",
     "@nuxt/icon",
+    "@vee-validate/nuxt",
   ],
 
   colorMode: {

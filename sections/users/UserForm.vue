@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useRouter, useRoute } from "vue-router";
-import { useForm } from "vee-validate";
 import * as yup from "yup";
 // CUSTOM COMPONENTS
 import UserImageUpload from "./UserImageUpload.vue";

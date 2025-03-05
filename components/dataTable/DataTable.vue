@@ -1,7 +1,5 @@
 <script setup lang="ts" generic="T">
 import { FlexRender, type ColumnDef } from "@tanstack/vue-table";
-
-import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENTS
 import DataTablePagination from "./DataTablePagination.vue";
 // CUSTOM COMPOSABLE
@@ -57,7 +55,7 @@ const handleDeleteRows = () => {
   </div>
 
   <!-- DATA TABLE SECTION -->
-  <Scrollbar :auto-hide="false">
+  <div class="overflow-x-auto">
     <Table class="min-w-[1200px]">
       <TableHeader>
         <TableRow
@@ -110,7 +108,7 @@ const handleDeleteRows = () => {
         </template>
       </TableBody>
     </Table>
-  </Scrollbar>
+  </div>
 
   <hr class="border-border" />
 

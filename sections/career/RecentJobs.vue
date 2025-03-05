@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Scrollbar from "simplebar-vue";
 // CUSTOM UTILS METHOD
 import { dateFormat } from "~/utils/dateFormat";
 // DATA LIST

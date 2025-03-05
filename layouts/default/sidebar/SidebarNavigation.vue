@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Scrollbar from "simplebar-vue";
 // CUSTOM COMPONENT
 import NavAccordion from "./NavAccordion.vue";
 // MENU LIST
@@ -17,7 +16,7 @@ import { navigation } from "~/data/navigation";
     </RouterLink>
   </div>
 
-  <Scrollbar class="h-[calc(100vh-80px)]">
+  <div class="h-[calc(100vh-80px)] overflow-y-auto">
     <nav class="px-4 pb-4 space-y-4">
       <div v-for="navGroup in navigation" :key="navGroup.id">
         <h4
@@ -34,5 +33,5 @@ import { navigation } from "~/data/navigation";
         />
       </div>
     </nav>
-  </Scrollbar>
+  </div>
 </template>
