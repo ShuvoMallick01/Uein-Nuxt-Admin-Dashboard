@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 import VueApexCharts from "vue3-apexcharts";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";

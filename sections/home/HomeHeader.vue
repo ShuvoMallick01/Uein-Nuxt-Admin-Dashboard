@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { RouterLink } from "vue-router";
-// CUSTOM UTILS METHOD
 import { cn } from "~/utils/utils";
 
 const { y } = useWindowScroll({ behavior: "smooth" });

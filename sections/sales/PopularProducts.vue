@@ -1,8 +1,7 @@
 <script setup lang="ts">
 // SHADCN COMPONENTS
-import { Badge, type BadgeVariants } from "~/components/ui/badge";
-// CUSTOM UTILS METHOD
-import { currency } from "~/utils/currency";
+import { type BadgeVariants } from "~/components/ui/badge";
+
 // CUSTOM DATA
 import { popularProducts } from "~/data/dashboards/sales";
 

@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// CUSTOM UTILS METHOD
-import { currency } from "~/utils/currency";
 // DATA LIST
 import { featureCourses } from "~/data/dashboards/course";
 </script>

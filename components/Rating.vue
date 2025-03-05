@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
-
 // ==============================================================
 interface RatingProps {
   rating: number;
@@ -9,7 +7,6 @@ interface RatingProps {
 // ==============================================================
 
 const props = withDefaults(defineProps<RatingProps>(), { size: 16 });
-
 const remaining = computed(() => 5 - Math.floor(props.rating));
 </script>
 

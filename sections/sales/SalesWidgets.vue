@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// CUSTOM UTILS METHODS
-import { cn } from "~/utils/utils";
-import { currency } from "~/utils/currency";
 // DATA LIST
 import { widgets } from "~/data/dashboards/sales";
 </script>

@@ -1,10 +1,6 @@
 <script setup lang="ts">
-import { computed, ref } from "vue";
-import { useFieldArray, useField } from "vee-validate";
 // CUSTOM COMPONENTS
 import Item from "./InvoiceItem.vue";
-// CUSTOM UTILS METHOD
-import { currency } from "~/utils/currency";
 // TYPES
 import type { InvoiceItem } from "./types";
 

@@ -1,7 +1,4 @@
 <script setup lang="ts">
-// CUSTOM UTILS METHOD
-import { currency } from "~/utils/currency";
-
 defineProps<{
   name: string;
   description: string;

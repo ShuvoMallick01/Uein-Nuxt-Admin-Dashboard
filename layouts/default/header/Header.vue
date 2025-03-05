@@ -1,7 +1,4 @@
 <script setup lang="ts">
-import { onMounted } from "vue";
-// CUSTOM STORE
-import { useSidebarStore } from "~/stores/sidebar";
 // CUSTOM COMPONENTS
 import SearchPopover from "./popovers/SearchPopover.vue";
 import MessagePopover from "./popovers/MessagePopover.vue";

@@ -1,4 +1,3 @@
-import { computed, ref, reactive } from "vue";
 import type {
   ColumnDef,
   ColumnFiltersState,
@@ -11,8 +10,6 @@ import {
   getFilteredRowModel,
   getPaginationRowModel,
 } from "@tanstack/vue-table";
-// CUSTOM UTILS METHOD
-import { valueUpdater } from "~/utils/utils";
 
 // ==============================================================
 interface Options<T> {

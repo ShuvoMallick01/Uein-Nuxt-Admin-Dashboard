@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { onMounted, ref, watch, watchEffect } from "vue";
-import { useTextDirection } from "@vueuse/core";
 import VueApexCharts from "vue3-apexcharts";
 // CUSTOM COMPOSABLE
 import { useApexChartOptions } from "~/composables/useApexChartOptions";

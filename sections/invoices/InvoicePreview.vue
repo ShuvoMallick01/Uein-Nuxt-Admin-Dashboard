@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { computed } from "vue";
 // TYPES
 import type { Invoice } from "~/types/Invoice";
 

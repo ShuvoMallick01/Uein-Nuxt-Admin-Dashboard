@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// CUSTOM UTILS METHOD
-import { dateFormat } from "~/utils/dateFormat";
 // DATA LIST
 import { recentJobs } from "~/data/dashboards/career";
 </script>

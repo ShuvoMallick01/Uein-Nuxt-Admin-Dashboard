@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { ref } from "vue";
 // TABLE COLUMNS DEFINITION
 import { columns } from "./ordersColumns";
 // TYPES

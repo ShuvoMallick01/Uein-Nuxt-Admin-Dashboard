@@ -1,9 +1,4 @@
 <script setup lang="ts">
-import { useField } from "vee-validate";
-// SHADCN COMPONENTS
-import { Label } from "~/components/ui/label";
-import { Textarea } from "~/components/ui/textarea";
-
 // ==============================================================
 interface TextAreaFieldProps {
   id: string;
@@ -17,7 +12,6 @@ interface TextAreaFieldProps {
 const props = withDefaults(defineProps<TextAreaFieldProps>(), {
   isDisable: false,
 });
-
 const { value, errorMessage } = useField<string>(() => props.name);
 </script>
 

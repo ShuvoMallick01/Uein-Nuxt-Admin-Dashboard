@@ -1,8 +1,5 @@
 <script lang="ts" setup>
-import { useFieldArray } from "vee-validate";
-
 defineProps<{ id: number }>();
-
 const { remove } = useFieldArray("features");
 </script>
 

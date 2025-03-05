@@ -1,7 +1,6 @@
 <script setup lang="ts">
 // TYPE
 import { type NavItem } from "./type";
-import { cn } from "~/utils/utils";
 
 const props = defineProps<{ item: NavItem }>();
 

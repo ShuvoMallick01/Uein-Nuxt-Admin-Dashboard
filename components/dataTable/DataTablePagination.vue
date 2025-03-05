@@ -1,7 +1,6 @@
 <script setup lang="ts" generic="T">
-import { computed } from "vue";
-
 import type { Table } from "@tanstack/vue-table";
+
 const { table } = defineProps<{ table: Table<T> }>();
 
 const firstIndex = computed(() => {

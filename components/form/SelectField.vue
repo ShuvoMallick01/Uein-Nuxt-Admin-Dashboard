@@ -1,14 +1,4 @@
 <script setup lang="ts">
-import { useField } from "vee-validate";
-// SHADCN COMPONENTS
-import { Label } from "~/components/ui/label";
-import {
-  Select,
-  SelectValue,
-  SelectContent,
-  SelectTrigger,
-} from "~/components/ui/select";
-
 // ==============================================================
 interface SelectFieldProps {
   id: string;
@@ -19,7 +9,6 @@ interface SelectFieldProps {
 // ==============================================================
 
 const props = defineProps<SelectFieldProps>();
-
 const { value, errorMessage } = useField<string>(() => props.name);
 </script>
 

@@ -8,11 +8,7 @@ const {
   data: categories,
   error,
   status,
-} = await useAsyncData<ProductAttribute[]>(
-  "colors",
-  () => $fetch("/api/products/categories"),
-  { lazy: false }
-);
+} = useFetch<ProductAttribute[]>("/api/products/categories");
 
 if (error.value) {
   console.error("Failed to fetch categories:", error.value);

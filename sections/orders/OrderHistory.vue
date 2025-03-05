@@ -1,6 +1,4 @@
 <script setup lang="ts">
-// CUSTOM COMPONENTS
-
 // ==============================================================
 interface OrderHistory {
   id: number;

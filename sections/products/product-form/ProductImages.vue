@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { ErrorMessage, useField } from "vee-validate";
 import { type FileRejectReason, useDropzone } from "vue3-dropzone";
-
-// CUSTOM UTILS METHOD
-import { cn } from "~/utils/utils";
-
 const { value, errorMessage, setValue, setErrors } = useField<any>("images");
 
 function onDrop(files: File[] | null, rejectReasons: FileRejectReason[]) {

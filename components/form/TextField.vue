@@ -1,10 +1,5 @@
 <script setup lang="ts">
-import { InputHTMLAttributes } from "vue";
-import { useField } from "vee-validate";
-// SHADCN COMPONENTS
-import { Input } from "~/components/ui/input";
-import { Label } from "~/components/ui/label";
-
+import type { InputHTMLAttributes } from "vue";
 // ==============================================================
 interface TextFieldProps {
   id: string;
@@ -20,7 +15,6 @@ const props = withDefaults(defineProps<TextFieldProps>(), {
   type: "text",
   isDisable: false,
 });
-
 const { value, errorMessage } = useField<string>(() => props.name);
 </script>
 

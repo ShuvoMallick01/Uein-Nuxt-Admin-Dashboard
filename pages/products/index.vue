@@ -21,7 +21,6 @@ const {
 // HANDLE DELETE PRODUCT BY IDS
 const handleDeleteProducts = async (products: Product[]) => {
   try {
-    isLoading.value = true;
     const ids = products.map(({ id }) => id);
     await $fetch("/api/products", { method: "DELETE", body: { ids } });
     await refresh();

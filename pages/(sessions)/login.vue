@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useForm } from "vee-validate";
-
 import * as yup from "yup";
 
 definePageMeta({

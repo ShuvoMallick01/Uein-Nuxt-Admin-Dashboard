@@ -1,6 +1,6 @@
 <script setup lang="ts">
 // SHADCN COMPONENT
-import { Badge, type BadgeVariants } from "~/components/ui/badge";
+import { type BadgeVariants } from "~/components/ui/badge";
 // DATA LIST
 import { widgets } from "~/data/dashboards/finance";
 

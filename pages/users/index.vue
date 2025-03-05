@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { watch, onMounted } from "vue";
 // TABLE COLUMNS DEFINITION
 import { columns } from "./usersColumns";
 // TYPES

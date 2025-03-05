@@ -1,9 +1,6 @@
 <script setup lang="ts">
 // CUSTOM COMPONENTS
 import OrderWidgetCard from "./OrderWidgetCard.vue";
-// CUSTOM UTILS METHODS
-import { currency } from "~/utils/currency";
-import { dateFormat } from "~/utils/dateFormat";
 // TYPES
 import type { Order } from "~/types/Order";
 

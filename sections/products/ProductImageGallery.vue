@@ -1,11 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
-
-// CUSTOM UTILS METHODS
-import { cn } from "~/utils/utils";
-
 const props = defineProps<{ images: string[] }>();
-
 const selectedImage = ref(props.images[0]);
 </script>
 

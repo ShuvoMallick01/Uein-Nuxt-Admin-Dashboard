@@ -1,4 +1,3 @@
-import { ref } from "vue";
 import { useApexChartOptions } from "~/composables/useApexChartOptions";
 
 export const useChartOptions = () => {

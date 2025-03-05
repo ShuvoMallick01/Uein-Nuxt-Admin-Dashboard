@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useField } from "vee-validate";
 // TYPES
 import type { ProductAttribute } from "~/types/Product";
 
