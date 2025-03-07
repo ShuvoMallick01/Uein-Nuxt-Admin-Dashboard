@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import * as yup from "yup";
+import { toast } from "vue-sonner";
 // CUSTOM COMPONENTS
 import InvoiceItems from "./InvoiceItems.vue";
 // TYPE
@@ -27,10 +28,11 @@ const createNewInvoice = async (body: InvoicePayload) => {
       body: { newInvoice },
     });
     console.log("Invoice Create Successfully");
-    // push.success("Invoice created successfully");
+    toast.success("Invoice created successfully");
+    await navigateTo("/invoices");
   } catch (error) {
     console.error(error);
-    // push.error("Something went wrong");
+    toast.error("Something went wrong");
   }
 };
 
@@ -45,10 +47,11 @@ const updateInvoice = async (id: string, body: InvoicePayload) => {
       }
     );
     console.log("Invoice updated successfully");
-    // push.success("Invoice updated successfully");
+    toast.success("Invoice updated successfully");
+    await navigateTo("/invoices");
   } catch (error) {
     console.error(error);
-    // push.error("Something went wrong");
+    toast.error("Something went wrong");
   }
 };
 

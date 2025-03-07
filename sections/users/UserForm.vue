@@ -4,6 +4,7 @@ import * as yup from "yup";
 import UserImageUpload from "./UserImageUpload.vue";
 // TYPES
 import type { User, UserPayload } from "~/types/User";
+import { toast } from "vue-sonner";
 
 const { user } = defineProps<{ user?: User }>();
 
@@ -18,11 +19,11 @@ const createNewUser = async (body: UserPayload) => {
       body: { body },
     });
     console.log(newUser);
-    await router.push("/users");
-    // push.success("User created successfully");
+    toast.success("User Created Successfully");
+    await navigateTo("/users");
   } catch (error) {
     console.log(error);
-    // push.error("Something went wrong");
+    toast.error("Something went wrong");
   }
 };
 
@@ -33,11 +34,11 @@ const updateUser = async (id: number, body: UserPayload) => {
       method: "PUT",
       body: { id: id, updatedData: body },
     });
-    await router.push("/users");
-    // push.success("User updated successfully");
+    toast.success("User updated successfully");
+    await navigateTo("/users");
   } catch (error) {
     console.error(error);
-    // push.error("Something went wrong");
+    toast.error("Something went wrong");
   }
 };
 

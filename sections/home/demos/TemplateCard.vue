@@ -14,7 +14,7 @@ const colorMode = useColorMode();
 const router = useRouter();
 
 const handleClickDemo = () => {
-  router.push(props.route);
+  navigateTo(props.route);
   if (props.isDark) colorMode.preference = "dark";
   else colorMode.preference = "light";
 };

@@ -113,6 +113,7 @@ export default defineNuxtConfig({
         "vscode-icons",
         "uil",
         "oui",
+        "eva",
       ],
     },
   },

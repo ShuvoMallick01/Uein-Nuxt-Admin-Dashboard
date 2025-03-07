@@ -36,6 +36,7 @@ useHead({
 
       <!-- PAGE / ROUTE VIEW -->
       <div class="px-4 mx-auto max-w-screen-2xl sm:px-7 2xl:px-20">
+        <Toaster position="top-right" />
         <slot />
       </div>
     </main>

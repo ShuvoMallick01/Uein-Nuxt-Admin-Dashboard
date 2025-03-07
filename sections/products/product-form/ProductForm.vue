@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import * as yup from "yup";
+import { toast } from "vue-sonner";
 // CUSTOM COMPONENTS
 import Sizes from "./Sizes.vue";
 import Colors from "./Colors.vue";
@@ -8,12 +9,10 @@ import ProductImages from "./ProductImages.vue";
 import ProductFeatureItem from "./ProductFeatureItem.vue";
 // TYPE
 import type { Product, ProductPayload } from "~/types/Product";
-
 // PROPS
 const { product } = defineProps<{ product?: Product }>();
 
 // COMPOSABLES
-const router = useRouter();
 const route = useRoute();
 
 // CREATE NEW PRODUCT API REQUEST HANDLER
@@ -38,11 +37,11 @@ const createNewProduct = async (body: ProductPayload) => {
       body: { updateBody },
     });
     console.log(newProduct);
-    await router.push("/products");
-    // push.success("Product created successfully");
+    toast.success("Product created successfully");
+    await navigateTo("/products");
   } catch (error) {
     console.error(error);
-    // push.error("Something went wrong");
+    toast.error("Something went wrong");
   }
 };
 
@@ -53,11 +52,11 @@ const updateProduct = async (id: number, body: ProductPayload) => {
       method: "PUT",
       body: { id: id, updatedData: body },
     });
-    await router.push("/products");
-    // push.success("Product updated successfully");
+    toast.success("Product updated successfully");
+    await navigateTo("/products");
   } catch (error) {
     console.error(error);
-    // push.error("Something went wrong");
+    toast.error("Something went wrong");
   }
 };
 
