@@ -12,7 +12,7 @@ const {
   data: product,
   status,
   error,
-} = useFetch<Product>(`/api/products/${route.params.productId}`);
+} = useFetch<Product>(`/api/products/${route.params.id}`);
 
 console.log(product.value);
 

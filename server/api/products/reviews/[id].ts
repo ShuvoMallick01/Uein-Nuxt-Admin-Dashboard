@@ -2,18 +2,18 @@ import reviews from "~/server/data/reviews";
 
 export default defineEventHandler(async (event) => {
   try {
-    const productId = getRouterParam(event, "productId");
+    const id = getRouterParam(event, "id");
 
-    if (!productId) {
+    if (!id) {
       throw createError({
         statusCode: 400,
         statusMessage: "Product ID is required!",
       });
     }
 
-    // Filter reviews by productId
+    // Filter reviews by id
     // const productReviews = reviews.filter(
-    //   (review) => review.productId === Number(productId)
+    //   (review) => review.id === Number(id)
     // );
 
     return reviews;

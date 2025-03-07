@@ -4,13 +4,13 @@ import ProductReviewSkeleton from "./skeletons/ProductReviewSkeleton.vue";
 import type { Review } from "~/types/Product";
 
 // PROPS
-const { productId } = defineProps<{ productId: number }>();
+const { id } = defineProps<{ id: number }>();
 
 const {
   data: reviews,
   status,
   error,
-} = useFetch<Review[]>(`/api/products/reviews/${productId}`);
+} = useFetch<Review[]>(`/api/products/reviews/${id}`);
 
 // Error Handling
 if (error.value) {

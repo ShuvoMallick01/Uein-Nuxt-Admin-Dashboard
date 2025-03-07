@@ -29,7 +29,7 @@ const createNewUser = async (body: UserPayload) => {
 // UPDATE USER API REQUEST HANDLER
 const updateUser = async (id: number, body: UserPayload) => {
   try {
-    await $fetch<{ user: User }>(`/api/users/${route.params.userEditId}`, {
+    await $fetch<{ user: User }>(`/api/users/${route.params.id}`, {
       method: "PUT",
       body: { id: id, updatedData: body },
     });

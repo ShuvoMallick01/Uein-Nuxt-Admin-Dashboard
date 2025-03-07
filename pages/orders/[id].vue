@@ -12,7 +12,7 @@ const {
   status,
   error,
   data: order,
-} = useFetch<Order>(`/api/orders/${route.params.orderId}`);
+} = useFetch<Order>(`/api/orders/${route.params.id}`);
 
 if (error.value) console.log(error.value);
 </script>
@@ -24,7 +24,7 @@ if (error.value) console.log(error.value);
       :links="[
         { name: 'Home', href: '/' },
         { name: 'Orders', href: '/orders' },
-        { name: order?.invoiceId || '', current: true },
+        { name: order?.id || '', current: true },
       ]"
     />
 

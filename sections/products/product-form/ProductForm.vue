@@ -49,13 +49,10 @@ const createNewProduct = async (body: ProductPayload) => {
 // UPDATE PRODUCT API REQUEST HANDLER
 const updateProduct = async (id: number, body: ProductPayload) => {
   try {
-    await $fetch<{ product: Product }>(
-      `/api/products/${route.params.productId}`,
-      {
-        method: "PUT",
-        body: { id: id, updatedData: body },
-      }
-    );
+    await $fetch<{ product: Product }>(`/api/products/${route.params.id}`, {
+      method: "PUT",
+      body: { id: id, updatedData: body },
+    });
     await router.push("/products");
     // push.success("Product updated successfully");
   } catch (error) {

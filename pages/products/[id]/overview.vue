@@ -12,7 +12,7 @@ const {
   data: product,
   status,
   error,
-} = useFetch<Product>(`/api/products/${route.params.productId}`);
+} = useFetch<Product>(`/api/products/${route.params.id}`);
 
 if (error) console.log(error.value);
 </script>
@@ -64,7 +64,7 @@ if (error) console.log(error.value);
           </div>
 
           <!-- PRODUCT REVIEWS -->
-          <ProductReviewList :productId="product.id" />
+          <ProductReviewList :id="product.id" />
         </div>
       </div>
     </div>

@@ -137,7 +137,7 @@ export const columns: ColumnDef<User>[] = [
           // THESE ARE CUSTOM PROPS
           handleDelete,
           editLink: `/users/${id}`,
-          viewLink: "/users/profile",
+          viewLink: "/users/user-profile",
         }),
       ]);
     },

@@ -149,7 +149,7 @@ export const columns: ColumnDef<Invoice>[] = [
           // THESE ARE CUSTOM PROPS
           handleDelete,
           editLink: `/invoices/${id}`,
-          viewLink: `/invoices/overview/${id}`,
+          viewLink: `/invoices/${id}/details`,
         }),
       ]);
     },

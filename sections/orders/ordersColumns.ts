@@ -150,7 +150,6 @@ export const columns: ColumnDef<Order>[] = [
           // THESE ARE CUSTOM PROPS
           handleDelete,
           viewLink: `/orders/${id}`,
-          editLink: `/orders`,
         }),
       ]);
     },

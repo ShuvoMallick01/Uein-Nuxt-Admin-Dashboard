@@ -36,7 +36,7 @@ onMounted(() => {
             class="text-gray-500 lg:hidden hover:text-primary"
             @click="handleSidebarToggle()"
           >
-            <Icon name="iconamoon:menu-burger-horizontal" height="22" />
+            <Icon name="iconamoon:menu-burger-horizontal" size="22" />
           </button>
 
           <!-- SEARCH -->
