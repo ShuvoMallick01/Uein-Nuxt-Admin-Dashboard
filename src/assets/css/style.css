@@ -683,10 +683,6 @@ h6 {
   margin-top: 1.75rem;
 }
 
-.mt-5 {
-  margin-top: 1.25rem;
-}
-
 .block {
   display: block;
 }
@@ -973,6 +969,10 @@ h6 {
   padding-bottom: 2rem;
 }
 
+.\!pt-10 {
+  padding-top: 2.5rem !important;
+}
+
 .pb-3 {
   padding-bottom: 0.75rem;
 }
@@ -987,18 +987,6 @@ h6 {
 
 .pt-5 {
   padding-top: 1.25rem;
-}
-
-.\!pt-4 {
-  padding-top: 1rem !important;
-}
-
-.\!pt-8 {
-  padding-top: 2rem !important;
-}
-
-.\!pt-10 {
-  padding-top: 2.5rem !important;
 }
 
 .text-justify {

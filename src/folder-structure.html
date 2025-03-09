@@ -229,13 +229,7 @@
               etc). Sections include pre-built components and hooks specific to
               the page's functionality.
             </li>
-            <li>
-              <span
-                class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
-                >utils/</span
-              >: Stores utility functions and helper methods used across the
-              application for better maintainability.
-            </li>
+
             <li>
               <span
                 class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
@@ -263,8 +257,8 @@
               <span
                 class="px-2 py-1 rounded bg-slate-200/60 text-primary-darker"
                 >utils/</span
-              >: Stores helper functions that provide reusable logic and
-              utilities for various tasks throughout the project.
+              >: Stores utility functions and helper methods used across the
+              application for better maintainability.
             </li>
           </ul>
 
@@ -302,7 +296,6 @@
 │  ├─ CustomBreadcrumb.vue
 │  ├─ DataNotFound.vue
 │  ├─ Footer.vue
-│  ├─ Icon.vue
 │  ├─ Rating.vue
 │  └─ SearchInput.vue
 │
@@ -318,7 +311,7 @@
 │  │  └─ sales.ts
 │  ├─ few more folders..
 │  ├─ notifications.ts
-│  ├─ navigation.ts
+│  └─ navigation.ts
 │
 ├─ layout
 │  ├─ auth
@@ -353,17 +346,17 @@
 │  │  ├─ server-error.vue
 │  │  └─ verification.vue
 │  ├─ invoices
-│  │  ├─ [invoiceId]
+│  │  ├─ [id]
 │  │  │  ├─ details.vue
 │  │  │  ├─ index.vue
 │  │  │  └─ invoicesColumn.ts
 │  │  ├─ create.vue
 │  │  └─ index.vue
 │  ├─ orders
-│  │  ├─ [orderId].vue
+│  │  ├─ [id].vue
 │  │  └─ index.vue
 │  ├─ products
-│  │  ├─ [productId]
+│  │  ├─ [id]
 │  │  │  ├─ index.vue
 │  │  │  └─ overview.vue
 │  │  ├─ create.vue
@@ -418,14 +411,14 @@
 │  │  │  │  ├─ index.delete.ts
 │  │  │  │  ├─ index.get.ts
 │  │  │  │  └─ index.put.ts
-│  │  │  └─ index.get.ts
+│  │  │  ├─ index.get.ts
 │  │  │  └─ index.post.ts
 │  │  ├─ orders
 │  │  │  └─ some more files..
 │  │  ├─ products
 │  │  │  └─ some more files..
-│  │  ├─ users
-│  │  │  └─ some more files..
+│  │  └─ users
+│  │     └─ some more files..
 │  ├─ data
 │  │  ├─ invoices.js
 │  │  └─ some more files..
